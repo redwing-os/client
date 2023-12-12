@@ -65,6 +65,9 @@ extern VectorDeleteRequestDefaultTypeInternal _VectorDeleteRequest_default_insta
 class VectorDeleteResponse;
 struct VectorDeleteResponseDefaultTypeInternal;
 extern VectorDeleteResponseDefaultTypeInternal _VectorDeleteResponse_default_instance_;
+class VectorEmbedAndWriteRequest;
+struct VectorEmbedAndWriteRequestDefaultTypeInternal;
+extern VectorEmbedAndWriteRequestDefaultTypeInternal _VectorEmbedAndWriteRequest_default_instance_;
 class VectorReadRequest;
 struct VectorReadRequestDefaultTypeInternal;
 extern VectorReadRequestDefaultTypeInternal _VectorReadRequest_default_instance_;
@@ -1224,6 +1227,231 @@ class VectorReadRequest final :
   friend struct ::TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto;
 };// -------------------------------------------------------------------
 
+class VectorEmbedAndWriteRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vectordb.VectorEmbedAndWriteRequest) */ {
+ public:
+  inline VectorEmbedAndWriteRequest() : VectorEmbedAndWriteRequest(nullptr) {}
+  ~VectorEmbedAndWriteRequest() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR VectorEmbedAndWriteRequest(::google::protobuf::internal::ConstantInitialized);
+
+  inline VectorEmbedAndWriteRequest(const VectorEmbedAndWriteRequest& from)
+      : VectorEmbedAndWriteRequest(nullptr, from) {}
+  VectorEmbedAndWriteRequest(VectorEmbedAndWriteRequest&& from) noexcept
+    : VectorEmbedAndWriteRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline VectorEmbedAndWriteRequest& operator=(const VectorEmbedAndWriteRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VectorEmbedAndWriteRequest& operator=(VectorEmbedAndWriteRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VectorEmbedAndWriteRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VectorEmbedAndWriteRequest* internal_default_instance() {
+    return reinterpret_cast<const VectorEmbedAndWriteRequest*>(
+               &_VectorEmbedAndWriteRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(VectorEmbedAndWriteRequest& a, VectorEmbedAndWriteRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VectorEmbedAndWriteRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VectorEmbedAndWriteRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VectorEmbedAndWriteRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VectorEmbedAndWriteRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const VectorEmbedAndWriteRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const VectorEmbedAndWriteRequest& from) {
+    VectorEmbedAndWriteRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(VectorEmbedAndWriteRequest* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "vectordb.VectorEmbedAndWriteRequest";
+  }
+  protected:
+  explicit VectorEmbedAndWriteRequest(::google::protobuf::Arena* arena);
+  VectorEmbedAndWriteRequest(::google::protobuf::Arena* arena, const VectorEmbedAndWriteRequest& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 2,
+    kKeyFieldNumber = 1,
+    kRowsFieldNumber = 3,
+    kColsFieldNumber = 4,
+  };
+  // repeated float data = 2;
+  int data_size() const;
+  private:
+  int _internal_data_size() const;
+
+  public:
+  void clear_data() ;
+  float data(int index) const;
+  void set_data(int index, float value);
+  void add_data(float value);
+  const ::google::protobuf::RepeatedField<float>& data() const;
+  ::google::protobuf::RepeatedField<float>* mutable_data();
+
+  private:
+  const ::google::protobuf::RepeatedField<float>& _internal_data() const;
+  ::google::protobuf::RepeatedField<float>* _internal_mutable_data();
+
+  public:
+  // string key = 1;
+  void clear_key() ;
+  const std::string& key() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_key(Arg_&& arg, Args_... args);
+  std::string* mutable_key();
+  PROTOBUF_NODISCARD std::string* release_key();
+  void set_allocated_key(std::string* value);
+
+  private:
+  const std::string& _internal_key() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(
+      const std::string& value);
+  std::string* _internal_mutable_key();
+
+  public:
+  // int32 rows = 3;
+  void clear_rows() ;
+  ::int32_t rows() const;
+  void set_rows(::int32_t value);
+
+  private:
+  ::int32_t _internal_rows() const;
+  void _internal_set_rows(::int32_t value);
+
+  public:
+  // int32 cols = 4;
+  void clear_cols() ;
+  ::int32_t cols() const;
+  void set_cols(::int32_t value);
+
+  private:
+  ::int32_t _internal_cols() const;
+  void _internal_set_cols(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:vectordb.VectorEmbedAndWriteRequest)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 4, 0,
+      47, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::RepeatedField<float> data_;
+    ::google::protobuf::internal::ArenaStringPtr key_;
+    ::int32_t rows_;
+    ::int32_t cols_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto;
+};// -------------------------------------------------------------------
+
 class VectorDeleteResponse final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vectordb.VectorDeleteResponse) */ {
  public:
@@ -2297,6 +2525,154 @@ inline void VectorDeleteResponse::_internal_set_success(bool value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.success_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// VectorEmbedAndWriteRequest
+
+// string key = 1;
+inline void VectorEmbedAndWriteRequest::clear_key() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.key_.ClearToEmpty();
+}
+inline const std::string& VectorEmbedAndWriteRequest::key() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorEmbedAndWriteRequest.key)
+  return _internal_key();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorEmbedAndWriteRequest::set_key(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.key_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorEmbedAndWriteRequest.key)
+}
+inline std::string* VectorEmbedAndWriteRequest::mutable_key() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_key();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorEmbedAndWriteRequest.key)
+  return _s;
+}
+inline const std::string& VectorEmbedAndWriteRequest::_internal_key() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.key_.Get();
+}
+inline void VectorEmbedAndWriteRequest::_internal_set_key(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.key_.Set(value, GetArena());
+}
+inline std::string* VectorEmbedAndWriteRequest::_internal_mutable_key() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.key_.Mutable( GetArena());
+}
+inline std::string* VectorEmbedAndWriteRequest::release_key() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorEmbedAndWriteRequest.key)
+  return _impl_.key_.Release();
+}
+inline void VectorEmbedAndWriteRequest::set_allocated_key(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.key_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.key_.IsDefault()) {
+          _impl_.key_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorEmbedAndWriteRequest.key)
+}
+
+// repeated float data = 2;
+inline int VectorEmbedAndWriteRequest::_internal_data_size() const {
+  return _internal_data().size();
+}
+inline int VectorEmbedAndWriteRequest::data_size() const {
+  return _internal_data_size();
+}
+inline void VectorEmbedAndWriteRequest::clear_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.data_.Clear();
+}
+inline float VectorEmbedAndWriteRequest::data(int index) const {
+  // @@protoc_insertion_point(field_get:vectordb.VectorEmbedAndWriteRequest.data)
+  return _internal_data().Get(index);
+}
+inline void VectorEmbedAndWriteRequest::set_data(int index, float value) {
+  _internal_mutable_data()->Set(index, value);
+  // @@protoc_insertion_point(field_set:vectordb.VectorEmbedAndWriteRequest.data)
+}
+inline void VectorEmbedAndWriteRequest::add_data(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_data()->Add(value);
+  // @@protoc_insertion_point(field_add:vectordb.VectorEmbedAndWriteRequest.data)
+}
+inline const ::google::protobuf::RepeatedField<float>& VectorEmbedAndWriteRequest::data() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:vectordb.VectorEmbedAndWriteRequest.data)
+  return _internal_data();
+}
+inline ::google::protobuf::RepeatedField<float>* VectorEmbedAndWriteRequest::mutable_data()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:vectordb.VectorEmbedAndWriteRequest.data)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  return _internal_mutable_data();
+}
+inline const ::google::protobuf::RepeatedField<float>& VectorEmbedAndWriteRequest::_internal_data()
+    const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.data_;
+}
+inline ::google::protobuf::RepeatedField<float>* VectorEmbedAndWriteRequest::_internal_mutable_data() {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return &_impl_.data_;
+}
+
+// int32 rows = 3;
+inline void VectorEmbedAndWriteRequest::clear_rows() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.rows_ = 0;
+}
+inline ::int32_t VectorEmbedAndWriteRequest::rows() const {
+  // @@protoc_insertion_point(field_get:vectordb.VectorEmbedAndWriteRequest.rows)
+  return _internal_rows();
+}
+inline void VectorEmbedAndWriteRequest::set_rows(::int32_t value) {
+  _internal_set_rows(value);
+  // @@protoc_insertion_point(field_set:vectordb.VectorEmbedAndWriteRequest.rows)
+}
+inline ::int32_t VectorEmbedAndWriteRequest::_internal_rows() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.rows_;
+}
+inline void VectorEmbedAndWriteRequest::_internal_set_rows(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.rows_ = value;
+}
+
+// int32 cols = 4;
+inline void VectorEmbedAndWriteRequest::clear_cols() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.cols_ = 0;
+}
+inline ::int32_t VectorEmbedAndWriteRequest::cols() const {
+  // @@protoc_insertion_point(field_get:vectordb.VectorEmbedAndWriteRequest.cols)
+  return _internal_cols();
+}
+inline void VectorEmbedAndWriteRequest::set_cols(::int32_t value) {
+  _internal_set_cols(value);
+  // @@protoc_insertion_point(field_set:vectordb.VectorEmbedAndWriteRequest.cols)
+}
+inline ::int32_t VectorEmbedAndWriteRequest::_internal_cols() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.cols_;
+}
+inline void VectorEmbedAndWriteRequest::_internal_set_cols(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.cols_ = value;
 }
 
 #ifdef __GNUC__

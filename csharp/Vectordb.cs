@@ -34,15 +34,19 @@ namespace Vectordb {
             "dWVzdBILCgNrZXkYASABKAkSDgoGdmVjdG9yGAIgAygCIicKFFZlY3RvclVw",
             "ZGF0ZVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiIgoTVmVjdG9yRGVsZXRl",
             "UmVxdWVzdBILCgNrZXkYASABKAkiJwoUVmVjdG9yRGVsZXRlUmVzcG9uc2US",
-            "DwoHc3VjY2VzcxgBIAEoCDL1AgoIVmVjdG9yREISTgoKQmF0Y2hXcml0ZRIh",
-            "LnZlY3RvcmRiLlZlY3RvckJhdGNoV3JpdGVSZXF1ZXN0Gh0udmVjdG9yZGIu",
-            "VmVjdG9yV3JpdGVSZXNwb25zZRJECgVXcml0ZRIcLnZlY3RvcmRiLlZlY3Rv",
-            "cldyaXRlUmVxdWVzdBodLnZlY3RvcmRiLlZlY3RvcldyaXRlUmVzcG9uc2US",
-            "QQoEUmVhZBIbLnZlY3RvcmRiLlZlY3RvclJlYWRSZXF1ZXN0GhwudmVjdG9y",
-            "ZGIuVmVjdG9yUmVhZFJlc3BvbnNlEkcKBlVwZGF0ZRIdLnZlY3RvcmRiLlZl",
-            "Y3RvclVwZGF0ZVJlcXVlc3QaHi52ZWN0b3JkYi5WZWN0b3JVcGRhdGVSZXNw",
-            "b25zZRJHCgZEZWxldGUSHS52ZWN0b3JkYi5WZWN0b3JEZWxldGVSZXF1ZXN0",
-            "Gh4udmVjdG9yZGIuVmVjdG9yRGVsZXRlUmVzcG9uc2ViBnByb3RvMw=="));
+            "DwoHc3VjY2VzcxgBIAEoCCJTChpWZWN0b3JFbWJlZEFuZFdyaXRlUmVxdWVz",
+            "dBILCgNrZXkYASABKAkSDAoEZGF0YRgCIAMoAhIMCgRyb3dzGAMgASgFEgwK",
+            "BGNvbHMYBCABKAUyywMKCFZlY3RvckRCEk4KCkJhdGNoV3JpdGUSIS52ZWN0",
+            "b3JkYi5WZWN0b3JCYXRjaFdyaXRlUmVxdWVzdBodLnZlY3RvcmRiLlZlY3Rv",
+            "cldyaXRlUmVzcG9uc2USRAoFV3JpdGUSHC52ZWN0b3JkYi5WZWN0b3JXcml0",
+            "ZVJlcXVlc3QaHS52ZWN0b3JkYi5WZWN0b3JXcml0ZVJlc3BvbnNlEkEKBFJl",
+            "YWQSGy52ZWN0b3JkYi5WZWN0b3JSZWFkUmVxdWVzdBocLnZlY3RvcmRiLlZl",
+            "Y3RvclJlYWRSZXNwb25zZRJHCgZVcGRhdGUSHS52ZWN0b3JkYi5WZWN0b3JV",
+            "cGRhdGVSZXF1ZXN0Gh4udmVjdG9yZGIuVmVjdG9yVXBkYXRlUmVzcG9uc2US",
+            "RwoGRGVsZXRlEh0udmVjdG9yZGIuVmVjdG9yRGVsZXRlUmVxdWVzdBoeLnZl",
+            "Y3RvcmRiLlZlY3RvckRlbGV0ZVJlc3BvbnNlElQKDUVtYmVkQW5kV3JpdGUS",
+            "JC52ZWN0b3JkYi5WZWN0b3JFbWJlZEFuZFdyaXRlUmVxdWVzdBodLnZlY3Rv",
+            "cmRiLlZlY3RvcldyaXRlUmVzcG9uc2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -54,7 +58,8 @@ namespace Vectordb {
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorUpdateRequest), global::Vectordb.VectorUpdateRequest.Parser, new[]{ "Key", "Vector" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorUpdateResponse), global::Vectordb.VectorUpdateResponse.Parser, new[]{ "Success" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorDeleteRequest), global::Vectordb.VectorDeleteRequest.Parser, new[]{ "Key" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorDeleteResponse), global::Vectordb.VectorDeleteResponse.Parser, new[]{ "Success" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorDeleteResponse), global::Vectordb.VectorDeleteResponse.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorEmbedAndWriteRequest), global::Vectordb.VectorEmbedAndWriteRequest.Parser, new[]{ "Key", "Data", "Rows", "Cols" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1838,6 +1843,298 @@ namespace Vectordb {
             break;
           case 8: {
             Success = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class VectorEmbedAndWriteRequest : pb::IMessage<VectorEmbedAndWriteRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<VectorEmbedAndWriteRequest> _parser = new pb::MessageParser<VectorEmbedAndWriteRequest>(() => new VectorEmbedAndWriteRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<VectorEmbedAndWriteRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Vectordb.VectordbReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VectorEmbedAndWriteRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VectorEmbedAndWriteRequest(VectorEmbedAndWriteRequest other) : this() {
+      key_ = other.key_;
+      data_ = other.data_.Clone();
+      rows_ = other.rows_;
+      cols_ = other.cols_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VectorEmbedAndWriteRequest Clone() {
+      return new VectorEmbedAndWriteRequest(this);
+    }
+
+    /// <summary>Field number for the "key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private string key_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Key {
+      get { return key_; }
+      set {
+        key_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 2;
+    private static readonly pb::FieldCodec<float> _repeated_data_codec
+        = pb::FieldCodec.ForFloat(18);
+    private readonly pbc::RepeatedField<float> data_ = new pbc::RepeatedField<float>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<float> Data {
+      get { return data_; }
+    }
+
+    /// <summary>Field number for the "rows" field.</summary>
+    public const int RowsFieldNumber = 3;
+    private int rows_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Rows {
+      get { return rows_; }
+      set {
+        rows_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cols" field.</summary>
+    public const int ColsFieldNumber = 4;
+    private int cols_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Cols {
+      get { return cols_; }
+      set {
+        cols_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as VectorEmbedAndWriteRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(VectorEmbedAndWriteRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if(!data_.Equals(other.data_)) return false;
+      if (Rows != other.Rows) return false;
+      if (Cols != other.Cols) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key.Length != 0) hash ^= Key.GetHashCode();
+      hash ^= data_.GetHashCode();
+      if (Rows != 0) hash ^= Rows.GetHashCode();
+      if (Cols != 0) hash ^= Cols.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Key.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Key);
+      }
+      data_.WriteTo(output, _repeated_data_codec);
+      if (Rows != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Rows);
+      }
+      if (Cols != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Cols);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Key.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Key);
+      }
+      data_.WriteTo(ref output, _repeated_data_codec);
+      if (Rows != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Rows);
+      }
+      if (Cols != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Cols);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+      }
+      size += data_.CalculateSize(_repeated_data_codec);
+      if (Rows != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Rows);
+      }
+      if (Cols != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cols);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(VectorEmbedAndWriteRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key.Length != 0) {
+        Key = other.Key;
+      }
+      data_.Add(other.data_);
+      if (other.Rows != 0) {
+        Rows = other.Rows;
+      }
+      if (other.Cols != 0) {
+        Cols = other.Cols;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Key = input.ReadString();
+            break;
+          }
+          case 18:
+          case 21: {
+            data_.AddEntriesFrom(input, _repeated_data_codec);
+            break;
+          }
+          case 24: {
+            Rows = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Cols = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Key = input.ReadString();
+            break;
+          }
+          case 18:
+          case 21: {
+            data_.AddEntriesFrom(ref input, _repeated_data_codec);
+            break;
+          }
+          case 24: {
+            Rows = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Cols = input.ReadInt32();
             break;
           }
         }

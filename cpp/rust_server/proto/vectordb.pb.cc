@@ -145,6 +145,30 @@ struct VectorReadRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorReadRequestDefaultTypeInternal _VectorReadRequest_default_instance_;
 
+inline constexpr VectorEmbedAndWriteRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : data_{},
+        key_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        rows_{0},
+        cols_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR VectorEmbedAndWriteRequest::VectorEmbedAndWriteRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct VectorEmbedAndWriteRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VectorEmbedAndWriteRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VectorEmbedAndWriteRequestDefaultTypeInternal() {}
+  union {
+    VectorEmbedAndWriteRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorEmbedAndWriteRequestDefaultTypeInternal _VectorEmbedAndWriteRequest_default_instance_;
+
 inline constexpr VectorDeleteResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : success_{false},
@@ -204,7 +228,7 @@ struct VectorBatchWriteRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorBatchWriteRequestDefaultTypeInternal _VectorBatchWriteRequest_default_instance_;
 }  // namespace vectordb
-static ::_pb::Metadata file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[9];
+static ::_pb::Metadata file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[10];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_rust_5fserver_2fproto_2fvectordb_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
@@ -295,6 +319,18 @@ const ::uint32_t TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets[]
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorDeleteResponse, _impl_.success_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.key_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.data_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.rows_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.cols_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -308,6 +344,7 @@ static const ::_pbi::MigrationSchema
         {57, -1, -1, sizeof(::vectordb::VectorUpdateResponse)},
         {66, -1, -1, sizeof(::vectordb::VectorDeleteRequest)},
         {75, -1, -1, sizeof(::vectordb::VectorDeleteResponse)},
+        {84, -1, -1, sizeof(::vectordb::VectorEmbedAndWriteRequest)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -320,6 +357,7 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::vectordb::_VectorUpdateResponse_default_instance_._instance,
     &::vectordb::_VectorDeleteRequest_default_instance_._instance,
     &::vectordb::_VectorDeleteResponse_default_instance_._instance,
+    &::vectordb::_VectorEmbedAndWriteRequest_default_instance_._instance,
 };
 const char descriptor_table_protodef_rust_5fserver_2fproto_2fvectordb_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n rust_server/proto/vectordb.proto\022\010vect"
@@ -333,29 +371,33 @@ const char descriptor_table_protodef_rust_5fserver_2fproto_2fvectordb_2eproto[] 
     "\013\n\003key\030\001 \001(\t\022\016\n\006vector\030\002 \003(\002\"\'\n\024VectorUp"
     "dateResponse\022\017\n\007success\030\001 \001(\010\"\"\n\023VectorD"
     "eleteRequest\022\013\n\003key\030\001 \001(\t\"\'\n\024VectorDelet"
-    "eResponse\022\017\n\007success\030\001 \001(\0102\365\002\n\010VectorDB\022"
-    "N\n\nBatchWrite\022!.vectordb.VectorBatchWrit"
-    "eRequest\032\035.vectordb.VectorWriteResponse\022"
-    "D\n\005Write\022\034.vectordb.VectorWriteRequest\032\035"
-    ".vectordb.VectorWriteResponse\022A\n\004Read\022\033."
-    "vectordb.VectorReadRequest\032\034.vectordb.Ve"
-    "ctorReadResponse\022G\n\006Update\022\035.vectordb.Ve"
-    "ctorUpdateRequest\032\036.vectordb.VectorUpdat"
-    "eResponse\022G\n\006Delete\022\035.vectordb.VectorDel"
-    "eteRequest\032\036.vectordb.VectorDeleteRespon"
-    "seb\006proto3"
+    "eResponse\022\017\n\007success\030\001 \001(\010\"S\n\032VectorEmbe"
+    "dAndWriteRequest\022\013\n\003key\030\001 \001(\t\022\014\n\004data\030\002 "
+    "\003(\002\022\014\n\004rows\030\003 \001(\005\022\014\n\004cols\030\004 \001(\0052\313\003\n\010Vect"
+    "orDB\022N\n\nBatchWrite\022!.vectordb.VectorBatc"
+    "hWriteRequest\032\035.vectordb.VectorWriteResp"
+    "onse\022D\n\005Write\022\034.vectordb.VectorWriteRequ"
+    "est\032\035.vectordb.VectorWriteResponse\022A\n\004Re"
+    "ad\022\033.vectordb.VectorReadRequest\032\034.vector"
+    "db.VectorReadResponse\022G\n\006Update\022\035.vector"
+    "db.VectorUpdateRequest\032\036.vectordb.Vector"
+    "UpdateResponse\022G\n\006Delete\022\035.vectordb.Vect"
+    "orDeleteRequest\032\036.vectordb.VectorDeleteR"
+    "esponse\022T\n\rEmbedAndWrite\022$.vectordb.Vect"
+    "orEmbedAndWriteRequest\032\035.vectordb.Vector"
+    "WriteResponseb\006proto3"
 };
 static ::absl::once_flag descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto = {
     false,
     false,
-    850,
+    1021,
     descriptor_table_protodef_rust_5fserver_2fproto_2fvectordb_2eproto,
     "rust_server/proto/vectordb.proto",
     &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once,
     nullptr,
     0,
-    9,
+    10,
     schemas,
     file_default_instances,
     TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets,
@@ -2097,6 +2139,290 @@ void VectorDeleteResponse::InternalSwap(VectorDeleteResponse* PROTOBUF_RESTRICT 
   return ::_pbi::AssignDescriptors(
       &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_getter, &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once,
       file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[8]);
+}
+// ===================================================================
+
+class VectorEmbedAndWriteRequest::_Internal {
+ public:
+};
+
+VectorEmbedAndWriteRequest::VectorEmbedAndWriteRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vectordb.VectorEmbedAndWriteRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE VectorEmbedAndWriteRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : data_{visibility, arena, from.data_},
+        key_(arena, from.key_),
+        _cached_size_{0} {}
+
+VectorEmbedAndWriteRequest::VectorEmbedAndWriteRequest(
+    ::google::protobuf::Arena* arena,
+    const VectorEmbedAndWriteRequest& from)
+    : ::google::protobuf::Message(arena) {
+  VectorEmbedAndWriteRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, rows_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, rows_),
+           offsetof(Impl_, cols_) -
+               offsetof(Impl_, rows_) +
+               sizeof(Impl_::cols_));
+
+  // @@protoc_insertion_point(copy_constructor:vectordb.VectorEmbedAndWriteRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE VectorEmbedAndWriteRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : data_{visibility, arena},
+        key_(arena),
+        _cached_size_{0} {}
+
+inline void VectorEmbedAndWriteRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, rows_),
+           0,
+           offsetof(Impl_, cols_) -
+               offsetof(Impl_, rows_) +
+               sizeof(Impl_::cols_));
+}
+VectorEmbedAndWriteRequest::~VectorEmbedAndWriteRequest() {
+  // @@protoc_insertion_point(destructor:vectordb.VectorEmbedAndWriteRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void VectorEmbedAndWriteRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.key_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void VectorEmbedAndWriteRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vectordb.VectorEmbedAndWriteRequest)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.data_.Clear();
+  _impl_.key_.ClearToEmpty();
+  ::memset(&_impl_.rows_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.cols_) -
+      reinterpret_cast<char*>(&_impl_.rows_)) + sizeof(_impl_.cols_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* VectorEmbedAndWriteRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 47, 2> VectorEmbedAndWriteRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_VectorEmbedAndWriteRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // int32 cols = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(VectorEmbedAndWriteRequest, _impl_.cols_), 63>(),
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.cols_)}},
+    // string key = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.key_)}},
+    // repeated float data = 2;
+    {::_pbi::TcParser::FastF32P1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.data_)}},
+    // int32 rows = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(VectorEmbedAndWriteRequest, _impl_.rows_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.rows_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1;
+    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.key_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // repeated float data = 2;
+    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.data_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kPackedFloat)},
+    // int32 rows = 3;
+    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.rows_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // int32 cols = 4;
+    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.cols_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+  }},
+  // no aux_entries
+  {{
+    "\43\3\0\0\0\0\0\0"
+    "vectordb.VectorEmbedAndWriteRequest"
+    "key"
+  }},
+};
+
+::uint8_t* VectorEmbedAndWriteRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vectordb.VectorEmbedAndWriteRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string key = 1;
+  if (!this->_internal_key().empty()) {
+    const std::string& _s = this->_internal_key();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "vectordb.VectorEmbedAndWriteRequest.key");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  // repeated float data = 2;
+  if (this->_internal_data_size() > 0) {
+    target = stream->WriteFixedPacked(2, _internal_data(), target);
+  }
+
+  // int32 rows = 3;
+  if (this->_internal_rows() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<3>(
+            stream, this->_internal_rows(), target);
+  }
+
+  // int32 cols = 4;
+  if (this->_internal_cols() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<4>(
+            stream, this->_internal_cols(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vectordb.VectorEmbedAndWriteRequest)
+  return target;
+}
+
+::size_t VectorEmbedAndWriteRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vectordb.VectorEmbedAndWriteRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float data = 2;
+  {
+    std::size_t data_size = std::size_t{4} *
+        ::_pbi::FromIntSize(this->_internal_data_size())
+    ;
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+  // string key = 1;
+  if (!this->_internal_key().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_key());
+  }
+
+  // int32 rows = 3;
+  if (this->_internal_rows() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_rows());
+  }
+
+  // int32 cols = 4;
+  if (this->_internal_cols() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_cols());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData VectorEmbedAndWriteRequest::_class_data_ = {
+    VectorEmbedAndWriteRequest::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* VectorEmbedAndWriteRequest::GetClassData() const {
+  return &_class_data_;
+}
+
+void VectorEmbedAndWriteRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<VectorEmbedAndWriteRequest*>(&to_msg);
+  auto& from = static_cast<const VectorEmbedAndWriteRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:vectordb.VectorEmbedAndWriteRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_data()->MergeFrom(from._internal_data());
+  if (!from._internal_key().empty()) {
+    _this->_internal_set_key(from._internal_key());
+  }
+  if (from._internal_rows() != 0) {
+    _this->_internal_set_rows(from._internal_rows());
+  }
+  if (from._internal_cols() != 0) {
+    _this->_internal_set_cols(from._internal_cols());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void VectorEmbedAndWriteRequest::CopyFrom(const VectorEmbedAndWriteRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vectordb.VectorEmbedAndWriteRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool VectorEmbedAndWriteRequest::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* VectorEmbedAndWriteRequest::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void VectorEmbedAndWriteRequest::InternalSwap(VectorEmbedAndWriteRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.data_.InternalSwap(&other->_impl_.data_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, &other->_impl_.key_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.cols_)
+      + sizeof(VectorEmbedAndWriteRequest::_impl_.cols_)
+      - PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.rows_)>(
+          reinterpret_cast<char*>(&_impl_.rows_),
+          reinterpret_cast<char*>(&other->_impl_.rows_));
+}
+
+::google::protobuf::Metadata VectorEmbedAndWriteRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_getter, &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once,
+      file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[9]);
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace vectordb

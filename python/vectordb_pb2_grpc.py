@@ -40,6 +40,11 @@ class VectorDBStub(object):
                 request_serializer=vectordb__pb2.VectorDeleteRequest.SerializeToString,
                 response_deserializer=vectordb__pb2.VectorDeleteResponse.FromString,
                 )
+        self.EmbedAndWrite = channel.unary_unary(
+                '/vectordb.VectorDB/EmbedAndWrite',
+                request_serializer=vectordb__pb2.VectorEmbedAndWriteRequest.SerializeToString,
+                response_deserializer=vectordb__pb2.VectorWriteResponse.FromString,
+                )
 
 
 class VectorDBServicer(object):
@@ -76,6 +81,12 @@ class VectorDBServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def EmbedAndWrite(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VectorDBServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -103,6 +114,11 @@ def add_VectorDBServicer_to_server(servicer, server):
                     servicer.Delete,
                     request_deserializer=vectordb__pb2.VectorDeleteRequest.FromString,
                     response_serializer=vectordb__pb2.VectorDeleteResponse.SerializeToString,
+            ),
+            'EmbedAndWrite': grpc.unary_unary_rpc_method_handler(
+                    servicer.EmbedAndWrite,
+                    request_deserializer=vectordb__pb2.VectorEmbedAndWriteRequest.FromString,
+                    response_serializer=vectordb__pb2.VectorWriteResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -197,5 +213,22 @@ class VectorDB(object):
         return grpc.experimental.unary_unary(request, target, '/vectordb.VectorDB/Delete',
             vectordb__pb2.VectorDeleteRequest.SerializeToString,
             vectordb__pb2.VectorDeleteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EmbedAndWrite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/vectordb.VectorDB/EmbedAndWrite',
+            vectordb__pb2.VectorEmbedAndWriteRequest.SerializeToString,
+            vectordb__pb2.VectorWriteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
