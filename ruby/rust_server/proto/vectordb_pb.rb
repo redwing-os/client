@@ -4,8 +4,10 @@
 
 require 'google/protobuf'
 
+require 'google/protobuf/timestamp_pb'
 
-descriptor_data = "\n rust_server/proto/vectordb.proto\x12\x08vectordb\"1\n\x12VectorWriteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06vector\x18\x02 \x03(\x02\"H\n\x17VectorBatchWriteRequest\x12-\n\x07vectors\x18\x01 \x03(\x0b\x32\x1c.vectordb.VectorWriteRequest\"&\n\x13VectorWriteResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\" \n\x11VectorReadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"3\n\x12VectorReadResponse\x12\x0e\n\x06vector\x18\x01 \x03(\x02\x12\r\n\x05\x66ound\x18\x02 \x01(\x08\"2\n\x13VectorUpdateRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06vector\x18\x02 \x03(\x02\"\'\n\x14VectorUpdateResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\"\n\x13VectorDeleteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"\'\n\x14VectorDeleteResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"S\n\x1aVectorEmbedAndWriteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x03(\x02\x12\x0c\n\x04rows\x18\x03 \x01(\x05\x12\x0c\n\x04\x63ols\x18\x04 \x01(\x05\x32\xcb\x03\n\x08VectorDB\x12N\n\nBatchWrite\x12!.vectordb.VectorBatchWriteRequest\x1a\x1d.vectordb.VectorWriteResponse\x12\x44\n\x05Write\x12\x1c.vectordb.VectorWriteRequest\x1a\x1d.vectordb.VectorWriteResponse\x12\x41\n\x04Read\x12\x1b.vectordb.VectorReadRequest\x1a\x1c.vectordb.VectorReadResponse\x12G\n\x06Update\x12\x1d.vectordb.VectorUpdateRequest\x1a\x1e.vectordb.VectorUpdateResponse\x12G\n\x06\x44\x65lete\x12\x1d.vectordb.VectorDeleteRequest\x1a\x1e.vectordb.VectorDeleteResponse\x12T\n\rEmbedAndWrite\x12$.vectordb.VectorEmbedAndWriteRequest\x1a\x1d.vectordb.VectorWriteResponseb\x06proto3"
+
+descriptor_data = "\n rust_server/proto/vectordb.proto\x12\x08vectordb\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x01\n\x12VectorWriteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06vector\x18\x02 \x03(\x02\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"H\n\x17VectorBatchWriteRequest\x12-\n\x07vectors\x18\x01 \x03(\x0b\x32\x1c.vectordb.VectorWriteRequest\"&\n\x13VectorWriteResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\" \n\x11VectorReadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"3\n\x12VectorReadResponse\x12\x0e\n\x06vector\x18\x01 \x03(\x02\x12\r\n\x05\x66ound\x18\x02 \x01(\x08\"\x92\x01\n\x13VectorUpdateRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06vector\x18\x02 \x03(\x02\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\'\n\x14VectorUpdateResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\"\n\x13VectorDeleteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"\'\n\x14VectorDeleteResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"V\n\x13VectorSearchRequest\x12\r\n\x05query\x18\x01 \x03(\x02\x12\r\n\x05top_k\x18\x02 \x01(\x05\x12\x0e\n\x06metric\x18\x03 \x01(\t\x12\x11\n\tthreshold\x18\x04 \x01(\x02\"?\n\x14VectorSearchResponse\x12\'\n\x07matches\x18\x01 \x03(\x0b\x32\x16.vectordb.SearchResult\"*\n\x0cSearchResult\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x32\xbe\x03\n\x08VectorDB\x12G\n\x06Search\x12\x1d.vectordb.VectorSearchRequest\x1a\x1e.vectordb.VectorSearchResponse\x12N\n\nBatchWrite\x12!.vectordb.VectorBatchWriteRequest\x1a\x1d.vectordb.VectorWriteResponse\x12\x44\n\x05Write\x12\x1c.vectordb.VectorWriteRequest\x1a\x1d.vectordb.VectorWriteResponse\x12\x41\n\x04Read\x12\x1b.vectordb.VectorReadRequest\x1a\x1c.vectordb.VectorReadResponse\x12G\n\x06Update\x12\x1d.vectordb.VectorUpdateRequest\x1a\x1e.vectordb.VectorUpdateResponse\x12G\n\x06\x44\x65lete\x12\x1d.vectordb.VectorDeleteRequest\x1a\x1e.vectordb.VectorDeleteResponseb\x06proto3"
 
 pool = Google::Protobuf::DescriptorPool.generated_pool
 
@@ -20,6 +22,7 @@ rescue TypeError
   file = pool.add_serialized_file(serialized)
   warn "Warning: Protobuf detected an import path issue while loading generated file #{__FILE__}"
   imports = [
+    ["google.protobuf.Timestamp", "google/protobuf/timestamp.proto"],
   ]
   imports.each do |type_name, expected_filename|
     import_file = pool.lookup(type_name).file_descriptor
@@ -41,5 +44,7 @@ module Vectordb
   VectorUpdateResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("vectordb.VectorUpdateResponse").msgclass
   VectorDeleteRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("vectordb.VectorDeleteRequest").msgclass
   VectorDeleteResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("vectordb.VectorDeleteResponse").msgclass
-  VectorEmbedAndWriteRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("vectordb.VectorEmbedAndWriteRequest").msgclass
+  VectorSearchRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("vectordb.VectorSearchRequest").msgclass
+  VectorSearchResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("vectordb.VectorSearchResponse").msgclass
+  SearchResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("vectordb.SearchResult").msgclass
 end

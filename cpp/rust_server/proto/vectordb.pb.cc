@@ -41,28 +41,6 @@ struct VectorWriteResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorWriteResponseDefaultTypeInternal _VectorWriteResponse_default_instance_;
 
-inline constexpr VectorWriteRequest::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : vector_{},
-        key_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR VectorWriteRequest::VectorWriteRequest(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct VectorWriteRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR VectorWriteRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~VectorWriteRequestDefaultTypeInternal() {}
-  union {
-    VectorWriteRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorWriteRequestDefaultTypeInternal _VectorWriteRequest_default_instance_;
-
 inline constexpr VectorUpdateResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : success_{false},
@@ -82,27 +60,29 @@ struct VectorUpdateResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorUpdateResponseDefaultTypeInternal _VectorUpdateResponse_default_instance_;
 
-inline constexpr VectorUpdateRequest::Impl_::Impl_(
+inline constexpr VectorSearchRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : vector_{},
-        key_(
+      : query_{},
+        metric_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        top_k_{0},
+        threshold_{0},
         _cached_size_{0} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR VectorUpdateRequest::VectorUpdateRequest(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR VectorSearchRequest::VectorSearchRequest(::_pbi::ConstantInitialized)
     : _impl_(::_pbi::ConstantInitialized()) {}
-struct VectorUpdateRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR VectorUpdateRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~VectorUpdateRequestDefaultTypeInternal() {}
+struct VectorSearchRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VectorSearchRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VectorSearchRequestDefaultTypeInternal() {}
   union {
-    VectorUpdateRequest _instance;
+    VectorSearchRequest _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorUpdateRequestDefaultTypeInternal _VectorUpdateRequest_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorSearchRequestDefaultTypeInternal _VectorSearchRequest_default_instance_;
 
 inline constexpr VectorReadResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -145,30 +125,6 @@ struct VectorReadRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorReadRequestDefaultTypeInternal _VectorReadRequest_default_instance_;
 
-inline constexpr VectorEmbedAndWriteRequest::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : data_{},
-        key_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        rows_{0},
-        cols_{0},
-        _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR VectorEmbedAndWriteRequest::VectorEmbedAndWriteRequest(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct VectorEmbedAndWriteRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR VectorEmbedAndWriteRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~VectorEmbedAndWriteRequestDefaultTypeInternal() {}
-  union {
-    VectorEmbedAndWriteRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorEmbedAndWriteRequestDefaultTypeInternal _VectorEmbedAndWriteRequest_default_instance_;
-
 inline constexpr VectorDeleteResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : success_{false},
@@ -209,6 +165,95 @@ struct VectorDeleteRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorDeleteRequestDefaultTypeInternal _VectorDeleteRequest_default_instance_;
 
+inline constexpr SearchResult::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : key_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        score_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SearchResult::SearchResult(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct SearchResultDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SearchResultDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SearchResultDefaultTypeInternal() {}
+  union {
+    SearchResult _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SearchResultDefaultTypeInternal _SearchResult_default_instance_;
+
+inline constexpr VectorWriteRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        vector_{},
+        key_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        created_at_{nullptr},
+        updated_at_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR VectorWriteRequest::VectorWriteRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct VectorWriteRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VectorWriteRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VectorWriteRequestDefaultTypeInternal() {}
+  union {
+    VectorWriteRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorWriteRequestDefaultTypeInternal _VectorWriteRequest_default_instance_;
+
+inline constexpr VectorUpdateRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        vector_{},
+        key_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        created_at_{nullptr},
+        updated_at_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR VectorUpdateRequest::VectorUpdateRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct VectorUpdateRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VectorUpdateRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VectorUpdateRequestDefaultTypeInternal() {}
+  union {
+    VectorUpdateRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorUpdateRequestDefaultTypeInternal _VectorUpdateRequest_default_instance_;
+
+inline constexpr VectorSearchResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : matches_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR VectorSearchResponse::VectorSearchResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct VectorSearchResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VectorSearchResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VectorSearchResponseDefaultTypeInternal() {}
+  union {
+    VectorSearchResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorSearchResponseDefaultTypeInternal _VectorSearchResponse_default_instance_;
+
 inline constexpr VectorBatchWriteRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : vectors_{},
@@ -228,14 +273,14 @@ struct VectorBatchWriteRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VectorBatchWriteRequestDefaultTypeInternal _VectorBatchWriteRequest_default_instance_;
 }  // namespace vectordb
-static ::_pb::Metadata file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[10];
+static ::_pb::Metadata file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[12];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_rust_5fserver_2fproto_2fvectordb_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_rust_5fserver_2fproto_2fvectordb_2eproto = nullptr;
 const ::uint32_t TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     protodesc_cold) = {
-    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorWriteRequest, _impl_._has_bits_),
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorWriteRequest, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
@@ -245,6 +290,12 @@ const ::uint32_t TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets[]
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorWriteRequest, _impl_.key_),
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorWriteRequest, _impl_.vector_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorWriteRequest, _impl_.created_at_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorWriteRequest, _impl_.updated_at_),
+    ~0u,
+    ~0u,
+    0,
+    1,
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorBatchWriteRequest, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -282,7 +333,7 @@ const ::uint32_t TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets[]
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorReadResponse, _impl_.vector_),
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorReadResponse, _impl_.found_),
-    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorUpdateRequest, _impl_._has_bits_),
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorUpdateRequest, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
@@ -292,6 +343,12 @@ const ::uint32_t TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets[]
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorUpdateRequest, _impl_.key_),
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorUpdateRequest, _impl_.vector_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorUpdateRequest, _impl_.created_at_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorUpdateRequest, _impl_.updated_at_),
+    ~0u,
+    ~0u,
+    0,
+    1,
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorUpdateResponse, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -320,31 +377,52 @@ const ::uint32_t TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets[]
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::vectordb::VectorDeleteResponse, _impl_.success_),
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorSearchRequest, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.key_),
-    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.data_),
-    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.rows_),
-    PROTOBUF_FIELD_OFFSET(::vectordb::VectorEmbedAndWriteRequest, _impl_.cols_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorSearchRequest, _impl_.query_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorSearchRequest, _impl_.top_k_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorSearchRequest, _impl_.metric_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorSearchRequest, _impl_.threshold_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorSearchResponse, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::vectordb::VectorSearchResponse, _impl_.matches_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::vectordb::SearchResult, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::vectordb::SearchResult, _impl_.key_),
+    PROTOBUF_FIELD_OFFSET(::vectordb::SearchResult, _impl_.score_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::vectordb::VectorWriteRequest)},
-        {10, -1, -1, sizeof(::vectordb::VectorBatchWriteRequest)},
-        {19, -1, -1, sizeof(::vectordb::VectorWriteResponse)},
-        {28, -1, -1, sizeof(::vectordb::VectorReadRequest)},
-        {37, -1, -1, sizeof(::vectordb::VectorReadResponse)},
-        {47, -1, -1, sizeof(::vectordb::VectorUpdateRequest)},
-        {57, -1, -1, sizeof(::vectordb::VectorUpdateResponse)},
-        {66, -1, -1, sizeof(::vectordb::VectorDeleteRequest)},
-        {75, -1, -1, sizeof(::vectordb::VectorDeleteResponse)},
-        {84, -1, -1, sizeof(::vectordb::VectorEmbedAndWriteRequest)},
+        {0, 12, -1, sizeof(::vectordb::VectorWriteRequest)},
+        {16, -1, -1, sizeof(::vectordb::VectorBatchWriteRequest)},
+        {25, -1, -1, sizeof(::vectordb::VectorWriteResponse)},
+        {34, -1, -1, sizeof(::vectordb::VectorReadRequest)},
+        {43, -1, -1, sizeof(::vectordb::VectorReadResponse)},
+        {53, 65, -1, sizeof(::vectordb::VectorUpdateRequest)},
+        {69, -1, -1, sizeof(::vectordb::VectorUpdateResponse)},
+        {78, -1, -1, sizeof(::vectordb::VectorDeleteRequest)},
+        {87, -1, -1, sizeof(::vectordb::VectorDeleteResponse)},
+        {96, -1, -1, sizeof(::vectordb::VectorSearchRequest)},
+        {108, -1, -1, sizeof(::vectordb::VectorSearchResponse)},
+        {117, -1, -1, sizeof(::vectordb::SearchResult)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -357,47 +435,61 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::vectordb::_VectorUpdateResponse_default_instance_._instance,
     &::vectordb::_VectorDeleteRequest_default_instance_._instance,
     &::vectordb::_VectorDeleteResponse_default_instance_._instance,
-    &::vectordb::_VectorEmbedAndWriteRequest_default_instance_._instance,
+    &::vectordb::_VectorSearchRequest_default_instance_._instance,
+    &::vectordb::_VectorSearchResponse_default_instance_._instance,
+    &::vectordb::_SearchResult_default_instance_._instance,
 };
 const char descriptor_table_protodef_rust_5fserver_2fproto_2fvectordb_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n rust_server/proto/vectordb.proto\022\010vect"
-    "ordb\"1\n\022VectorWriteRequest\022\013\n\003key\030\001 \001(\t\022"
-    "\016\n\006vector\030\002 \003(\002\"H\n\027VectorBatchWriteReque"
-    "st\022-\n\007vectors\030\001 \003(\0132\034.vectordb.VectorWri"
-    "teRequest\"&\n\023VectorWriteResponse\022\017\n\007succ"
-    "ess\030\001 \001(\010\" \n\021VectorReadRequest\022\013\n\003key\030\001 "
-    "\001(\t\"3\n\022VectorReadResponse\022\016\n\006vector\030\001 \003("
-    "\002\022\r\n\005found\030\002 \001(\010\"2\n\023VectorUpdateRequest\022"
-    "\013\n\003key\030\001 \001(\t\022\016\n\006vector\030\002 \003(\002\"\'\n\024VectorUp"
-    "dateResponse\022\017\n\007success\030\001 \001(\010\"\"\n\023VectorD"
-    "eleteRequest\022\013\n\003key\030\001 \001(\t\"\'\n\024VectorDelet"
-    "eResponse\022\017\n\007success\030\001 \001(\010\"S\n\032VectorEmbe"
-    "dAndWriteRequest\022\013\n\003key\030\001 \001(\t\022\014\n\004data\030\002 "
-    "\003(\002\022\014\n\004rows\030\003 \001(\005\022\014\n\004cols\030\004 \001(\0052\313\003\n\010Vect"
-    "orDB\022N\n\nBatchWrite\022!.vectordb.VectorBatc"
-    "hWriteRequest\032\035.vectordb.VectorWriteResp"
-    "onse\022D\n\005Write\022\034.vectordb.VectorWriteRequ"
-    "est\032\035.vectordb.VectorWriteResponse\022A\n\004Re"
-    "ad\022\033.vectordb.VectorReadRequest\032\034.vector"
-    "db.VectorReadResponse\022G\n\006Update\022\035.vector"
-    "db.VectorUpdateRequest\032\036.vectordb.Vector"
-    "UpdateResponse\022G\n\006Delete\022\035.vectordb.Vect"
-    "orDeleteRequest\032\036.vectordb.VectorDeleteR"
-    "esponse\022T\n\rEmbedAndWrite\022$.vectordb.Vect"
-    "orEmbedAndWriteRequest\032\035.vectordb.Vector"
-    "WriteResponseb\006proto3"
+    "ordb\032\037google/protobuf/timestamp.proto\"\221\001"
+    "\n\022VectorWriteRequest\022\013\n\003key\030\001 \001(\t\022\016\n\006vec"
+    "tor\030\002 \003(\002\022.\n\ncreated_at\030\003 \001(\0132\032.google.p"
+    "rotobuf.Timestamp\022.\n\nupdated_at\030\004 \001(\0132\032."
+    "google.protobuf.Timestamp\"H\n\027VectorBatch"
+    "WriteRequest\022-\n\007vectors\030\001 \003(\0132\034.vectordb"
+    ".VectorWriteRequest\"&\n\023VectorWriteRespon"
+    "se\022\017\n\007success\030\001 \001(\010\" \n\021VectorReadRequest"
+    "\022\013\n\003key\030\001 \001(\t\"3\n\022VectorReadResponse\022\016\n\006v"
+    "ector\030\001 \003(\002\022\r\n\005found\030\002 \001(\010\"\222\001\n\023VectorUpd"
+    "ateRequest\022\013\n\003key\030\001 \001(\t\022\016\n\006vector\030\002 \003(\002\022"
+    ".\n\ncreated_at\030\003 \001(\0132\032.google.protobuf.Ti"
+    "mestamp\022.\n\nupdated_at\030\004 \001(\0132\032.google.pro"
+    "tobuf.Timestamp\"\'\n\024VectorUpdateResponse\022"
+    "\017\n\007success\030\001 \001(\010\"\"\n\023VectorDeleteRequest\022"
+    "\013\n\003key\030\001 \001(\t\"\'\n\024VectorDeleteResponse\022\017\n\007"
+    "success\030\001 \001(\010\"V\n\023VectorSearchRequest\022\r\n\005"
+    "query\030\001 \003(\002\022\r\n\005top_k\030\002 \001(\005\022\016\n\006metric\030\003 \001"
+    "(\t\022\021\n\tthreshold\030\004 \001(\002\"\?\n\024VectorSearchRes"
+    "ponse\022\'\n\007matches\030\001 \003(\0132\026.vectordb.Search"
+    "Result\"*\n\014SearchResult\022\013\n\003key\030\001 \001(\t\022\r\n\005s"
+    "core\030\002 \001(\0022\276\003\n\010VectorDB\022G\n\006Search\022\035.vect"
+    "ordb.VectorSearchRequest\032\036.vectordb.Vect"
+    "orSearchResponse\022N\n\nBatchWrite\022!.vectord"
+    "b.VectorBatchWriteRequest\032\035.vectordb.Vec"
+    "torWriteResponse\022D\n\005Write\022\034.vectordb.Vec"
+    "torWriteRequest\032\035.vectordb.VectorWriteRe"
+    "sponse\022A\n\004Read\022\033.vectordb.VectorReadRequ"
+    "est\032\034.vectordb.VectorReadResponse\022G\n\006Upd"
+    "ate\022\035.vectordb.VectorUpdateRequest\032\036.vec"
+    "tordb.VectorUpdateResponse\022G\n\006Delete\022\035.v"
+    "ectordb.VectorDeleteRequest\032\036.vectordb.V"
+    "ectorDeleteResponseb\006proto3"
+};
+static const ::_pbi::DescriptorTable* const descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_deps[1] =
+    {
+        &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::absl::once_flag descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto = {
     false,
     false,
-    1021,
+    1347,
     descriptor_table_protodef_rust_5fserver_2fproto_2fvectordb_2eproto,
     "rust_server/proto/vectordb.proto",
     &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once,
-    nullptr,
-    0,
-    10,
+    descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_deps,
+    1,
+    12,
     schemas,
     file_default_instances,
     TableStruct_rust_5fserver_2fproto_2fvectordb_2eproto::offsets,
@@ -428,8 +520,35 @@ namespace vectordb {
 
 class VectorWriteRequest::_Internal {
  public:
+  using HasBits = decltype(std::declval<VectorWriteRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_._has_bits_);
+  static const ::google::protobuf::Timestamp& created_at(const VectorWriteRequest* msg);
+  static void set_has_created_at(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::google::protobuf::Timestamp& updated_at(const VectorWriteRequest* msg);
+  static void set_has_updated_at(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
 };
 
+const ::google::protobuf::Timestamp& VectorWriteRequest::_Internal::created_at(const VectorWriteRequest* msg) {
+  return *msg->_impl_.created_at_;
+}
+const ::google::protobuf::Timestamp& VectorWriteRequest::_Internal::updated_at(const VectorWriteRequest* msg) {
+  return *msg->_impl_.updated_at_;
+}
+void VectorWriteRequest::clear_created_at() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  if (_impl_.created_at_ != nullptr) _impl_.created_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+void VectorWriteRequest::clear_updated_at() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  if (_impl_.updated_at_ != nullptr) _impl_.updated_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
 VectorWriteRequest::VectorWriteRequest(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
@@ -438,9 +557,10 @@ VectorWriteRequest::VectorWriteRequest(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE VectorWriteRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
-      : vector_{visibility, arena, from.vector_},
-        key_(arena, from.key_),
-        _cached_size_{0} {}
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        vector_{visibility, arena, from.vector_},
+        key_(arena, from.key_) {}
 
 VectorWriteRequest::VectorWriteRequest(
     ::google::protobuf::Arena* arena,
@@ -451,18 +571,31 @@ VectorWriteRequest::VectorWriteRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.created_at_ = (cached_has_bits & 0x00000001u)
+                ? CreateMaybeMessage<::google::protobuf::Timestamp>(arena, *from._impl_.created_at_)
+                : nullptr;
+  _impl_.updated_at_ = (cached_has_bits & 0x00000002u)
+                ? CreateMaybeMessage<::google::protobuf::Timestamp>(arena, *from._impl_.updated_at_)
+                : nullptr;
 
   // @@protoc_insertion_point(copy_constructor:vectordb.VectorWriteRequest)
 }
 inline PROTOBUF_NDEBUG_INLINE VectorWriteRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : vector_{visibility, arena},
-        key_(arena),
-        _cached_size_{0} {}
+      : _cached_size_{0},
+        vector_{visibility, arena},
+        key_(arena) {}
 
 inline void VectorWriteRequest::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, created_at_),
+           0,
+           offsetof(Impl_, updated_at_) -
+               offsetof(Impl_, created_at_) +
+               sizeof(Impl_::updated_at_));
 }
 VectorWriteRequest::~VectorWriteRequest() {
   // @@protoc_insertion_point(destructor:vectordb.VectorWriteRequest)
@@ -472,6 +605,8 @@ VectorWriteRequest::~VectorWriteRequest() {
 inline void VectorWriteRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.key_.Destroy();
+  delete _impl_.created_at_;
+  delete _impl_.updated_at_;
   _impl_.~Impl_();
 }
 
@@ -484,6 +619,18 @@ PROTOBUF_NOINLINE void VectorWriteRequest::Clear() {
 
   _impl_.vector_.Clear();
   _impl_.key_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      ABSL_DCHECK(_impl_.created_at_ != nullptr);
+      _impl_.created_at_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      ABSL_DCHECK(_impl_.updated_at_ != nullptr);
+      _impl_.updated_at_->Clear();
+    }
+  }
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -495,38 +642,51 @@ const char* VectorWriteRequest::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 39, 2> VectorWriteRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 2, 39, 2> VectorWriteRequest::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_._has_bits_),
     0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    4,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     &_VectorWriteRequest_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
   }, {{
-    // repeated float vector = 2;
-    {::_pbi::TcParser::FastF32P1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.vector_)}},
+    // .google.protobuf.Timestamp updated_at = 4;
+    {::_pbi::TcParser::FastMtS1,
+     {34, 1, 1, PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.updated_at_)}},
     // string key = 1;
     {::_pbi::TcParser::FastUS1,
      {10, 63, 0, PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.key_)}},
+    // repeated float vector = 2;
+    {::_pbi::TcParser::FastF32P1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.vector_)}},
+    // .google.protobuf.Timestamp created_at = 3;
+    {::_pbi::TcParser::FastMtS1,
+     {26, 0, 0, PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.created_at_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string key = 1;
-    {PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.key_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.key_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // repeated float vector = 2;
-    {PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.vector_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.vector_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kPackedFloat)},
-  }},
-  // no aux_entries
-  {{
+    // .google.protobuf.Timestamp created_at = 3;
+    {PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.created_at_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .google.protobuf.Timestamp updated_at = 4;
+    {PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.updated_at_), _Internal::kHasBitsOffset + 1, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+  }}, {{
     "\33\3\0\0\0\0\0\0"
     "vectordb.VectorWriteRequest"
     "key"
@@ -551,6 +711,21 @@ const ::_pbi::TcParseTable<1, 2, 0, 39, 2> VectorWriteRequest::_table_ = {
   // repeated float vector = 2;
   if (this->_internal_vector_size() > 0) {
     target = stream->WriteFixedPacked(2, _internal_vector(), target);
+  }
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // .google.protobuf.Timestamp created_at = 3;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        3, _Internal::created_at(this),
+        _Internal::created_at(this).GetCachedSize(), target, stream);
+  }
+
+  // .google.protobuf.Timestamp updated_at = 4;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        4, _Internal::updated_at(this),
+        _Internal::updated_at(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -588,6 +763,21 @@ const ::_pbi::TcParseTable<1, 2, 0, 39, 2> VectorWriteRequest::_table_ = {
                                     this->_internal_key());
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // .google.protobuf.Timestamp created_at = 3;
+    if (cached_has_bits & 0x00000001u) {
+      total_size +=
+          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.created_at_);
+    }
+
+    // .google.protobuf.Timestamp updated_at = 4;
+    if (cached_has_bits & 0x00000002u) {
+      total_size +=
+          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.updated_at_);
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -611,6 +801,17 @@ void VectorWriteRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::
   if (!from._internal_key().empty()) {
     _this->_internal_set_key(from._internal_key());
   }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_created_at()->::google::protobuf::Timestamp::MergeFrom(
+          from._internal_created_at());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_updated_at()->::google::protobuf::Timestamp::MergeFrom(
+          from._internal_updated_at());
+    }
+  }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -633,8 +834,15 @@ void VectorWriteRequest::InternalSwap(VectorWriteRequest* PROTOBUF_RESTRICT othe
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.vector_.InternalSwap(&other->_impl_.vector_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, &other->_impl_.key_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.updated_at_)
+      + sizeof(VectorWriteRequest::_impl_.updated_at_)
+      - PROTOBUF_FIELD_OFFSET(VectorWriteRequest, _impl_.created_at_)>(
+          reinterpret_cast<char*>(&_impl_.created_at_),
+          reinterpret_cast<char*>(&other->_impl_.created_at_));
 }
 
 ::google::protobuf::Metadata VectorWriteRequest::GetMetadata() const {
@@ -1398,8 +1606,35 @@ void VectorReadResponse::InternalSwap(VectorReadResponse* PROTOBUF_RESTRICT othe
 
 class VectorUpdateRequest::_Internal {
  public:
+  using HasBits = decltype(std::declval<VectorUpdateRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_._has_bits_);
+  static const ::google::protobuf::Timestamp& created_at(const VectorUpdateRequest* msg);
+  static void set_has_created_at(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::google::protobuf::Timestamp& updated_at(const VectorUpdateRequest* msg);
+  static void set_has_updated_at(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
 };
 
+const ::google::protobuf::Timestamp& VectorUpdateRequest::_Internal::created_at(const VectorUpdateRequest* msg) {
+  return *msg->_impl_.created_at_;
+}
+const ::google::protobuf::Timestamp& VectorUpdateRequest::_Internal::updated_at(const VectorUpdateRequest* msg) {
+  return *msg->_impl_.updated_at_;
+}
+void VectorUpdateRequest::clear_created_at() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  if (_impl_.created_at_ != nullptr) _impl_.created_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+void VectorUpdateRequest::clear_updated_at() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  if (_impl_.updated_at_ != nullptr) _impl_.updated_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
 VectorUpdateRequest::VectorUpdateRequest(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
@@ -1408,9 +1643,10 @@ VectorUpdateRequest::VectorUpdateRequest(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE VectorUpdateRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
-      : vector_{visibility, arena, from.vector_},
-        key_(arena, from.key_),
-        _cached_size_{0} {}
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        vector_{visibility, arena, from.vector_},
+        key_(arena, from.key_) {}
 
 VectorUpdateRequest::VectorUpdateRequest(
     ::google::protobuf::Arena* arena,
@@ -1421,18 +1657,31 @@ VectorUpdateRequest::VectorUpdateRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.created_at_ = (cached_has_bits & 0x00000001u)
+                ? CreateMaybeMessage<::google::protobuf::Timestamp>(arena, *from._impl_.created_at_)
+                : nullptr;
+  _impl_.updated_at_ = (cached_has_bits & 0x00000002u)
+                ? CreateMaybeMessage<::google::protobuf::Timestamp>(arena, *from._impl_.updated_at_)
+                : nullptr;
 
   // @@protoc_insertion_point(copy_constructor:vectordb.VectorUpdateRequest)
 }
 inline PROTOBUF_NDEBUG_INLINE VectorUpdateRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : vector_{visibility, arena},
-        key_(arena),
-        _cached_size_{0} {}
+      : _cached_size_{0},
+        vector_{visibility, arena},
+        key_(arena) {}
 
 inline void VectorUpdateRequest::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, created_at_),
+           0,
+           offsetof(Impl_, updated_at_) -
+               offsetof(Impl_, created_at_) +
+               sizeof(Impl_::updated_at_));
 }
 VectorUpdateRequest::~VectorUpdateRequest() {
   // @@protoc_insertion_point(destructor:vectordb.VectorUpdateRequest)
@@ -1442,6 +1691,8 @@ VectorUpdateRequest::~VectorUpdateRequest() {
 inline void VectorUpdateRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.key_.Destroy();
+  delete _impl_.created_at_;
+  delete _impl_.updated_at_;
   _impl_.~Impl_();
 }
 
@@ -1454,6 +1705,18 @@ PROTOBUF_NOINLINE void VectorUpdateRequest::Clear() {
 
   _impl_.vector_.Clear();
   _impl_.key_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      ABSL_DCHECK(_impl_.created_at_ != nullptr);
+      _impl_.created_at_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      ABSL_DCHECK(_impl_.updated_at_ != nullptr);
+      _impl_.updated_at_->Clear();
+    }
+  }
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -1465,38 +1728,51 @@ const char* VectorUpdateRequest::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 40, 2> VectorUpdateRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 2, 40, 2> VectorUpdateRequest::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_._has_bits_),
     0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    4,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     &_VectorUpdateRequest_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
   }, {{
-    // repeated float vector = 2;
-    {::_pbi::TcParser::FastF32P1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.vector_)}},
+    // .google.protobuf.Timestamp updated_at = 4;
+    {::_pbi::TcParser::FastMtS1,
+     {34, 1, 1, PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.updated_at_)}},
     // string key = 1;
     {::_pbi::TcParser::FastUS1,
      {10, 63, 0, PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.key_)}},
+    // repeated float vector = 2;
+    {::_pbi::TcParser::FastF32P1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.vector_)}},
+    // .google.protobuf.Timestamp created_at = 3;
+    {::_pbi::TcParser::FastMtS1,
+     {26, 0, 0, PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.created_at_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string key = 1;
-    {PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.key_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.key_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // repeated float vector = 2;
-    {PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.vector_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.vector_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kPackedFloat)},
-  }},
-  // no aux_entries
-  {{
+    // .google.protobuf.Timestamp created_at = 3;
+    {PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.created_at_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .google.protobuf.Timestamp updated_at = 4;
+    {PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.updated_at_), _Internal::kHasBitsOffset + 1, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+  }}, {{
     "\34\3\0\0\0\0\0\0"
     "vectordb.VectorUpdateRequest"
     "key"
@@ -1521,6 +1797,21 @@ const ::_pbi::TcParseTable<1, 2, 0, 40, 2> VectorUpdateRequest::_table_ = {
   // repeated float vector = 2;
   if (this->_internal_vector_size() > 0) {
     target = stream->WriteFixedPacked(2, _internal_vector(), target);
+  }
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // .google.protobuf.Timestamp created_at = 3;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        3, _Internal::created_at(this),
+        _Internal::created_at(this).GetCachedSize(), target, stream);
+  }
+
+  // .google.protobuf.Timestamp updated_at = 4;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        4, _Internal::updated_at(this),
+        _Internal::updated_at(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1558,6 +1849,21 @@ const ::_pbi::TcParseTable<1, 2, 0, 40, 2> VectorUpdateRequest::_table_ = {
                                     this->_internal_key());
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // .google.protobuf.Timestamp created_at = 3;
+    if (cached_has_bits & 0x00000001u) {
+      total_size +=
+          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.created_at_);
+    }
+
+    // .google.protobuf.Timestamp updated_at = 4;
+    if (cached_has_bits & 0x00000002u) {
+      total_size +=
+          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.updated_at_);
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1581,6 +1887,17 @@ void VectorUpdateRequest::MergeImpl(::google::protobuf::Message& to_msg, const :
   if (!from._internal_key().empty()) {
     _this->_internal_set_key(from._internal_key());
   }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_created_at()->::google::protobuf::Timestamp::MergeFrom(
+          from._internal_created_at());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_updated_at()->::google::protobuf::Timestamp::MergeFrom(
+          from._internal_updated_at());
+    }
+  }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1603,8 +1920,15 @@ void VectorUpdateRequest::InternalSwap(VectorUpdateRequest* PROTOBUF_RESTRICT ot
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.vector_.InternalSwap(&other->_impl_.vector_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, &other->_impl_.key_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.updated_at_)
+      + sizeof(VectorUpdateRequest::_impl_.updated_at_)
+      - PROTOBUF_FIELD_OFFSET(VectorUpdateRequest, _impl_.created_at_)>(
+          reinterpret_cast<char*>(&_impl_.created_at_),
+          reinterpret_cast<char*>(&other->_impl_.created_at_));
 }
 
 ::google::protobuf::Metadata VectorUpdateRequest::GetMetadata() const {
@@ -2142,84 +2466,84 @@ void VectorDeleteResponse::InternalSwap(VectorDeleteResponse* PROTOBUF_RESTRICT 
 }
 // ===================================================================
 
-class VectorEmbedAndWriteRequest::_Internal {
+class VectorSearchRequest::_Internal {
  public:
 };
 
-VectorEmbedAndWriteRequest::VectorEmbedAndWriteRequest(::google::protobuf::Arena* arena)
+VectorSearchRequest::VectorSearchRequest(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vectordb.VectorEmbedAndWriteRequest)
+  // @@protoc_insertion_point(arena_constructor:vectordb.VectorSearchRequest)
 }
-inline PROTOBUF_NDEBUG_INLINE VectorEmbedAndWriteRequest::Impl_::Impl_(
+inline PROTOBUF_NDEBUG_INLINE VectorSearchRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
-      : data_{visibility, arena, from.data_},
-        key_(arena, from.key_),
+      : query_{visibility, arena, from.query_},
+        metric_(arena, from.metric_),
         _cached_size_{0} {}
 
-VectorEmbedAndWriteRequest::VectorEmbedAndWriteRequest(
+VectorSearchRequest::VectorSearchRequest(
     ::google::protobuf::Arena* arena,
-    const VectorEmbedAndWriteRequest& from)
+    const VectorSearchRequest& from)
     : ::google::protobuf::Message(arena) {
-  VectorEmbedAndWriteRequest* const _this = this;
+  VectorSearchRequest* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, rows_),
+               offsetof(Impl_, top_k_),
            reinterpret_cast<const char *>(&from._impl_) +
-               offsetof(Impl_, rows_),
-           offsetof(Impl_, cols_) -
-               offsetof(Impl_, rows_) +
-               sizeof(Impl_::cols_));
+               offsetof(Impl_, top_k_),
+           offsetof(Impl_, threshold_) -
+               offsetof(Impl_, top_k_) +
+               sizeof(Impl_::threshold_));
 
-  // @@protoc_insertion_point(copy_constructor:vectordb.VectorEmbedAndWriteRequest)
+  // @@protoc_insertion_point(copy_constructor:vectordb.VectorSearchRequest)
 }
-inline PROTOBUF_NDEBUG_INLINE VectorEmbedAndWriteRequest::Impl_::Impl_(
+inline PROTOBUF_NDEBUG_INLINE VectorSearchRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : data_{visibility, arena},
-        key_(arena),
+      : query_{visibility, arena},
+        metric_(arena),
         _cached_size_{0} {}
 
-inline void VectorEmbedAndWriteRequest::SharedCtor(::_pb::Arena* arena) {
+inline void VectorSearchRequest::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, rows_),
+               offsetof(Impl_, top_k_),
            0,
-           offsetof(Impl_, cols_) -
-               offsetof(Impl_, rows_) +
-               sizeof(Impl_::cols_));
+           offsetof(Impl_, threshold_) -
+               offsetof(Impl_, top_k_) +
+               sizeof(Impl_::threshold_));
 }
-VectorEmbedAndWriteRequest::~VectorEmbedAndWriteRequest() {
-  // @@protoc_insertion_point(destructor:vectordb.VectorEmbedAndWriteRequest)
+VectorSearchRequest::~VectorSearchRequest() {
+  // @@protoc_insertion_point(destructor:vectordb.VectorSearchRequest)
   _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-inline void VectorEmbedAndWriteRequest::SharedDtor() {
+inline void VectorSearchRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
-  _impl_.key_.Destroy();
+  _impl_.metric_.Destroy();
   _impl_.~Impl_();
 }
 
-PROTOBUF_NOINLINE void VectorEmbedAndWriteRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:vectordb.VectorEmbedAndWriteRequest)
+PROTOBUF_NOINLINE void VectorSearchRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vectordb.VectorSearchRequest)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.data_.Clear();
-  _impl_.key_.ClearToEmpty();
-  ::memset(&_impl_.rows_, 0, static_cast<::size_t>(
-      reinterpret_cast<char*>(&_impl_.cols_) -
-      reinterpret_cast<char*>(&_impl_.rows_)) + sizeof(_impl_.cols_));
+  _impl_.query_.Clear();
+  _impl_.metric_.ClearToEmpty();
+  ::memset(&_impl_.top_k_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.threshold_) -
+      reinterpret_cast<char*>(&_impl_.top_k_)) + sizeof(_impl_.threshold_));
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* VectorEmbedAndWriteRequest::_InternalParse(
+const char* VectorSearchRequest::_InternalParse(
     const char* ptr, ::_pbi::ParseContext* ctx) {
   ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
@@ -2227,7 +2551,7 @@ const char* VectorEmbedAndWriteRequest::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 0, 47, 2> VectorEmbedAndWriteRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 0, 43, 2> VectorSearchRequest::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
@@ -2238,77 +2562,82 @@ const ::_pbi::TcParseTable<2, 4, 0, 47, 2> VectorEmbedAndWriteRequest::_table_ =
     4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_VectorEmbedAndWriteRequest_default_instance_._instance,
+    &_VectorSearchRequest_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
   }, {{
-    // int32 cols = 4;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(VectorEmbedAndWriteRequest, _impl_.cols_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.cols_)}},
-    // string key = 1;
-    {::_pbi::TcParser::FastUS1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.key_)}},
-    // repeated float data = 2;
+    // float threshold = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 63, 0, PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.threshold_)}},
+    // repeated float query = 1;
     {::_pbi::TcParser::FastF32P1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.data_)}},
-    // int32 rows = 3;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(VectorEmbedAndWriteRequest, _impl_.rows_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.rows_)}},
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.query_)}},
+    // int32 top_k = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(VectorSearchRequest, _impl_.top_k_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.top_k_)}},
+    // string metric = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.metric_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string key = 1;
-    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.key_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // repeated float data = 2;
-    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.data_), 0, 0,
+    // repeated float query = 1;
+    {PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.query_), 0, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kPackedFloat)},
-    // int32 rows = 3;
-    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.rows_), 0, 0,
+    // int32 top_k = 2;
+    {PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.top_k_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 cols = 4;
-    {PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.cols_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string metric = 3;
+    {PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.metric_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // float threshold = 4;
+    {PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.threshold_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
   }},
   // no aux_entries
   {{
-    "\43\3\0\0\0\0\0\0"
-    "vectordb.VectorEmbedAndWriteRequest"
-    "key"
+    "\34\0\0\6\0\0\0\0"
+    "vectordb.VectorSearchRequest"
+    "metric"
   }},
 };
 
-::uint8_t* VectorEmbedAndWriteRequest::_InternalSerialize(
+::uint8_t* VectorSearchRequest::_InternalSerialize(
     ::uint8_t* target,
     ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vectordb.VectorEmbedAndWriteRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:vectordb.VectorSearchRequest)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string key = 1;
-  if (!this->_internal_key().empty()) {
-    const std::string& _s = this->_internal_key();
+  // repeated float query = 1;
+  if (this->_internal_query_size() > 0) {
+    target = stream->WriteFixedPacked(1, _internal_query(), target);
+  }
+
+  // int32 top_k = 2;
+  if (this->_internal_top_k() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<2>(
+            stream, this->_internal_top_k(), target);
+  }
+
+  // string metric = 3;
+  if (!this->_internal_metric().empty()) {
+    const std::string& _s = this->_internal_metric();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "vectordb.VectorEmbedAndWriteRequest.key");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "vectordb.VectorSearchRequest.metric");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
-  // repeated float data = 2;
-  if (this->_internal_data_size() > 0) {
-    target = stream->WriteFixedPacked(2, _internal_data(), target);
-  }
-
-  // int32 rows = 3;
-  if (this->_internal_rows() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<3>(
-            stream, this->_internal_rows(), target);
-  }
-
-  // int32 cols = 4;
-  if (this->_internal_cols() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<4>(
-            stream, this->_internal_cols(), target);
+  // float threshold = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_threshold = this->_internal_threshold();
+  ::uint32_t raw_threshold;
+  memcpy(&raw_threshold, &tmp_threshold, sizeof(tmp_threshold));
+  if (raw_threshold != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_threshold(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2316,22 +2645,22 @@ const ::_pbi::TcParseTable<2, 4, 0, 47, 2> VectorEmbedAndWriteRequest::_table_ =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vectordb.VectorEmbedAndWriteRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:vectordb.VectorSearchRequest)
   return target;
 }
 
-::size_t VectorEmbedAndWriteRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vectordb.VectorEmbedAndWriteRequest)
+::size_t VectorSearchRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vectordb.VectorSearchRequest)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated float data = 2;
+  // repeated float query = 1;
   {
     std::size_t data_size = std::size_t{4} *
-        ::_pbi::FromIntSize(this->_internal_data_size())
+        ::_pbi::FromIntSize(this->_internal_query_size())
     ;
     std::size_t tag_size = data_size == 0
         ? 0
@@ -2340,89 +2669,511 @@ const ::_pbi::TcParseTable<2, 4, 0, 47, 2> VectorEmbedAndWriteRequest::_table_ =
     ;
     total_size += tag_size + data_size;
   }
+  // string metric = 3;
+  if (!this->_internal_metric().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_metric());
+  }
+
+  // int32 top_k = 2;
+  if (this->_internal_top_k() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_top_k());
+  }
+
+  // float threshold = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_threshold = this->_internal_threshold();
+  ::uint32_t raw_threshold;
+  memcpy(&raw_threshold, &tmp_threshold, sizeof(tmp_threshold));
+  if (raw_threshold != 0) {
+    total_size += 5;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData VectorSearchRequest::_class_data_ = {
+    VectorSearchRequest::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* VectorSearchRequest::GetClassData() const {
+  return &_class_data_;
+}
+
+void VectorSearchRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<VectorSearchRequest*>(&to_msg);
+  auto& from = static_cast<const VectorSearchRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:vectordb.VectorSearchRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_query()->MergeFrom(from._internal_query());
+  if (!from._internal_metric().empty()) {
+    _this->_internal_set_metric(from._internal_metric());
+  }
+  if (from._internal_top_k() != 0) {
+    _this->_internal_set_top_k(from._internal_top_k());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_threshold = from._internal_threshold();
+  ::uint32_t raw_threshold;
+  memcpy(&raw_threshold, &tmp_threshold, sizeof(tmp_threshold));
+  if (raw_threshold != 0) {
+    _this->_internal_set_threshold(from._internal_threshold());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void VectorSearchRequest::CopyFrom(const VectorSearchRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vectordb.VectorSearchRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool VectorSearchRequest::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* VectorSearchRequest::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void VectorSearchRequest::InternalSwap(VectorSearchRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.query_.InternalSwap(&other->_impl_.query_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.metric_, &other->_impl_.metric_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.threshold_)
+      + sizeof(VectorSearchRequest::_impl_.threshold_)
+      - PROTOBUF_FIELD_OFFSET(VectorSearchRequest, _impl_.top_k_)>(
+          reinterpret_cast<char*>(&_impl_.top_k_),
+          reinterpret_cast<char*>(&other->_impl_.top_k_));
+}
+
+::google::protobuf::Metadata VectorSearchRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_getter, &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once,
+      file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[9]);
+}
+// ===================================================================
+
+class VectorSearchResponse::_Internal {
+ public:
+};
+
+VectorSearchResponse::VectorSearchResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vectordb.VectorSearchResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE VectorSearchResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : matches_{visibility, arena, from.matches_},
+        _cached_size_{0} {}
+
+VectorSearchResponse::VectorSearchResponse(
+    ::google::protobuf::Arena* arena,
+    const VectorSearchResponse& from)
+    : ::google::protobuf::Message(arena) {
+  VectorSearchResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+
+  // @@protoc_insertion_point(copy_constructor:vectordb.VectorSearchResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE VectorSearchResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : matches_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void VectorSearchResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+VectorSearchResponse::~VectorSearchResponse() {
+  // @@protoc_insertion_point(destructor:vectordb.VectorSearchResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void VectorSearchResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void VectorSearchResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vectordb.VectorSearchResponse)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.matches_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* VectorSearchResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> VectorSearchResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_VectorSearchResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .vectordb.SearchResult matches = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(VectorSearchResponse, _impl_.matches_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .vectordb.SearchResult matches = 1;
+    {PROTOBUF_FIELD_OFFSET(VectorSearchResponse, _impl_.matches_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::vectordb::SearchResult>()},
+  }}, {{
+  }},
+};
+
+::uint8_t* VectorSearchResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vectordb.VectorSearchResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated .vectordb.SearchResult matches = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_matches_size()); i < n; i++) {
+    const auto& repfield = this->_internal_matches().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vectordb.VectorSearchResponse)
+  return target;
+}
+
+::size_t VectorSearchResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vectordb.VectorSearchResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .vectordb.SearchResult matches = 1;
+  total_size += 1UL * this->_internal_matches_size();
+  for (const auto& msg : this->_internal_matches()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData VectorSearchResponse::_class_data_ = {
+    VectorSearchResponse::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* VectorSearchResponse::GetClassData() const {
+  return &_class_data_;
+}
+
+void VectorSearchResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<VectorSearchResponse*>(&to_msg);
+  auto& from = static_cast<const VectorSearchResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:vectordb.VectorSearchResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_matches()->MergeFrom(
+      from._internal_matches());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void VectorSearchResponse::CopyFrom(const VectorSearchResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vectordb.VectorSearchResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool VectorSearchResponse::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* VectorSearchResponse::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void VectorSearchResponse::InternalSwap(VectorSearchResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.matches_.InternalSwap(&other->_impl_.matches_);
+}
+
+::google::protobuf::Metadata VectorSearchResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_getter, &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once,
+      file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[10]);
+}
+// ===================================================================
+
+class SearchResult::_Internal {
+ public:
+};
+
+SearchResult::SearchResult(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vectordb.SearchResult)
+}
+inline PROTOBUF_NDEBUG_INLINE SearchResult::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : key_(arena, from.key_),
+        _cached_size_{0} {}
+
+SearchResult::SearchResult(
+    ::google::protobuf::Arena* arena,
+    const SearchResult& from)
+    : ::google::protobuf::Message(arena) {
+  SearchResult* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  _impl_.score_ = from._impl_.score_;
+
+  // @@protoc_insertion_point(copy_constructor:vectordb.SearchResult)
+}
+inline PROTOBUF_NDEBUG_INLINE SearchResult::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : key_(arena),
+        _cached_size_{0} {}
+
+inline void SearchResult::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.score_ = {};
+}
+SearchResult::~SearchResult() {
+  // @@protoc_insertion_point(destructor:vectordb.SearchResult)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void SearchResult::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.key_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void SearchResult::Clear() {
+// @@protoc_insertion_point(message_clear_start:vectordb.SearchResult)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.key_.ClearToEmpty();
+  _impl_.score_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* SearchResult::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 33, 2> SearchResult::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_SearchResult_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // float score = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 63, 0, PROTOBUF_FIELD_OFFSET(SearchResult, _impl_.score_)}},
+    // string key = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(SearchResult, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1;
+    {PROTOBUF_FIELD_OFFSET(SearchResult, _impl_.key_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // float score = 2;
+    {PROTOBUF_FIELD_OFFSET(SearchResult, _impl_.score_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\25\3\0\0\0\0\0\0"
+    "vectordb.SearchResult"
+    "key"
+  }},
+};
+
+::uint8_t* SearchResult::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vectordb.SearchResult)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string key = 1;
+  if (!this->_internal_key().empty()) {
+    const std::string& _s = this->_internal_key();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "vectordb.SearchResult.key");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  // float score = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_score = this->_internal_score();
+  ::uint32_t raw_score;
+  memcpy(&raw_score, &tmp_score, sizeof(tmp_score));
+  if (raw_score != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_score(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vectordb.SearchResult)
+  return target;
+}
+
+::size_t SearchResult::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vectordb.SearchResult)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string key = 1;
   if (!this->_internal_key().empty()) {
     total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                     this->_internal_key());
   }
 
-  // int32 rows = 3;
-  if (this->_internal_rows() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_rows());
-  }
-
-  // int32 cols = 4;
-  if (this->_internal_cols() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_cols());
+  // float score = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_score = this->_internal_score();
+  ::uint32_t raw_score;
+  memcpy(&raw_score, &tmp_score, sizeof(tmp_score));
+  if (raw_score != 0) {
+    total_size += 5;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData VectorEmbedAndWriteRequest::_class_data_ = {
-    VectorEmbedAndWriteRequest::MergeImpl,
+const ::google::protobuf::Message::ClassData SearchResult::_class_data_ = {
+    SearchResult::MergeImpl,
     nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::google::protobuf::Message::ClassData* VectorEmbedAndWriteRequest::GetClassData() const {
+const ::google::protobuf::Message::ClassData* SearchResult::GetClassData() const {
   return &_class_data_;
 }
 
-void VectorEmbedAndWriteRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
-  auto* const _this = static_cast<VectorEmbedAndWriteRequest*>(&to_msg);
-  auto& from = static_cast<const VectorEmbedAndWriteRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:vectordb.VectorEmbedAndWriteRequest)
+void SearchResult::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SearchResult*>(&to_msg);
+  auto& from = static_cast<const SearchResult&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:vectordb.SearchResult)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_data()->MergeFrom(from._internal_data());
   if (!from._internal_key().empty()) {
     _this->_internal_set_key(from._internal_key());
   }
-  if (from._internal_rows() != 0) {
-    _this->_internal_set_rows(from._internal_rows());
-  }
-  if (from._internal_cols() != 0) {
-    _this->_internal_set_cols(from._internal_cols());
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_score = from._internal_score();
+  ::uint32_t raw_score;
+  memcpy(&raw_score, &tmp_score, sizeof(tmp_score));
+  if (raw_score != 0) {
+    _this->_internal_set_score(from._internal_score());
   }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void VectorEmbedAndWriteRequest::CopyFrom(const VectorEmbedAndWriteRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vectordb.VectorEmbedAndWriteRequest)
+void SearchResult::CopyFrom(const SearchResult& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vectordb.SearchResult)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool VectorEmbedAndWriteRequest::IsInitialized() const {
+PROTOBUF_NOINLINE bool SearchResult::IsInitialized() const {
   return true;
 }
 
-::_pbi::CachedSize* VectorEmbedAndWriteRequest::AccessCachedSize() const {
+::_pbi::CachedSize* SearchResult::AccessCachedSize() const {
   return &_impl_._cached_size_;
 }
-void VectorEmbedAndWriteRequest::InternalSwap(VectorEmbedAndWriteRequest* PROTOBUF_RESTRICT other) {
+void SearchResult::InternalSwap(SearchResult* PROTOBUF_RESTRICT other) {
   using std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.data_.InternalSwap(&other->_impl_.data_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, &other->_impl_.key_, arena);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.cols_)
-      + sizeof(VectorEmbedAndWriteRequest::_impl_.cols_)
-      - PROTOBUF_FIELD_OFFSET(VectorEmbedAndWriteRequest, _impl_.rows_)>(
-          reinterpret_cast<char*>(&_impl_.rows_),
-          reinterpret_cast<char*>(&other->_impl_.rows_));
+        swap(_impl_.score_, other->_impl_.score_);
 }
 
-::google::protobuf::Metadata VectorEmbedAndWriteRequest::GetMetadata() const {
+::google::protobuf::Metadata SearchResult::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_getter, &descriptor_table_rust_5fserver_2fproto_2fvectordb_2eproto_once,
-      file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[9]);
+      file_level_metadata_rust_5fserver_2fproto_2fvectordb_2eproto[11]);
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace vectordb

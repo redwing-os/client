@@ -47,6 +47,36 @@ public final class Vectordb {
      * @return The vector at the given index.
      */
     float getVector(int index);
+
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
+     */
+    boolean hasCreatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
+     */
+    com.google.protobuf.Timestamp getCreatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return Whether the updatedAt field is set.
+     */
+    boolean hasUpdatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return The updatedAt.
+     */
+    com.google.protobuf.Timestamp getUpdatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
   }
   /**
    * <pre>
@@ -89,6 +119,7 @@ public final class Vectordb {
               vectordb.Vectordb.VectorWriteRequest.class, vectordb.Vectordb.VectorWriteRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int KEY_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
@@ -158,6 +189,58 @@ public final class Vectordb {
     }
     private int vectorMemoizedSerializedSize = -1;
 
+    public static final int CREATED_AT_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp createdAt_;
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreatedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp updatedAt_;
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return Whether the updatedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdatedAt() {
+      return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+      return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -183,6 +266,12 @@ public final class Vectordb {
       for (int i = 0; i < vector_.size(); i++) {
         output.writeFloatNoTag(vector_.getFloat(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getCreatedAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getUpdatedAt());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -206,6 +295,14 @@ public final class Vectordb {
         }
         vectorMemoizedSerializedSize = dataSize;
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getCreatedAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getUpdatedAt());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -225,6 +322,16 @@ public final class Vectordb {
           .equals(other.getKey())) return false;
       if (!getVectorList()
           .equals(other.getVectorList())) return false;
+      if (hasCreatedAt() != other.hasCreatedAt()) return false;
+      if (hasCreatedAt()) {
+        if (!getCreatedAt()
+            .equals(other.getCreatedAt())) return false;
+      }
+      if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+      if (hasUpdatedAt()) {
+        if (!getUpdatedAt()
+            .equals(other.getUpdatedAt())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -241,6 +348,14 @@ public final class Vectordb {
       if (getVectorCount() > 0) {
         hash = (37 * hash) + VECTOR_FIELD_NUMBER;
         hash = (53 * hash) + getVectorList().hashCode();
+      }
+      if (hasCreatedAt()) {
+        hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreatedAt().hashCode();
+      }
+      if (hasUpdatedAt()) {
+        hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdatedAt().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -365,13 +480,20 @@ public final class Vectordb {
 
       // Construct using vectordb.Vectordb.VectorWriteRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCreatedAtFieldBuilder();
+          getUpdatedAtFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -379,6 +501,16 @@ public final class Vectordb {
         bitField0_ = 0;
         key_ = "";
         vector_ = emptyFloatList();
+        createdAt_ = null;
+        if (createdAtBuilder_ != null) {
+          createdAtBuilder_.dispose();
+          createdAtBuilder_ = null;
+        }
+        updatedAt_ = null;
+        if (updatedAtBuilder_ != null) {
+          updatedAtBuilder_.dispose();
+          updatedAtBuilder_ = null;
+        }
         return this;
       }
 
@@ -419,6 +551,20 @@ public final class Vectordb {
           vector_.makeImmutable();
           result.vector_ = vector_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.createdAt_ = createdAtBuilder_ == null
+              ? createdAt_
+              : createdAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.updatedAt_ = updatedAtBuilder_ == null
+              ? updatedAt_
+              : updatedAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -481,6 +627,12 @@ public final class Vectordb {
           }
           onChanged();
         }
+        if (other.hasCreatedAt()) {
+          mergeCreatedAt(other.getCreatedAt());
+        }
+        if (other.hasUpdatedAt()) {
+          mergeUpdatedAt(other.getUpdatedAt());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -529,6 +681,20 @@ public final class Vectordb {
                 input.popLimit(limit);
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    getCreatedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getUpdatedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -706,6 +872,248 @@ public final class Vectordb {
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Timestamp createdAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       * @return Whether the createdAt field is set.
+       */
+      public boolean hasCreatedAt() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       * @return The createdAt.
+       */
+      public com.google.protobuf.Timestamp getCreatedAt() {
+        if (createdAtBuilder_ == null) {
+          return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        } else {
+          return createdAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createdAt_ = value;
+        } else {
+          createdAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder setCreatedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createdAtBuilder_ == null) {
+          createdAt_ = builderForValue.build();
+        } else {
+          createdAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            createdAt_ != null &&
+            createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreatedAtBuilder().mergeFrom(value);
+          } else {
+            createdAt_ = value;
+          }
+        } else {
+          createdAtBuilder_.mergeFrom(value);
+        }
+        if (createdAt_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        createdAt_ = null;
+        if (createdAtBuilder_ != null) {
+          createdAtBuilder_.dispose();
+          createdAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getCreatedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+        if (createdAtBuilder_ != null) {
+          return createdAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createdAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreatedAtFieldBuilder() {
+        if (createdAtBuilder_ == null) {
+          createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreatedAt(),
+                  getParentForChildren(),
+                  isClean());
+          createdAt_ = null;
+        }
+        return createdAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updatedAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       * @return Whether the updatedAt field is set.
+       */
+      public boolean hasUpdatedAt() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       * @return The updatedAt.
+       */
+      public com.google.protobuf.Timestamp getUpdatedAt() {
+        if (updatedAtBuilder_ == null) {
+          return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+        } else {
+          return updatedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
+        if (updatedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updatedAt_ = value;
+        } else {
+          updatedAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder setUpdatedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updatedAtBuilder_ == null) {
+          updatedAt_ = builderForValue.build();
+        } else {
+          updatedAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
+        if (updatedAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0) &&
+            updatedAt_ != null &&
+            updatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdatedAtBuilder().mergeFrom(value);
+          } else {
+            updatedAt_ = value;
+          }
+        } else {
+          updatedAtBuilder_.mergeFrom(value);
+        }
+        if (updatedAt_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder clearUpdatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        updatedAt_ = null;
+        if (updatedAtBuilder_ != null) {
+          updatedAtBuilder_.dispose();
+          updatedAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getUpdatedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+        if (updatedAtBuilder_ != null) {
+          return updatedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updatedAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdatedAtFieldBuilder() {
+        if (updatedAtBuilder_ == null) {
+          updatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdatedAt(),
+                  getParentForChildren(),
+                  isClean());
+          updatedAt_ = null;
+        }
+        return updatedAtBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3287,6 +3695,36 @@ public final class Vectordb {
      * @return The vector at the given index.
      */
     float getVector(int index);
+
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
+     */
+    boolean hasCreatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
+     */
+    com.google.protobuf.Timestamp getCreatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return Whether the updatedAt field is set.
+     */
+    boolean hasUpdatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return The updatedAt.
+     */
+    com.google.protobuf.Timestamp getUpdatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
   }
   /**
    * Protobuf type {@code vectordb.VectorUpdateRequest}
@@ -3325,6 +3763,7 @@ public final class Vectordb {
               vectordb.Vectordb.VectorUpdateRequest.class, vectordb.Vectordb.VectorUpdateRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int KEY_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
@@ -3394,6 +3833,58 @@ public final class Vectordb {
     }
     private int vectorMemoizedSerializedSize = -1;
 
+    public static final int CREATED_AT_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp createdAt_;
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreatedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp updatedAt_;
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return Whether the updatedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdatedAt() {
+      return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+      return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3419,6 +3910,12 @@ public final class Vectordb {
       for (int i = 0; i < vector_.size(); i++) {
         output.writeFloatNoTag(vector_.getFloat(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getCreatedAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getUpdatedAt());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3442,6 +3939,14 @@ public final class Vectordb {
         }
         vectorMemoizedSerializedSize = dataSize;
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getCreatedAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getUpdatedAt());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3461,6 +3966,16 @@ public final class Vectordb {
           .equals(other.getKey())) return false;
       if (!getVectorList()
           .equals(other.getVectorList())) return false;
+      if (hasCreatedAt() != other.hasCreatedAt()) return false;
+      if (hasCreatedAt()) {
+        if (!getCreatedAt()
+            .equals(other.getCreatedAt())) return false;
+      }
+      if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+      if (hasUpdatedAt()) {
+        if (!getUpdatedAt()
+            .equals(other.getUpdatedAt())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3477,6 +3992,14 @@ public final class Vectordb {
       if (getVectorCount() > 0) {
         hash = (37 * hash) + VECTOR_FIELD_NUMBER;
         hash = (53 * hash) + getVectorList().hashCode();
+      }
+      if (hasCreatedAt()) {
+        hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreatedAt().hashCode();
+      }
+      if (hasUpdatedAt()) {
+        hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdatedAt().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -3597,13 +4120,20 @@ public final class Vectordb {
 
       // Construct using vectordb.Vectordb.VectorUpdateRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCreatedAtFieldBuilder();
+          getUpdatedAtFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3611,6 +4141,16 @@ public final class Vectordb {
         bitField0_ = 0;
         key_ = "";
         vector_ = emptyFloatList();
+        createdAt_ = null;
+        if (createdAtBuilder_ != null) {
+          createdAtBuilder_.dispose();
+          createdAtBuilder_ = null;
+        }
+        updatedAt_ = null;
+        if (updatedAtBuilder_ != null) {
+          updatedAtBuilder_.dispose();
+          updatedAtBuilder_ = null;
+        }
         return this;
       }
 
@@ -3651,6 +4191,20 @@ public final class Vectordb {
           vector_.makeImmutable();
           result.vector_ = vector_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.createdAt_ = createdAtBuilder_ == null
+              ? createdAt_
+              : createdAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.updatedAt_ = updatedAtBuilder_ == null
+              ? updatedAt_
+              : updatedAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3713,6 +4267,12 @@ public final class Vectordb {
           }
           onChanged();
         }
+        if (other.hasCreatedAt()) {
+          mergeCreatedAt(other.getCreatedAt());
+        }
+        if (other.hasUpdatedAt()) {
+          mergeUpdatedAt(other.getUpdatedAt());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3761,6 +4321,20 @@ public final class Vectordb {
                 input.popLimit(limit);
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    getCreatedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getUpdatedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3938,6 +4512,248 @@ public final class Vectordb {
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Timestamp createdAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       * @return Whether the createdAt field is set.
+       */
+      public boolean hasCreatedAt() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       * @return The createdAt.
+       */
+      public com.google.protobuf.Timestamp getCreatedAt() {
+        if (createdAtBuilder_ == null) {
+          return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        } else {
+          return createdAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createdAt_ = value;
+        } else {
+          createdAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder setCreatedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createdAtBuilder_ == null) {
+          createdAt_ = builderForValue.build();
+        } else {
+          createdAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            createdAt_ != null &&
+            createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreatedAtBuilder().mergeFrom(value);
+          } else {
+            createdAt_ = value;
+          }
+        } else {
+          createdAtBuilder_.mergeFrom(value);
+        }
+        if (createdAt_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        createdAt_ = null;
+        if (createdAtBuilder_ != null) {
+          createdAtBuilder_.dispose();
+          createdAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getCreatedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+        if (createdAtBuilder_ != null) {
+          return createdAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createdAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreatedAtFieldBuilder() {
+        if (createdAtBuilder_ == null) {
+          createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreatedAt(),
+                  getParentForChildren(),
+                  isClean());
+          createdAt_ = null;
+        }
+        return createdAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updatedAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       * @return Whether the updatedAt field is set.
+       */
+      public boolean hasUpdatedAt() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       * @return The updatedAt.
+       */
+      public com.google.protobuf.Timestamp getUpdatedAt() {
+        if (updatedAtBuilder_ == null) {
+          return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+        } else {
+          return updatedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
+        if (updatedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updatedAt_ = value;
+        } else {
+          updatedAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder setUpdatedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updatedAtBuilder_ == null) {
+          updatedAt_ = builderForValue.build();
+        } else {
+          updatedAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
+        if (updatedAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0) &&
+            updatedAt_ != null &&
+            updatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdatedAtBuilder().mergeFrom(value);
+          } else {
+            updatedAt_ = value;
+          }
+        } else {
+          updatedAtBuilder_.mergeFrom(value);
+        }
+        if (updatedAt_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public Builder clearUpdatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        updatedAt_ = null;
+        if (updatedAtBuilder_ != null) {
+          updatedAtBuilder_.dispose();
+          updatedAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getUpdatedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+        if (updatedAtBuilder_ != null) {
+          return updatedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updatedAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdatedAtFieldBuilder() {
+        if (updatedAtBuilder_ == null) {
+          updatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdatedAt(),
+                  getParentForChildren(),
+                  isClean());
+          updatedAt_ = null;
+        }
+        return updatedAtBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5509,8 +6325,1684 @@ public final class Vectordb {
 
   }
 
-  public interface VectorEmbedAndWriteRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vectordb.VectorEmbedAndWriteRequest)
+  public interface VectorSearchRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vectordb.VectorSearchRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated float query = 1;</code>
+     * @return A list containing the query.
+     */
+    java.util.List<java.lang.Float> getQueryList();
+    /**
+     * <code>repeated float query = 1;</code>
+     * @return The count of query.
+     */
+    int getQueryCount();
+    /**
+     * <code>repeated float query = 1;</code>
+     * @param index The index of the element to return.
+     * @return The query at the given index.
+     */
+    float getQuery(int index);
+
+    /**
+     * <code>int32 top_k = 2;</code>
+     * @return The topK.
+     */
+    int getTopK();
+
+    /**
+     * <code>string metric = 3;</code>
+     * @return The metric.
+     */
+    java.lang.String getMetric();
+    /**
+     * <code>string metric = 3;</code>
+     * @return The bytes for metric.
+     */
+    com.google.protobuf.ByteString
+        getMetricBytes();
+
+    /**
+     * <code>float threshold = 4;</code>
+     * @return The threshold.
+     */
+    float getThreshold();
+  }
+  /**
+   * Protobuf type {@code vectordb.VectorSearchRequest}
+   */
+  public static final class VectorSearchRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vectordb.VectorSearchRequest)
+      VectorSearchRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use VectorSearchRequest.newBuilder() to construct.
+    private VectorSearchRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private VectorSearchRequest() {
+      query_ = emptyFloatList();
+      metric_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new VectorSearchRequest();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return vectordb.Vectordb.internal_static_vectordb_VectorSearchRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return vectordb.Vectordb.internal_static_vectordb_VectorSearchRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              vectordb.Vectordb.VectorSearchRequest.class, vectordb.Vectordb.VectorSearchRequest.Builder.class);
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.FloatList query_ =
+        emptyFloatList();
+    /**
+     * <code>repeated float query = 1;</code>
+     * @return A list containing the query.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Float>
+        getQueryList() {
+      return query_;
+    }
+    /**
+     * <code>repeated float query = 1;</code>
+     * @return The count of query.
+     */
+    public int getQueryCount() {
+      return query_.size();
+    }
+    /**
+     * <code>repeated float query = 1;</code>
+     * @param index The index of the element to return.
+     * @return The query at the given index.
+     */
+    public float getQuery(int index) {
+      return query_.getFloat(index);
+    }
+    private int queryMemoizedSerializedSize = -1;
+
+    public static final int TOP_K_FIELD_NUMBER = 2;
+    private int topK_ = 0;
+    /**
+     * <code>int32 top_k = 2;</code>
+     * @return The topK.
+     */
+    @java.lang.Override
+    public int getTopK() {
+      return topK_;
+    }
+
+    public static final int METRIC_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object metric_ = "";
+    /**
+     * <code>string metric = 3;</code>
+     * @return The metric.
+     */
+    @java.lang.Override
+    public java.lang.String getMetric() {
+      java.lang.Object ref = metric_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metric_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string metric = 3;</code>
+     * @return The bytes for metric.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMetricBytes() {
+      java.lang.Object ref = metric_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metric_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THRESHOLD_FIELD_NUMBER = 4;
+    private float threshold_ = 0F;
+    /**
+     * <code>float threshold = 4;</code>
+     * @return The threshold.
+     */
+    @java.lang.Override
+    public float getThreshold() {
+      return threshold_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getQueryList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(queryMemoizedSerializedSize);
+      }
+      for (int i = 0; i < query_.size(); i++) {
+        output.writeFloatNoTag(query_.getFloat(i));
+      }
+      if (topK_ != 0) {
+        output.writeInt32(2, topK_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, metric_);
+      }
+      if (java.lang.Float.floatToRawIntBits(threshold_) != 0) {
+        output.writeFloat(4, threshold_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 4 * getQueryList().size();
+        size += dataSize;
+        if (!getQueryList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        queryMemoizedSerializedSize = dataSize;
+      }
+      if (topK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, topK_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, metric_);
+      }
+      if (java.lang.Float.floatToRawIntBits(threshold_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, threshold_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof vectordb.Vectordb.VectorSearchRequest)) {
+        return super.equals(obj);
+      }
+      vectordb.Vectordb.VectorSearchRequest other = (vectordb.Vectordb.VectorSearchRequest) obj;
+
+      if (!getQueryList()
+          .equals(other.getQueryList())) return false;
+      if (getTopK()
+          != other.getTopK()) return false;
+      if (!getMetric()
+          .equals(other.getMetric())) return false;
+      if (java.lang.Float.floatToIntBits(getThreshold())
+          != java.lang.Float.floatToIntBits(
+              other.getThreshold())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getQueryCount() > 0) {
+        hash = (37 * hash) + QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryList().hashCode();
+      }
+      hash = (37 * hash) + TOP_K_FIELD_NUMBER;
+      hash = (53 * hash) + getTopK();
+      hash = (37 * hash) + METRIC_FIELD_NUMBER;
+      hash = (53 * hash) + getMetric().hashCode();
+      hash = (37 * hash) + THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getThreshold());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static vectordb.Vectordb.VectorSearchRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static vectordb.Vectordb.VectorSearchRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vectordb.Vectordb.VectorSearchRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(vectordb.Vectordb.VectorSearchRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vectordb.VectorSearchRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vectordb.VectorSearchRequest)
+        vectordb.Vectordb.VectorSearchRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return vectordb.Vectordb.internal_static_vectordb_VectorSearchRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return vectordb.Vectordb.internal_static_vectordb_VectorSearchRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                vectordb.Vectordb.VectorSearchRequest.class, vectordb.Vectordb.VectorSearchRequest.Builder.class);
+      }
+
+      // Construct using vectordb.Vectordb.VectorSearchRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        query_ = emptyFloatList();
+        topK_ = 0;
+        metric_ = "";
+        threshold_ = 0F;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return vectordb.Vectordb.internal_static_vectordb_VectorSearchRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public vectordb.Vectordb.VectorSearchRequest getDefaultInstanceForType() {
+        return vectordb.Vectordb.VectorSearchRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public vectordb.Vectordb.VectorSearchRequest build() {
+        vectordb.Vectordb.VectorSearchRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public vectordb.Vectordb.VectorSearchRequest buildPartial() {
+        vectordb.Vectordb.VectorSearchRequest result = new vectordb.Vectordb.VectorSearchRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(vectordb.Vectordb.VectorSearchRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          query_.makeImmutable();
+          result.query_ = query_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.topK_ = topK_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.metric_ = metric_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.threshold_ = threshold_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof vectordb.Vectordb.VectorSearchRequest) {
+          return mergeFrom((vectordb.Vectordb.VectorSearchRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(vectordb.Vectordb.VectorSearchRequest other) {
+        if (other == vectordb.Vectordb.VectorSearchRequest.getDefaultInstance()) return this;
+        if (!other.query_.isEmpty()) {
+          if (query_.isEmpty()) {
+            query_ = other.query_;
+            query_.makeImmutable();
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureQueryIsMutable();
+            query_.addAll(other.query_);
+          }
+          onChanged();
+        }
+        if (other.getTopK() != 0) {
+          setTopK(other.getTopK());
+        }
+        if (!other.getMetric().isEmpty()) {
+          metric_ = other.metric_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getThreshold() != 0F) {
+          setThreshold(other.getThreshold());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                float v = input.readFloat();
+                ensureQueryIsMutable();
+                query_.addFloat(v);
+                break;
+              } // case 13
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                int alloc = length > 4096 ? 4096 : length;
+                ensureQueryIsMutable(alloc / 4);
+                while (input.getBytesUntilLimit() > 0) {
+                  query_.addFloat(input.readFloat());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              case 16: {
+                topK_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                metric_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 37: {
+                threshold_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.FloatList query_ = emptyFloatList();
+      private void ensureQueryIsMutable() {
+        if (!query_.isModifiable()) {
+          query_ = makeMutableCopy(query_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      private void ensureQueryIsMutable(int capacity) {
+        if (!query_.isModifiable()) {
+          query_ = makeMutableCopy(query_, capacity);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       * <code>repeated float query = 1;</code>
+       * @return A list containing the query.
+       */
+      public java.util.List<java.lang.Float>
+          getQueryList() {
+        query_.makeImmutable();
+        return query_;
+      }
+      /**
+       * <code>repeated float query = 1;</code>
+       * @return The count of query.
+       */
+      public int getQueryCount() {
+        return query_.size();
+      }
+      /**
+       * <code>repeated float query = 1;</code>
+       * @param index The index of the element to return.
+       * @return The query at the given index.
+       */
+      public float getQuery(int index) {
+        return query_.getFloat(index);
+      }
+      /**
+       * <code>repeated float query = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The query to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuery(
+          int index, float value) {
+
+        ensureQueryIsMutable();
+        query_.setFloat(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float query = 1;</code>
+       * @param value The query to add.
+       * @return This builder for chaining.
+       */
+      public Builder addQuery(float value) {
+
+        ensureQueryIsMutable();
+        query_.addFloat(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float query = 1;</code>
+       * @param values The query to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllQuery(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureQueryIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, query_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float query = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuery() {
+        query_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int topK_ ;
+      /**
+       * <code>int32 top_k = 2;</code>
+       * @return The topK.
+       */
+      @java.lang.Override
+      public int getTopK() {
+        return topK_;
+      }
+      /**
+       * <code>int32 top_k = 2;</code>
+       * @param value The topK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopK(int value) {
+
+        topK_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 top_k = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTopK() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        topK_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object metric_ = "";
+      /**
+       * <code>string metric = 3;</code>
+       * @return The metric.
+       */
+      public java.lang.String getMetric() {
+        java.lang.Object ref = metric_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metric_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string metric = 3;</code>
+       * @return The bytes for metric.
+       */
+      public com.google.protobuf.ByteString
+          getMetricBytes() {
+        java.lang.Object ref = metric_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metric_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string metric = 3;</code>
+       * @param value The metric to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetric(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        metric_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMetric() {
+        metric_ = getDefaultInstance().getMetric();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric = 3;</code>
+       * @param value The bytes for metric to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        metric_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private float threshold_ ;
+      /**
+       * <code>float threshold = 4;</code>
+       * @return The threshold.
+       */
+      @java.lang.Override
+      public float getThreshold() {
+        return threshold_;
+      }
+      /**
+       * <code>float threshold = 4;</code>
+       * @param value The threshold to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThreshold(float value) {
+
+        threshold_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float threshold = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        threshold_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vectordb.VectorSearchRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:vectordb.VectorSearchRequest)
+    private static final vectordb.Vectordb.VectorSearchRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new vectordb.Vectordb.VectorSearchRequest();
+    }
+
+    public static vectordb.Vectordb.VectorSearchRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VectorSearchRequest>
+        PARSER = new com.google.protobuf.AbstractParser<VectorSearchRequest>() {
+      @java.lang.Override
+      public VectorSearchRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<VectorSearchRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VectorSearchRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public vectordb.Vectordb.VectorSearchRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface VectorSearchResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vectordb.VectorSearchResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    java.util.List<vectordb.Vectordb.SearchResult> 
+        getMatchesList();
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    vectordb.Vectordb.SearchResult getMatches(int index);
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    int getMatchesCount();
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    java.util.List<? extends vectordb.Vectordb.SearchResultOrBuilder> 
+        getMatchesOrBuilderList();
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    vectordb.Vectordb.SearchResultOrBuilder getMatchesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vectordb.VectorSearchResponse}
+   */
+  public static final class VectorSearchResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vectordb.VectorSearchResponse)
+      VectorSearchResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use VectorSearchResponse.newBuilder() to construct.
+    private VectorSearchResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private VectorSearchResponse() {
+      matches_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new VectorSearchResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return vectordb.Vectordb.internal_static_vectordb_VectorSearchResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return vectordb.Vectordb.internal_static_vectordb_VectorSearchResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              vectordb.Vectordb.VectorSearchResponse.class, vectordb.Vectordb.VectorSearchResponse.Builder.class);
+    }
+
+    public static final int MATCHES_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<vectordb.Vectordb.SearchResult> matches_;
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<vectordb.Vectordb.SearchResult> getMatchesList() {
+      return matches_;
+    }
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends vectordb.Vectordb.SearchResultOrBuilder> 
+        getMatchesOrBuilderList() {
+      return matches_;
+    }
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    @java.lang.Override
+    public int getMatchesCount() {
+      return matches_.size();
+    }
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    @java.lang.Override
+    public vectordb.Vectordb.SearchResult getMatches(int index) {
+      return matches_.get(index);
+    }
+    /**
+     * <code>repeated .vectordb.SearchResult matches = 1;</code>
+     */
+    @java.lang.Override
+    public vectordb.Vectordb.SearchResultOrBuilder getMatchesOrBuilder(
+        int index) {
+      return matches_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < matches_.size(); i++) {
+        output.writeMessage(1, matches_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < matches_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, matches_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof vectordb.Vectordb.VectorSearchResponse)) {
+        return super.equals(obj);
+      }
+      vectordb.Vectordb.VectorSearchResponse other = (vectordb.Vectordb.VectorSearchResponse) obj;
+
+      if (!getMatchesList()
+          .equals(other.getMatchesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMatchesCount() > 0) {
+        hash = (37 * hash) + MATCHES_FIELD_NUMBER;
+        hash = (53 * hash) + getMatchesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static vectordb.Vectordb.VectorSearchResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static vectordb.Vectordb.VectorSearchResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vectordb.Vectordb.VectorSearchResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(vectordb.Vectordb.VectorSearchResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vectordb.VectorSearchResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vectordb.VectorSearchResponse)
+        vectordb.Vectordb.VectorSearchResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return vectordb.Vectordb.internal_static_vectordb_VectorSearchResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return vectordb.Vectordb.internal_static_vectordb_VectorSearchResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                vectordb.Vectordb.VectorSearchResponse.class, vectordb.Vectordb.VectorSearchResponse.Builder.class);
+      }
+
+      // Construct using vectordb.Vectordb.VectorSearchResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (matchesBuilder_ == null) {
+          matches_ = java.util.Collections.emptyList();
+        } else {
+          matches_ = null;
+          matchesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return vectordb.Vectordb.internal_static_vectordb_VectorSearchResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public vectordb.Vectordb.VectorSearchResponse getDefaultInstanceForType() {
+        return vectordb.Vectordb.VectorSearchResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public vectordb.Vectordb.VectorSearchResponse build() {
+        vectordb.Vectordb.VectorSearchResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public vectordb.Vectordb.VectorSearchResponse buildPartial() {
+        vectordb.Vectordb.VectorSearchResponse result = new vectordb.Vectordb.VectorSearchResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(vectordb.Vectordb.VectorSearchResponse result) {
+        if (matchesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            matches_ = java.util.Collections.unmodifiableList(matches_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.matches_ = matches_;
+        } else {
+          result.matches_ = matchesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(vectordb.Vectordb.VectorSearchResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof vectordb.Vectordb.VectorSearchResponse) {
+          return mergeFrom((vectordb.Vectordb.VectorSearchResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(vectordb.Vectordb.VectorSearchResponse other) {
+        if (other == vectordb.Vectordb.VectorSearchResponse.getDefaultInstance()) return this;
+        if (matchesBuilder_ == null) {
+          if (!other.matches_.isEmpty()) {
+            if (matches_.isEmpty()) {
+              matches_ = other.matches_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMatchesIsMutable();
+              matches_.addAll(other.matches_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.matches_.isEmpty()) {
+            if (matchesBuilder_.isEmpty()) {
+              matchesBuilder_.dispose();
+              matchesBuilder_ = null;
+              matches_ = other.matches_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              matchesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMatchesFieldBuilder() : null;
+            } else {
+              matchesBuilder_.addAllMessages(other.matches_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                vectordb.Vectordb.SearchResult m =
+                    input.readMessage(
+                        vectordb.Vectordb.SearchResult.parser(),
+                        extensionRegistry);
+                if (matchesBuilder_ == null) {
+                  ensureMatchesIsMutable();
+                  matches_.add(m);
+                } else {
+                  matchesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<vectordb.Vectordb.SearchResult> matches_ =
+        java.util.Collections.emptyList();
+      private void ensureMatchesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          matches_ = new java.util.ArrayList<vectordb.Vectordb.SearchResult>(matches_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          vectordb.Vectordb.SearchResult, vectordb.Vectordb.SearchResult.Builder, vectordb.Vectordb.SearchResultOrBuilder> matchesBuilder_;
+
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public java.util.List<vectordb.Vectordb.SearchResult> getMatchesList() {
+        if (matchesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(matches_);
+        } else {
+          return matchesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public int getMatchesCount() {
+        if (matchesBuilder_ == null) {
+          return matches_.size();
+        } else {
+          return matchesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public vectordb.Vectordb.SearchResult getMatches(int index) {
+        if (matchesBuilder_ == null) {
+          return matches_.get(index);
+        } else {
+          return matchesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder setMatches(
+          int index, vectordb.Vectordb.SearchResult value) {
+        if (matchesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMatchesIsMutable();
+          matches_.set(index, value);
+          onChanged();
+        } else {
+          matchesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder setMatches(
+          int index, vectordb.Vectordb.SearchResult.Builder builderForValue) {
+        if (matchesBuilder_ == null) {
+          ensureMatchesIsMutable();
+          matches_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          matchesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder addMatches(vectordb.Vectordb.SearchResult value) {
+        if (matchesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMatchesIsMutable();
+          matches_.add(value);
+          onChanged();
+        } else {
+          matchesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder addMatches(
+          int index, vectordb.Vectordb.SearchResult value) {
+        if (matchesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMatchesIsMutable();
+          matches_.add(index, value);
+          onChanged();
+        } else {
+          matchesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder addMatches(
+          vectordb.Vectordb.SearchResult.Builder builderForValue) {
+        if (matchesBuilder_ == null) {
+          ensureMatchesIsMutable();
+          matches_.add(builderForValue.build());
+          onChanged();
+        } else {
+          matchesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder addMatches(
+          int index, vectordb.Vectordb.SearchResult.Builder builderForValue) {
+        if (matchesBuilder_ == null) {
+          ensureMatchesIsMutable();
+          matches_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          matchesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder addAllMatches(
+          java.lang.Iterable<? extends vectordb.Vectordb.SearchResult> values) {
+        if (matchesBuilder_ == null) {
+          ensureMatchesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, matches_);
+          onChanged();
+        } else {
+          matchesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder clearMatches() {
+        if (matchesBuilder_ == null) {
+          matches_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          matchesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public Builder removeMatches(int index) {
+        if (matchesBuilder_ == null) {
+          ensureMatchesIsMutable();
+          matches_.remove(index);
+          onChanged();
+        } else {
+          matchesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public vectordb.Vectordb.SearchResult.Builder getMatchesBuilder(
+          int index) {
+        return getMatchesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public vectordb.Vectordb.SearchResultOrBuilder getMatchesOrBuilder(
+          int index) {
+        if (matchesBuilder_ == null) {
+          return matches_.get(index);  } else {
+          return matchesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public java.util.List<? extends vectordb.Vectordb.SearchResultOrBuilder> 
+           getMatchesOrBuilderList() {
+        if (matchesBuilder_ != null) {
+          return matchesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(matches_);
+        }
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public vectordb.Vectordb.SearchResult.Builder addMatchesBuilder() {
+        return getMatchesFieldBuilder().addBuilder(
+            vectordb.Vectordb.SearchResult.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public vectordb.Vectordb.SearchResult.Builder addMatchesBuilder(
+          int index) {
+        return getMatchesFieldBuilder().addBuilder(
+            index, vectordb.Vectordb.SearchResult.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vectordb.SearchResult matches = 1;</code>
+       */
+      public java.util.List<vectordb.Vectordb.SearchResult.Builder> 
+           getMatchesBuilderList() {
+        return getMatchesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          vectordb.Vectordb.SearchResult, vectordb.Vectordb.SearchResult.Builder, vectordb.Vectordb.SearchResultOrBuilder> 
+          getMatchesFieldBuilder() {
+        if (matchesBuilder_ == null) {
+          matchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              vectordb.Vectordb.SearchResult, vectordb.Vectordb.SearchResult.Builder, vectordb.Vectordb.SearchResultOrBuilder>(
+                  matches_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          matches_ = null;
+        }
+        return matchesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vectordb.VectorSearchResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:vectordb.VectorSearchResponse)
+    private static final vectordb.Vectordb.VectorSearchResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new vectordb.Vectordb.VectorSearchResponse();
+    }
+
+    public static vectordb.Vectordb.VectorSearchResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VectorSearchResponse>
+        PARSER = new com.google.protobuf.AbstractParser<VectorSearchResponse>() {
+      @java.lang.Override
+      public VectorSearchResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<VectorSearchResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VectorSearchResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public vectordb.Vectordb.VectorSearchResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SearchResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vectordb.SearchResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5526,69 +8018,45 @@ public final class Vectordb {
         getKeyBytes();
 
     /**
-     * <code>repeated float data = 2;</code>
-     * @return A list containing the data.
+     * <code>float score = 2;</code>
+     * @return The score.
      */
-    java.util.List<java.lang.Float> getDataList();
-    /**
-     * <code>repeated float data = 2;</code>
-     * @return The count of data.
-     */
-    int getDataCount();
-    /**
-     * <code>repeated float data = 2;</code>
-     * @param index The index of the element to return.
-     * @return The data at the given index.
-     */
-    float getData(int index);
-
-    /**
-     * <code>int32 rows = 3;</code>
-     * @return The rows.
-     */
-    int getRows();
-
-    /**
-     * <code>int32 cols = 4;</code>
-     * @return The cols.
-     */
-    int getCols();
+    float getScore();
   }
   /**
-   * Protobuf type {@code vectordb.VectorEmbedAndWriteRequest}
+   * Protobuf type {@code vectordb.SearchResult}
    */
-  public static final class VectorEmbedAndWriteRequest extends
+  public static final class SearchResult extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vectordb.VectorEmbedAndWriteRequest)
-      VectorEmbedAndWriteRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:vectordb.SearchResult)
+      SearchResultOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use VectorEmbedAndWriteRequest.newBuilder() to construct.
-    private VectorEmbedAndWriteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SearchResult.newBuilder() to construct.
+    private SearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private VectorEmbedAndWriteRequest() {
+    private SearchResult() {
       key_ = "";
-      data_ = emptyFloatList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new VectorEmbedAndWriteRequest();
+      return new SearchResult();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return vectordb.Vectordb.internal_static_vectordb_VectorEmbedAndWriteRequest_descriptor;
+      return vectordb.Vectordb.internal_static_vectordb_SearchResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return vectordb.Vectordb.internal_static_vectordb_VectorEmbedAndWriteRequest_fieldAccessorTable
+      return vectordb.Vectordb.internal_static_vectordb_SearchResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              vectordb.Vectordb.VectorEmbedAndWriteRequest.class, vectordb.Vectordb.VectorEmbedAndWriteRequest.Builder.class);
+              vectordb.Vectordb.SearchResult.class, vectordb.Vectordb.SearchResult.Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
@@ -5630,56 +8098,15 @@ public final class Vectordb {
       }
     }
 
-    public static final int DATA_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.Internal.FloatList data_ =
-        emptyFloatList();
+    public static final int SCORE_FIELD_NUMBER = 2;
+    private float score_ = 0F;
     /**
-     * <code>repeated float data = 2;</code>
-     * @return A list containing the data.
+     * <code>float score = 2;</code>
+     * @return The score.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Float>
-        getDataList() {
-      return data_;
-    }
-    /**
-     * <code>repeated float data = 2;</code>
-     * @return The count of data.
-     */
-    public int getDataCount() {
-      return data_.size();
-    }
-    /**
-     * <code>repeated float data = 2;</code>
-     * @param index The index of the element to return.
-     * @return The data at the given index.
-     */
-    public float getData(int index) {
-      return data_.getFloat(index);
-    }
-    private int dataMemoizedSerializedSize = -1;
-
-    public static final int ROWS_FIELD_NUMBER = 3;
-    private int rows_ = 0;
-    /**
-     * <code>int32 rows = 3;</code>
-     * @return The rows.
-     */
-    @java.lang.Override
-    public int getRows() {
-      return rows_;
-    }
-
-    public static final int COLS_FIELD_NUMBER = 4;
-    private int cols_ = 0;
-    /**
-     * <code>int32 cols = 4;</code>
-     * @return The cols.
-     */
-    @java.lang.Override
-    public int getCols() {
-      return cols_;
+    public float getScore() {
+      return score_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5696,22 +8123,11 @@ public final class Vectordb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
-      if (getDataList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(dataMemoizedSerializedSize);
-      }
-      for (int i = 0; i < data_.size(); i++) {
-        output.writeFloatNoTag(data_.getFloat(i));
-      }
-      if (rows_ != 0) {
-        output.writeInt32(3, rows_);
-      }
-      if (cols_ != 0) {
-        output.writeInt32(4, cols_);
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
+        output.writeFloat(2, score_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5725,24 +8141,9 @@ public final class Vectordb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
       }
-      {
-        int dataSize = 0;
-        dataSize = 4 * getDataList().size();
-        size += dataSize;
-        if (!getDataList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        dataMemoizedSerializedSize = dataSize;
-      }
-      if (rows_ != 0) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, rows_);
-      }
-      if (cols_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, cols_);
+          .computeFloatSize(2, score_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5754,19 +8155,16 @@ public final class Vectordb {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof vectordb.Vectordb.VectorEmbedAndWriteRequest)) {
+      if (!(obj instanceof vectordb.Vectordb.SearchResult)) {
         return super.equals(obj);
       }
-      vectordb.Vectordb.VectorEmbedAndWriteRequest other = (vectordb.Vectordb.VectorEmbedAndWriteRequest) obj;
+      vectordb.Vectordb.SearchResult other = (vectordb.Vectordb.SearchResult) obj;
 
       if (!getKey()
           .equals(other.getKey())) return false;
-      if (!getDataList()
-          .equals(other.getDataList())) return false;
-      if (getRows()
-          != other.getRows()) return false;
-      if (getCols()
-          != other.getCols()) return false;
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(
+              other.getScore())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5780,57 +8178,52 @@ public final class Vectordb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
-      if (getDataCount() > 0) {
-        hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getDataList().hashCode();
-      }
-      hash = (37 * hash) + ROWS_FIELD_NUMBER;
-      hash = (53 * hash) + getRows();
-      hash = (37 * hash) + COLS_FIELD_NUMBER;
-      hash = (53 * hash) + getCols();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getScore());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(byte[] data)
+    public static vectordb.Vectordb.SearchResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(java.io.InputStream input)
+    public static vectordb.Vectordb.SearchResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5838,26 +8231,26 @@ public final class Vectordb {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseDelimitedFrom(java.io.InputStream input)
+    public static vectordb.Vectordb.SearchResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseDelimitedFrom(
+    public static vectordb.Vectordb.SearchResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest parseFrom(
+    public static vectordb.Vectordb.SearchResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5870,7 +8263,7 @@ public final class Vectordb {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(vectordb.Vectordb.VectorEmbedAndWriteRequest prototype) {
+    public static Builder newBuilder(vectordb.Vectordb.SearchResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5886,26 +8279,26 @@ public final class Vectordb {
       return builder;
     }
     /**
-     * Protobuf type {@code vectordb.VectorEmbedAndWriteRequest}
+     * Protobuf type {@code vectordb.SearchResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vectordb.VectorEmbedAndWriteRequest)
-        vectordb.Vectordb.VectorEmbedAndWriteRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:vectordb.SearchResult)
+        vectordb.Vectordb.SearchResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return vectordb.Vectordb.internal_static_vectordb_VectorEmbedAndWriteRequest_descriptor;
+        return vectordb.Vectordb.internal_static_vectordb_SearchResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return vectordb.Vectordb.internal_static_vectordb_VectorEmbedAndWriteRequest_fieldAccessorTable
+        return vectordb.Vectordb.internal_static_vectordb_SearchResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                vectordb.Vectordb.VectorEmbedAndWriteRequest.class, vectordb.Vectordb.VectorEmbedAndWriteRequest.Builder.class);
+                vectordb.Vectordb.SearchResult.class, vectordb.Vectordb.SearchResult.Builder.class);
       }
 
-      // Construct using vectordb.Vectordb.VectorEmbedAndWriteRequest.newBuilder()
+      // Construct using vectordb.Vectordb.SearchResult.newBuilder()
       private Builder() {
 
       }
@@ -5920,26 +8313,24 @@ public final class Vectordb {
         super.clear();
         bitField0_ = 0;
         key_ = "";
-        data_ = emptyFloatList();
-        rows_ = 0;
-        cols_ = 0;
+        score_ = 0F;
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return vectordb.Vectordb.internal_static_vectordb_VectorEmbedAndWriteRequest_descriptor;
+        return vectordb.Vectordb.internal_static_vectordb_SearchResult_descriptor;
       }
 
       @java.lang.Override
-      public vectordb.Vectordb.VectorEmbedAndWriteRequest getDefaultInstanceForType() {
-        return vectordb.Vectordb.VectorEmbedAndWriteRequest.getDefaultInstance();
+      public vectordb.Vectordb.SearchResult getDefaultInstanceForType() {
+        return vectordb.Vectordb.SearchResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public vectordb.Vectordb.VectorEmbedAndWriteRequest build() {
-        vectordb.Vectordb.VectorEmbedAndWriteRequest result = buildPartial();
+      public vectordb.Vectordb.SearchResult build() {
+        vectordb.Vectordb.SearchResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5947,27 +8338,20 @@ public final class Vectordb {
       }
 
       @java.lang.Override
-      public vectordb.Vectordb.VectorEmbedAndWriteRequest buildPartial() {
-        vectordb.Vectordb.VectorEmbedAndWriteRequest result = new vectordb.Vectordb.VectorEmbedAndWriteRequest(this);
+      public vectordb.Vectordb.SearchResult buildPartial() {
+        vectordb.Vectordb.SearchResult result = new vectordb.Vectordb.SearchResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(vectordb.Vectordb.VectorEmbedAndWriteRequest result) {
+      private void buildPartial0(vectordb.Vectordb.SearchResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.key_ = key_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          data_.makeImmutable();
-          result.data_ = data_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.rows_ = rows_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.cols_ = cols_;
+          result.score_ = score_;
         }
       }
 
@@ -6005,37 +8389,23 @@ public final class Vectordb {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof vectordb.Vectordb.VectorEmbedAndWriteRequest) {
-          return mergeFrom((vectordb.Vectordb.VectorEmbedAndWriteRequest)other);
+        if (other instanceof vectordb.Vectordb.SearchResult) {
+          return mergeFrom((vectordb.Vectordb.SearchResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(vectordb.Vectordb.VectorEmbedAndWriteRequest other) {
-        if (other == vectordb.Vectordb.VectorEmbedAndWriteRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(vectordb.Vectordb.SearchResult other) {
+        if (other == vectordb.Vectordb.SearchResult.getDefaultInstance()) return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.data_.isEmpty()) {
-          if (data_.isEmpty()) {
-            data_ = other.data_;
-            data_.makeImmutable();
-            bitField0_ |= 0x00000002;
-          } else {
-            ensureDataIsMutable();
-            data_.addAll(other.data_);
-          }
-          onChanged();
-        }
-        if (other.getRows() != 0) {
-          setRows(other.getRows());
-        }
-        if (other.getCols() != 0) {
-          setCols(other.getCols());
+        if (other.getScore() != 0F) {
+          setScore(other.getScore());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6069,32 +8439,10 @@ public final class Vectordb {
                 break;
               } // case 10
               case 21: {
-                float v = input.readFloat();
-                ensureDataIsMutable();
-                data_.addFloat(v);
+                score_ = input.readFloat();
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
-              case 18: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                int alloc = length > 4096 ? 4096 : length;
-                ensureDataIsMutable(alloc / 4);
-                while (input.getBytesUntilLimit() > 0) {
-                  data_.addFloat(input.readFloat());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 18
-              case 24: {
-                rows_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                cols_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6184,156 +8532,34 @@ public final class Vectordb {
         return this;
       }
 
-      private com.google.protobuf.Internal.FloatList data_ = emptyFloatList();
-      private void ensureDataIsMutable() {
-        if (!data_.isModifiable()) {
-          data_ = makeMutableCopy(data_);
-        }
-        bitField0_ |= 0x00000002;
-      }
-      private void ensureDataIsMutable(int capacity) {
-        if (!data_.isModifiable()) {
-          data_ = makeMutableCopy(data_, capacity);
-        }
-        bitField0_ |= 0x00000002;
-      }
+      private float score_ ;
       /**
-       * <code>repeated float data = 2;</code>
-       * @return A list containing the data.
+       * <code>float score = 2;</code>
+       * @return The score.
        */
-      public java.util.List<java.lang.Float>
-          getDataList() {
-        data_.makeImmutable();
-        return data_;
+      @java.lang.Override
+      public float getScore() {
+        return score_;
       }
       /**
-       * <code>repeated float data = 2;</code>
-       * @return The count of data.
-       */
-      public int getDataCount() {
-        return data_.size();
-      }
-      /**
-       * <code>repeated float data = 2;</code>
-       * @param index The index of the element to return.
-       * @return The data at the given index.
-       */
-      public float getData(int index) {
-        return data_.getFloat(index);
-      }
-      /**
-       * <code>repeated float data = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The data to set.
+       * <code>float score = 2;</code>
+       * @param value The score to set.
        * @return This builder for chaining.
        */
-      public Builder setData(
-          int index, float value) {
+      public Builder setScore(float value) {
 
-        ensureDataIsMutable();
-        data_.setFloat(index, value);
+        score_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated float data = 2;</code>
-       * @param value The data to add.
+       * <code>float score = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder addData(float value) {
-
-        ensureDataIsMutable();
-        data_.addFloat(value);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float data = 2;</code>
-       * @param values The data to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllData(
-          java.lang.Iterable<? extends java.lang.Float> values) {
-        ensureDataIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, data_);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float data = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearData() {
-        data_ = emptyFloatList();
+      public Builder clearScore() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private int rows_ ;
-      /**
-       * <code>int32 rows = 3;</code>
-       * @return The rows.
-       */
-      @java.lang.Override
-      public int getRows() {
-        return rows_;
-      }
-      /**
-       * <code>int32 rows = 3;</code>
-       * @param value The rows to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRows(int value) {
-
-        rows_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 rows = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRows() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        rows_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int cols_ ;
-      /**
-       * <code>int32 cols = 4;</code>
-       * @return The cols.
-       */
-      @java.lang.Override
-      public int getCols() {
-        return cols_;
-      }
-      /**
-       * <code>int32 cols = 4;</code>
-       * @param value The cols to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCols(int value) {
-
-        cols_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 cols = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCols() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        cols_ = 0;
+        score_ = 0F;
         onChanged();
         return this;
       }
@@ -6350,23 +8576,23 @@ public final class Vectordb {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:vectordb.VectorEmbedAndWriteRequest)
+      // @@protoc_insertion_point(builder_scope:vectordb.SearchResult)
     }
 
-    // @@protoc_insertion_point(class_scope:vectordb.VectorEmbedAndWriteRequest)
-    private static final vectordb.Vectordb.VectorEmbedAndWriteRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:vectordb.SearchResult)
+    private static final vectordb.Vectordb.SearchResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new vectordb.Vectordb.VectorEmbedAndWriteRequest();
+      DEFAULT_INSTANCE = new vectordb.Vectordb.SearchResult();
     }
 
-    public static vectordb.Vectordb.VectorEmbedAndWriteRequest getDefaultInstance() {
+    public static vectordb.Vectordb.SearchResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<VectorEmbedAndWriteRequest>
-        PARSER = new com.google.protobuf.AbstractParser<VectorEmbedAndWriteRequest>() {
+    private static final com.google.protobuf.Parser<SearchResult>
+        PARSER = new com.google.protobuf.AbstractParser<SearchResult>() {
       @java.lang.Override
-      public VectorEmbedAndWriteRequest parsePartialFrom(
+      public SearchResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6385,17 +8611,17 @@ public final class Vectordb {
       }
     };
 
-    public static com.google.protobuf.Parser<VectorEmbedAndWriteRequest> parser() {
+    public static com.google.protobuf.Parser<SearchResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<VectorEmbedAndWriteRequest> getParserForType() {
+    public com.google.protobuf.Parser<SearchResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public vectordb.Vectordb.VectorEmbedAndWriteRequest getDefaultInstanceForType() {
+    public vectordb.Vectordb.SearchResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6447,10 +8673,20 @@ public final class Vectordb {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vectordb_VectorDeleteResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vectordb_VectorEmbedAndWriteRequest_descriptor;
+    internal_static_vectordb_VectorSearchRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vectordb_VectorEmbedAndWriteRequest_fieldAccessorTable;
+      internal_static_vectordb_VectorSearchRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vectordb_VectorSearchResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vectordb_VectorSearchResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vectordb_SearchResult_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vectordb_SearchResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6461,42 +8697,51 @@ public final class Vectordb {
   static {
     java.lang.String[] descriptorData = {
       "\n rust_server/proto/vectordb.proto\022\010vect" +
-      "ordb\"1\n\022VectorWriteRequest\022\013\n\003key\030\001 \001(\t\022" +
-      "\016\n\006vector\030\002 \003(\002\"H\n\027VectorBatchWriteReque" +
-      "st\022-\n\007vectors\030\001 \003(\0132\034.vectordb.VectorWri" +
-      "teRequest\"&\n\023VectorWriteResponse\022\017\n\007succ" +
-      "ess\030\001 \001(\010\" \n\021VectorReadRequest\022\013\n\003key\030\001 " +
-      "\001(\t\"3\n\022VectorReadResponse\022\016\n\006vector\030\001 \003(" +
-      "\002\022\r\n\005found\030\002 \001(\010\"2\n\023VectorUpdateRequest\022" +
-      "\013\n\003key\030\001 \001(\t\022\016\n\006vector\030\002 \003(\002\"\'\n\024VectorUp" +
-      "dateResponse\022\017\n\007success\030\001 \001(\010\"\"\n\023VectorD" +
-      "eleteRequest\022\013\n\003key\030\001 \001(\t\"\'\n\024VectorDelet" +
-      "eResponse\022\017\n\007success\030\001 \001(\010\"S\n\032VectorEmbe" +
-      "dAndWriteRequest\022\013\n\003key\030\001 \001(\t\022\014\n\004data\030\002 " +
-      "\003(\002\022\014\n\004rows\030\003 \001(\005\022\014\n\004cols\030\004 \001(\0052\313\003\n\010Vect" +
-      "orDB\022N\n\nBatchWrite\022!.vectordb.VectorBatc" +
-      "hWriteRequest\032\035.vectordb.VectorWriteResp" +
-      "onse\022D\n\005Write\022\034.vectordb.VectorWriteRequ" +
-      "est\032\035.vectordb.VectorWriteResponse\022A\n\004Re" +
-      "ad\022\033.vectordb.VectorReadRequest\032\034.vector" +
-      "db.VectorReadResponse\022G\n\006Update\022\035.vector" +
-      "db.VectorUpdateRequest\032\036.vectordb.Vector" +
-      "UpdateResponse\022G\n\006Delete\022\035.vectordb.Vect" +
-      "orDeleteRequest\032\036.vectordb.VectorDeleteR" +
-      "esponse\022T\n\rEmbedAndWrite\022$.vectordb.Vect" +
-      "orEmbedAndWriteRequest\032\035.vectordb.Vector" +
-      "WriteResponseb\006proto3"
+      "ordb\032\037google/protobuf/timestamp.proto\"\221\001" +
+      "\n\022VectorWriteRequest\022\013\n\003key\030\001 \001(\t\022\016\n\006vec" +
+      "tor\030\002 \003(\002\022.\n\ncreated_at\030\003 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022.\n\nupdated_at\030\004 \001(\0132\032." +
+      "google.protobuf.Timestamp\"H\n\027VectorBatch" +
+      "WriteRequest\022-\n\007vectors\030\001 \003(\0132\034.vectordb" +
+      ".VectorWriteRequest\"&\n\023VectorWriteRespon" +
+      "se\022\017\n\007success\030\001 \001(\010\" \n\021VectorReadRequest" +
+      "\022\013\n\003key\030\001 \001(\t\"3\n\022VectorReadResponse\022\016\n\006v" +
+      "ector\030\001 \003(\002\022\r\n\005found\030\002 \001(\010\"\222\001\n\023VectorUpd" +
+      "ateRequest\022\013\n\003key\030\001 \001(\t\022\016\n\006vector\030\002 \003(\002\022" +
+      ".\n\ncreated_at\030\003 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022.\n\nupdated_at\030\004 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\"\'\n\024VectorUpdateResponse\022" +
+      "\017\n\007success\030\001 \001(\010\"\"\n\023VectorDeleteRequest\022" +
+      "\013\n\003key\030\001 \001(\t\"\'\n\024VectorDeleteResponse\022\017\n\007" +
+      "success\030\001 \001(\010\"V\n\023VectorSearchRequest\022\r\n\005" +
+      "query\030\001 \003(\002\022\r\n\005top_k\030\002 \001(\005\022\016\n\006metric\030\003 \001" +
+      "(\t\022\021\n\tthreshold\030\004 \001(\002\"?\n\024VectorSearchRes" +
+      "ponse\022\'\n\007matches\030\001 \003(\0132\026.vectordb.Search" +
+      "Result\"*\n\014SearchResult\022\013\n\003key\030\001 \001(\t\022\r\n\005s" +
+      "core\030\002 \001(\0022\276\003\n\010VectorDB\022G\n\006Search\022\035.vect" +
+      "ordb.VectorSearchRequest\032\036.vectordb.Vect" +
+      "orSearchResponse\022N\n\nBatchWrite\022!.vectord" +
+      "b.VectorBatchWriteRequest\032\035.vectordb.Vec" +
+      "torWriteResponse\022D\n\005Write\022\034.vectordb.Vec" +
+      "torWriteRequest\032\035.vectordb.VectorWriteRe" +
+      "sponse\022A\n\004Read\022\033.vectordb.VectorReadRequ" +
+      "est\032\034.vectordb.VectorReadResponse\022G\n\006Upd" +
+      "ate\022\035.vectordb.VectorUpdateRequest\032\036.vec" +
+      "tordb.VectorUpdateResponse\022G\n\006Delete\022\035.v" +
+      "ectordb.VectorDeleteRequest\032\036.vectordb.V" +
+      "ectorDeleteResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_vectordb_VectorWriteRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_vectordb_VectorWriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorWriteRequest_descriptor,
-        new java.lang.String[] { "Key", "Vector", });
+        new java.lang.String[] { "Key", "Vector", "CreatedAt", "UpdatedAt", });
     internal_static_vectordb_VectorBatchWriteRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vectordb_VectorBatchWriteRequest_fieldAccessorTable = new
@@ -6526,7 +8771,7 @@ public final class Vectordb {
     internal_static_vectordb_VectorUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorUpdateRequest_descriptor,
-        new java.lang.String[] { "Key", "Vector", });
+        new java.lang.String[] { "Key", "Vector", "CreatedAt", "UpdatedAt", });
     internal_static_vectordb_VectorUpdateResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_vectordb_VectorUpdateResponse_fieldAccessorTable = new
@@ -6545,12 +8790,25 @@ public final class Vectordb {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorDeleteResponse_descriptor,
         new java.lang.String[] { "Success", });
-    internal_static_vectordb_VectorEmbedAndWriteRequest_descriptor =
+    internal_static_vectordb_VectorSearchRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_vectordb_VectorEmbedAndWriteRequest_fieldAccessorTable = new
+    internal_static_vectordb_VectorSearchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vectordb_VectorEmbedAndWriteRequest_descriptor,
-        new java.lang.String[] { "Key", "Data", "Rows", "Cols", });
+        internal_static_vectordb_VectorSearchRequest_descriptor,
+        new java.lang.String[] { "Query", "TopK", "Metric", "Threshold", });
+    internal_static_vectordb_VectorSearchResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_vectordb_VectorSearchResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vectordb_VectorSearchResponse_descriptor,
+        new java.lang.String[] { "Matches", });
+    internal_static_vectordb_SearchResult_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_vectordb_SearchResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vectordb_SearchResult_descriptor,
+        new java.lang.String[] { "Key", "Score", });
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
