@@ -79,28 +79,28 @@ public final class Vectordb {
     com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The keyspace.
      */
-    java.lang.String getKeyspaceName();
+    java.lang.String getKeyspace();
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The bytes for keyspace.
      */
     com.google.protobuf.ByteString
-        getKeyspaceNameBytes();
+        getKeyspaceBytes();
 
     /**
-     * <code>string table_name = 6;</code>
-     * @return The tableName.
+     * <code>string table = 6;</code>
+     * @return The table.
      */
-    java.lang.String getTableName();
+    java.lang.String getTable();
     /**
-     * <code>string table_name = 6;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 6;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getTableNameBytes();
+        getTableBytes();
   }
   /**
    * <pre>
@@ -121,8 +121,8 @@ public final class Vectordb {
     private VectorWriteRequest() {
       key_ = "";
       vector_ = emptyFloatList();
-      keyspaceName_ = "";
-      tableName_ = "";
+      keyspace_ = "";
+      table_ = "";
     }
 
     @java.lang.Override
@@ -267,78 +267,78 @@ public final class Vectordb {
       return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
     }
 
-    public static final int KEYSPACE_NAME_FIELD_NUMBER = 5;
+    public static final int KEYSPACE_FIELD_NUMBER = 5;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object keyspaceName_ = "";
+    private volatile java.lang.Object keyspace_ = "";
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The keyspace.
      */
     @java.lang.Override
-    public java.lang.String getKeyspaceName() {
-      java.lang.Object ref = keyspaceName_;
+    public java.lang.String getKeyspace() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        keyspaceName_ = s;
+        keyspace_ = s;
         return s;
       }
     }
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The bytes for keyspace.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeyspaceNameBytes() {
-      java.lang.Object ref = keyspaceName_;
+        getKeyspaceBytes() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        keyspaceName_ = b;
+        keyspace_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TABLE_NAME_FIELD_NUMBER = 6;
+    public static final int TABLE_FIELD_NUMBER = 6;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object tableName_ = "";
+    private volatile java.lang.Object table_ = "";
     /**
-     * <code>string table_name = 6;</code>
-     * @return The tableName.
+     * <code>string table = 6;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
-     * <code>string table_name = 6;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 6;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tableName_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -376,11 +376,11 @@ public final class Vectordb {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(4, getUpdatedAt());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, table_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -413,11 +413,11 @@ public final class Vectordb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getUpdatedAt());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, table_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -448,10 +448,10 @@ public final class Vectordb {
         if (!getUpdatedAt()
             .equals(other.getUpdatedAt())) return false;
       }
-      if (!getKeyspaceName()
-          .equals(other.getKeyspaceName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
+      if (!getKeyspace()
+          .equals(other.getKeyspace())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -477,10 +477,10 @@ public final class Vectordb {
         hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getUpdatedAt().hashCode();
       }
-      hash = (37 * hash) + KEYSPACE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyspaceName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + KEYSPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyspace().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -635,8 +635,8 @@ public final class Vectordb {
           updatedAtBuilder_.dispose();
           updatedAtBuilder_ = null;
         }
-        keyspaceName_ = "";
-        tableName_ = "";
+        keyspace_ = "";
+        table_ = "";
         return this;
       }
 
@@ -691,10 +691,10 @@ public final class Vectordb {
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.keyspaceName_ = keyspaceName_;
+          result.keyspace_ = keyspace_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.tableName_ = tableName_;
+          result.table_ = table_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -765,13 +765,13 @@ public final class Vectordb {
         if (other.hasUpdatedAt()) {
           mergeUpdatedAt(other.getUpdatedAt());
         }
-        if (!other.getKeyspaceName().isEmpty()) {
-          keyspaceName_ = other.keyspaceName_;
+        if (!other.getKeyspace().isEmpty()) {
+          keyspace_ = other.keyspace_;
           bitField0_ |= 0x00000010;
           onChanged();
         }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           bitField0_ |= 0x00000020;
           onChanged();
         }
@@ -838,12 +838,12 @@ public final class Vectordb {
                 break;
               } // case 34
               case 42: {
-                keyspaceName_ = input.readStringRequireUtf8();
+                keyspace_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
               case 50: {
-                tableName_ = input.readStringRequireUtf8();
+                table_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
@@ -1268,145 +1268,145 @@ public final class Vectordb {
         return updatedAtBuilder_;
       }
 
-      private java.lang.Object keyspaceName_ = "";
+      private java.lang.Object keyspace_ = "";
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @return The keyspaceName.
+       * <code>string keyspace = 5;</code>
+       * @return The keyspace.
        */
-      public java.lang.String getKeyspaceName() {
-        java.lang.Object ref = keyspaceName_;
+      public java.lang.String getKeyspace() {
+        java.lang.Object ref = keyspace_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          keyspaceName_ = s;
+          keyspace_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @return The bytes for keyspaceName.
+       * <code>string keyspace = 5;</code>
+       * @return The bytes for keyspace.
        */
       public com.google.protobuf.ByteString
-          getKeyspaceNameBytes() {
-        java.lang.Object ref = keyspaceName_;
+          getKeyspaceBytes() {
+        java.lang.Object ref = keyspace_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          keyspaceName_ = b;
+          keyspace_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @param value The keyspaceName to set.
+       * <code>string keyspace = 5;</code>
+       * @param value The keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceName(
+      public Builder setKeyspace(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 5;</code>
+       * <code>string keyspace = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKeyspaceName() {
-        keyspaceName_ = getDefaultInstance().getKeyspaceName();
+      public Builder clearKeyspace() {
+        keyspace_ = getDefaultInstance().getKeyspace();
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @param value The bytes for keyspaceName to set.
+       * <code>string keyspace = 5;</code>
+       * @param value The bytes for keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceNameBytes(
+      public Builder setKeyspaceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private java.lang.Object tableName_ = "";
+      private java.lang.Object table_ = "";
       /**
-       * <code>string table_name = 6;</code>
-       * @return The tableName.
+       * <code>string table = 6;</code>
+       * @return The table.
        */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @return The bytes for tableName.
+       * <code>string table = 6;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tableName_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @param value The tableName to set.
+       * <code>string table = 6;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableName(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 6;</code>
+       * <code>string table = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTableName() {
-        tableName_ = getDefaultInstance().getTableName();
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
         bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @param value The bytes for tableName to set.
+       * <code>string table = 6;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableNameBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
@@ -1504,28 +1504,28 @@ public final class Vectordb {
         int index);
 
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The keyspace.
      */
-    java.lang.String getKeyspaceName();
+    java.lang.String getKeyspace();
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The bytes for keyspace.
      */
     com.google.protobuf.ByteString
-        getKeyspaceNameBytes();
+        getKeyspaceBytes();
 
     /**
-     * <code>string table_name = 3;</code>
-     * @return The tableName.
+     * <code>string table = 3;</code>
+     * @return The table.
      */
-    java.lang.String getTableName();
+    java.lang.String getTable();
     /**
-     * <code>string table_name = 3;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 3;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getTableNameBytes();
+        getTableBytes();
   }
   /**
    * Protobuf type {@code vectordb.VectorBatchWriteRequest}
@@ -1541,8 +1541,8 @@ public final class Vectordb {
     }
     private VectorBatchWriteRequest() {
       vectors_ = java.util.Collections.emptyList();
-      keyspaceName_ = "";
-      tableName_ = "";
+      keyspace_ = "";
+      table_ = "";
     }
 
     @java.lang.Override
@@ -1606,78 +1606,78 @@ public final class Vectordb {
       return vectors_.get(index);
     }
 
-    public static final int KEYSPACE_NAME_FIELD_NUMBER = 2;
+    public static final int KEYSPACE_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object keyspaceName_ = "";
+    private volatile java.lang.Object keyspace_ = "";
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The keyspace.
      */
     @java.lang.Override
-    public java.lang.String getKeyspaceName() {
-      java.lang.Object ref = keyspaceName_;
+    public java.lang.String getKeyspace() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        keyspaceName_ = s;
+        keyspace_ = s;
         return s;
       }
     }
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The bytes for keyspace.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeyspaceNameBytes() {
-      java.lang.Object ref = keyspaceName_;
+        getKeyspaceBytes() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        keyspaceName_ = b;
+        keyspace_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TABLE_NAME_FIELD_NUMBER = 3;
+    public static final int TABLE_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object tableName_ = "";
+    private volatile java.lang.Object table_ = "";
     /**
-     * <code>string table_name = 3;</code>
-     * @return The tableName.
+     * <code>string table = 3;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
-     * <code>string table_name = 3;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 3;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tableName_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1701,11 +1701,11 @@ public final class Vectordb {
       for (int i = 0; i < vectors_.size(); i++) {
         output.writeMessage(1, vectors_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, table_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1720,11 +1720,11 @@ public final class Vectordb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, vectors_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, table_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1743,10 +1743,10 @@ public final class Vectordb {
 
       if (!getVectorsList()
           .equals(other.getVectorsList())) return false;
-      if (!getKeyspaceName()
-          .equals(other.getKeyspaceName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
+      if (!getKeyspace()
+          .equals(other.getKeyspace())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1762,10 +1762,10 @@ public final class Vectordb {
         hash = (37 * hash) + VECTORS_FIELD_NUMBER;
         hash = (53 * hash) + getVectorsList().hashCode();
       }
-      hash = (37 * hash) + KEYSPACE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyspaceName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + KEYSPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyspace().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1904,8 +1904,8 @@ public final class Vectordb {
           vectorsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        keyspaceName_ = "";
-        tableName_ = "";
+        keyspace_ = "";
+        table_ = "";
         return this;
       }
 
@@ -1953,10 +1953,10 @@ public final class Vectordb {
       private void buildPartial0(vectordb.Vectordb.VectorBatchWriteRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.keyspaceName_ = keyspaceName_;
+          result.keyspace_ = keyspace_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.tableName_ = tableName_;
+          result.table_ = table_;
         }
       }
 
@@ -2030,13 +2030,13 @@ public final class Vectordb {
             }
           }
         }
-        if (!other.getKeyspaceName().isEmpty()) {
-          keyspaceName_ = other.keyspaceName_;
+        if (!other.getKeyspace().isEmpty()) {
+          keyspace_ = other.keyspace_;
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           bitField0_ |= 0x00000004;
           onChanged();
         }
@@ -2080,12 +2080,12 @@ public final class Vectordb {
                 break;
               } // case 10
               case 18: {
-                keyspaceName_ = input.readStringRequireUtf8();
+                keyspace_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
               case 26: {
-                tableName_ = input.readStringRequireUtf8();
+                table_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -2346,145 +2346,145 @@ public final class Vectordb {
         return vectorsBuilder_;
       }
 
-      private java.lang.Object keyspaceName_ = "";
+      private java.lang.Object keyspace_ = "";
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @return The keyspaceName.
+       * <code>string keyspace = 2;</code>
+       * @return The keyspace.
        */
-      public java.lang.String getKeyspaceName() {
-        java.lang.Object ref = keyspaceName_;
+      public java.lang.String getKeyspace() {
+        java.lang.Object ref = keyspace_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          keyspaceName_ = s;
+          keyspace_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @return The bytes for keyspaceName.
+       * <code>string keyspace = 2;</code>
+       * @return The bytes for keyspace.
        */
       public com.google.protobuf.ByteString
-          getKeyspaceNameBytes() {
-        java.lang.Object ref = keyspaceName_;
+          getKeyspaceBytes() {
+        java.lang.Object ref = keyspace_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          keyspaceName_ = b;
+          keyspace_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @param value The keyspaceName to set.
+       * <code>string keyspace = 2;</code>
+       * @param value The keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceName(
+      public Builder setKeyspace(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 2;</code>
+       * <code>string keyspace = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKeyspaceName() {
-        keyspaceName_ = getDefaultInstance().getKeyspaceName();
+      public Builder clearKeyspace() {
+        keyspace_ = getDefaultInstance().getKeyspace();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @param value The bytes for keyspaceName to set.
+       * <code>string keyspace = 2;</code>
+       * @param value The bytes for keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceNameBytes(
+      public Builder setKeyspaceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private java.lang.Object tableName_ = "";
+      private java.lang.Object table_ = "";
       /**
-       * <code>string table_name = 3;</code>
-       * @return The tableName.
+       * <code>string table = 3;</code>
+       * @return The table.
        */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @return The bytes for tableName.
+       * <code>string table = 3;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tableName_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @param value The tableName to set.
+       * <code>string table = 3;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableName(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 3;</code>
+       * <code>string table = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTableName() {
-        tableName_ = getDefaultInstance().getTableName();
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @param value The bytes for tableName to set.
+       * <code>string table = 3;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableNameBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
@@ -3047,28 +3047,28 @@ public final class Vectordb {
         getKeyBytes();
 
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The keyspace.
      */
-    java.lang.String getKeyspaceName();
+    java.lang.String getKeyspace();
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The bytes for keyspace.
      */
     com.google.protobuf.ByteString
-        getKeyspaceNameBytes();
+        getKeyspaceBytes();
 
     /**
-     * <code>string table_name = 3;</code>
-     * @return The tableName.
+     * <code>string table = 3;</code>
+     * @return The table.
      */
-    java.lang.String getTableName();
+    java.lang.String getTable();
     /**
-     * <code>string table_name = 3;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 3;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getTableNameBytes();
+        getTableBytes();
   }
   /**
    * Protobuf type {@code vectordb.VectorReadRequest}
@@ -3084,8 +3084,8 @@ public final class Vectordb {
     }
     private VectorReadRequest() {
       key_ = "";
-      keyspaceName_ = "";
-      tableName_ = "";
+      keyspace_ = "";
+      table_ = "";
     }
 
     @java.lang.Override
@@ -3147,78 +3147,78 @@ public final class Vectordb {
       }
     }
 
-    public static final int KEYSPACE_NAME_FIELD_NUMBER = 2;
+    public static final int KEYSPACE_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object keyspaceName_ = "";
+    private volatile java.lang.Object keyspace_ = "";
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The keyspace.
      */
     @java.lang.Override
-    public java.lang.String getKeyspaceName() {
-      java.lang.Object ref = keyspaceName_;
+    public java.lang.String getKeyspace() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        keyspaceName_ = s;
+        keyspace_ = s;
         return s;
       }
     }
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The bytes for keyspace.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeyspaceNameBytes() {
-      java.lang.Object ref = keyspaceName_;
+        getKeyspaceBytes() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        keyspaceName_ = b;
+        keyspace_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TABLE_NAME_FIELD_NUMBER = 3;
+    public static final int TABLE_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object tableName_ = "";
+    private volatile java.lang.Object table_ = "";
     /**
-     * <code>string table_name = 3;</code>
-     * @return The tableName.
+     * <code>string table = 3;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
-     * <code>string table_name = 3;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 3;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tableName_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3242,11 +3242,11 @@ public final class Vectordb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, table_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3260,11 +3260,11 @@ public final class Vectordb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, table_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3283,10 +3283,10 @@ public final class Vectordb {
 
       if (!getKey()
           .equals(other.getKey())) return false;
-      if (!getKeyspaceName()
-          .equals(other.getKeyspaceName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
+      if (!getKeyspace()
+          .equals(other.getKeyspace())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3300,10 +3300,10 @@ public final class Vectordb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
-      hash = (37 * hash) + KEYSPACE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyspaceName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + KEYSPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyspace().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3436,8 +3436,8 @@ public final class Vectordb {
         super.clear();
         bitField0_ = 0;
         key_ = "";
-        keyspaceName_ = "";
-        tableName_ = "";
+        keyspace_ = "";
+        table_ = "";
         return this;
       }
 
@@ -3475,10 +3475,10 @@ public final class Vectordb {
           result.key_ = key_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.keyspaceName_ = keyspaceName_;
+          result.keyspace_ = keyspace_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.tableName_ = tableName_;
+          result.table_ = table_;
         }
       }
 
@@ -3531,13 +3531,13 @@ public final class Vectordb {
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.getKeyspaceName().isEmpty()) {
-          keyspaceName_ = other.keyspaceName_;
+        if (!other.getKeyspace().isEmpty()) {
+          keyspace_ = other.keyspace_;
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           bitField0_ |= 0x00000004;
           onChanged();
         }
@@ -3573,12 +3573,12 @@ public final class Vectordb {
                 break;
               } // case 10
               case 18: {
-                keyspaceName_ = input.readStringRequireUtf8();
+                keyspace_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
               case 26: {
-                tableName_ = input.readStringRequireUtf8();
+                table_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -3671,145 +3671,145 @@ public final class Vectordb {
         return this;
       }
 
-      private java.lang.Object keyspaceName_ = "";
+      private java.lang.Object keyspace_ = "";
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @return The keyspaceName.
+       * <code>string keyspace = 2;</code>
+       * @return The keyspace.
        */
-      public java.lang.String getKeyspaceName() {
-        java.lang.Object ref = keyspaceName_;
+      public java.lang.String getKeyspace() {
+        java.lang.Object ref = keyspace_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          keyspaceName_ = s;
+          keyspace_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @return The bytes for keyspaceName.
+       * <code>string keyspace = 2;</code>
+       * @return The bytes for keyspace.
        */
       public com.google.protobuf.ByteString
-          getKeyspaceNameBytes() {
-        java.lang.Object ref = keyspaceName_;
+          getKeyspaceBytes() {
+        java.lang.Object ref = keyspace_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          keyspaceName_ = b;
+          keyspace_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @param value The keyspaceName to set.
+       * <code>string keyspace = 2;</code>
+       * @param value The keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceName(
+      public Builder setKeyspace(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 2;</code>
+       * <code>string keyspace = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKeyspaceName() {
-        keyspaceName_ = getDefaultInstance().getKeyspaceName();
+      public Builder clearKeyspace() {
+        keyspace_ = getDefaultInstance().getKeyspace();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @param value The bytes for keyspaceName to set.
+       * <code>string keyspace = 2;</code>
+       * @param value The bytes for keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceNameBytes(
+      public Builder setKeyspaceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private java.lang.Object tableName_ = "";
+      private java.lang.Object table_ = "";
       /**
-       * <code>string table_name = 3;</code>
-       * @return The tableName.
+       * <code>string table = 3;</code>
+       * @return The table.
        */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @return The bytes for tableName.
+       * <code>string table = 3;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tableName_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @param value The tableName to set.
+       * <code>string table = 3;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableName(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 3;</code>
+       * <code>string table = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTableName() {
-        tableName_ = getDefaultInstance().getTableName();
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @param value The bytes for tableName to set.
+       * <code>string table = 3;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableNameBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
@@ -4615,28 +4615,28 @@ public final class Vectordb {
     com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The keyspace.
      */
-    java.lang.String getKeyspaceName();
+    java.lang.String getKeyspace();
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The bytes for keyspace.
      */
     com.google.protobuf.ByteString
-        getKeyspaceNameBytes();
+        getKeyspaceBytes();
 
     /**
-     * <code>string table_name = 6;</code>
-     * @return The tableName.
+     * <code>string table = 6;</code>
+     * @return The table.
      */
-    java.lang.String getTableName();
+    java.lang.String getTable();
     /**
-     * <code>string table_name = 6;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 6;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getTableNameBytes();
+        getTableBytes();
   }
   /**
    * Protobuf type {@code vectordb.VectorUpdateRequest}
@@ -4653,8 +4653,8 @@ public final class Vectordb {
     private VectorUpdateRequest() {
       key_ = "";
       vector_ = emptyFloatList();
-      keyspaceName_ = "";
-      tableName_ = "";
+      keyspace_ = "";
+      table_ = "";
     }
 
     @java.lang.Override
@@ -4799,78 +4799,78 @@ public final class Vectordb {
       return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
     }
 
-    public static final int KEYSPACE_NAME_FIELD_NUMBER = 5;
+    public static final int KEYSPACE_FIELD_NUMBER = 5;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object keyspaceName_ = "";
+    private volatile java.lang.Object keyspace_ = "";
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The keyspace.
      */
     @java.lang.Override
-    public java.lang.String getKeyspaceName() {
-      java.lang.Object ref = keyspaceName_;
+    public java.lang.String getKeyspace() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        keyspaceName_ = s;
+        keyspace_ = s;
         return s;
       }
     }
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The bytes for keyspace.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeyspaceNameBytes() {
-      java.lang.Object ref = keyspaceName_;
+        getKeyspaceBytes() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        keyspaceName_ = b;
+        keyspace_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TABLE_NAME_FIELD_NUMBER = 6;
+    public static final int TABLE_FIELD_NUMBER = 6;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object tableName_ = "";
+    private volatile java.lang.Object table_ = "";
     /**
-     * <code>string table_name = 6;</code>
-     * @return The tableName.
+     * <code>string table = 6;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
-     * <code>string table_name = 6;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 6;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tableName_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4908,11 +4908,11 @@ public final class Vectordb {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(4, getUpdatedAt());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, table_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4945,11 +4945,11 @@ public final class Vectordb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getUpdatedAt());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, table_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4980,10 +4980,10 @@ public final class Vectordb {
         if (!getUpdatedAt()
             .equals(other.getUpdatedAt())) return false;
       }
-      if (!getKeyspaceName()
-          .equals(other.getKeyspaceName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
+      if (!getKeyspace()
+          .equals(other.getKeyspace())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5009,10 +5009,10 @@ public final class Vectordb {
         hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getUpdatedAt().hashCode();
       }
-      hash = (37 * hash) + KEYSPACE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyspaceName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + KEYSPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyspace().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5163,8 +5163,8 @@ public final class Vectordb {
           updatedAtBuilder_.dispose();
           updatedAtBuilder_ = null;
         }
-        keyspaceName_ = "";
-        tableName_ = "";
+        keyspace_ = "";
+        table_ = "";
         return this;
       }
 
@@ -5219,10 +5219,10 @@ public final class Vectordb {
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.keyspaceName_ = keyspaceName_;
+          result.keyspace_ = keyspace_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.tableName_ = tableName_;
+          result.table_ = table_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -5293,13 +5293,13 @@ public final class Vectordb {
         if (other.hasUpdatedAt()) {
           mergeUpdatedAt(other.getUpdatedAt());
         }
-        if (!other.getKeyspaceName().isEmpty()) {
-          keyspaceName_ = other.keyspaceName_;
+        if (!other.getKeyspace().isEmpty()) {
+          keyspace_ = other.keyspace_;
           bitField0_ |= 0x00000010;
           onChanged();
         }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           bitField0_ |= 0x00000020;
           onChanged();
         }
@@ -5366,12 +5366,12 @@ public final class Vectordb {
                 break;
               } // case 34
               case 42: {
-                keyspaceName_ = input.readStringRequireUtf8();
+                keyspace_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
               case 50: {
-                tableName_ = input.readStringRequireUtf8();
+                table_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
@@ -5796,145 +5796,145 @@ public final class Vectordb {
         return updatedAtBuilder_;
       }
 
-      private java.lang.Object keyspaceName_ = "";
+      private java.lang.Object keyspace_ = "";
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @return The keyspaceName.
+       * <code>string keyspace = 5;</code>
+       * @return The keyspace.
        */
-      public java.lang.String getKeyspaceName() {
-        java.lang.Object ref = keyspaceName_;
+      public java.lang.String getKeyspace() {
+        java.lang.Object ref = keyspace_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          keyspaceName_ = s;
+          keyspace_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @return The bytes for keyspaceName.
+       * <code>string keyspace = 5;</code>
+       * @return The bytes for keyspace.
        */
       public com.google.protobuf.ByteString
-          getKeyspaceNameBytes() {
-        java.lang.Object ref = keyspaceName_;
+          getKeyspaceBytes() {
+        java.lang.Object ref = keyspace_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          keyspaceName_ = b;
+          keyspace_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @param value The keyspaceName to set.
+       * <code>string keyspace = 5;</code>
+       * @param value The keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceName(
+      public Builder setKeyspace(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 5;</code>
+       * <code>string keyspace = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKeyspaceName() {
-        keyspaceName_ = getDefaultInstance().getKeyspaceName();
+      public Builder clearKeyspace() {
+        keyspace_ = getDefaultInstance().getKeyspace();
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @param value The bytes for keyspaceName to set.
+       * <code>string keyspace = 5;</code>
+       * @param value The bytes for keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceNameBytes(
+      public Builder setKeyspaceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private java.lang.Object tableName_ = "";
+      private java.lang.Object table_ = "";
       /**
-       * <code>string table_name = 6;</code>
-       * @return The tableName.
+       * <code>string table = 6;</code>
+       * @return The table.
        */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @return The bytes for tableName.
+       * <code>string table = 6;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tableName_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @param value The tableName to set.
+       * <code>string table = 6;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableName(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 6;</code>
+       * <code>string table = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTableName() {
-        tableName_ = getDefaultInstance().getTableName();
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
         bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @param value The bytes for tableName to set.
+       * <code>string table = 6;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableNameBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
@@ -6497,28 +6497,28 @@ public final class Vectordb {
         getKeyBytes();
 
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The keyspace.
      */
-    java.lang.String getKeyspaceName();
+    java.lang.String getKeyspace();
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The bytes for keyspace.
      */
     com.google.protobuf.ByteString
-        getKeyspaceNameBytes();
+        getKeyspaceBytes();
 
     /**
-     * <code>string table_name = 3;</code>
-     * @return The tableName.
+     * <code>string table = 3;</code>
+     * @return The table.
      */
-    java.lang.String getTableName();
+    java.lang.String getTable();
     /**
-     * <code>string table_name = 3;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 3;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getTableNameBytes();
+        getTableBytes();
   }
   /**
    * Protobuf type {@code vectordb.VectorDeleteRequest}
@@ -6534,8 +6534,8 @@ public final class Vectordb {
     }
     private VectorDeleteRequest() {
       key_ = "";
-      keyspaceName_ = "";
-      tableName_ = "";
+      keyspace_ = "";
+      table_ = "";
     }
 
     @java.lang.Override
@@ -6597,78 +6597,78 @@ public final class Vectordb {
       }
     }
 
-    public static final int KEYSPACE_NAME_FIELD_NUMBER = 2;
+    public static final int KEYSPACE_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object keyspaceName_ = "";
+    private volatile java.lang.Object keyspace_ = "";
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The keyspace.
      */
     @java.lang.Override
-    public java.lang.String getKeyspaceName() {
-      java.lang.Object ref = keyspaceName_;
+    public java.lang.String getKeyspace() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        keyspaceName_ = s;
+        keyspace_ = s;
         return s;
       }
     }
     /**
-     * <code>string keyspace_name = 2;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 2;</code>
+     * @return The bytes for keyspace.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeyspaceNameBytes() {
-      java.lang.Object ref = keyspaceName_;
+        getKeyspaceBytes() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        keyspaceName_ = b;
+        keyspace_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TABLE_NAME_FIELD_NUMBER = 3;
+    public static final int TABLE_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object tableName_ = "";
+    private volatile java.lang.Object table_ = "";
     /**
-     * <code>string table_name = 3;</code>
-     * @return The tableName.
+     * <code>string table = 3;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
-     * <code>string table_name = 3;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 3;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tableName_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6692,11 +6692,11 @@ public final class Vectordb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, table_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -6710,11 +6710,11 @@ public final class Vectordb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, table_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6733,10 +6733,10 @@ public final class Vectordb {
 
       if (!getKey()
           .equals(other.getKey())) return false;
-      if (!getKeyspaceName()
-          .equals(other.getKeyspaceName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
+      if (!getKeyspace()
+          .equals(other.getKeyspace())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6750,10 +6750,10 @@ public final class Vectordb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
-      hash = (37 * hash) + KEYSPACE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyspaceName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + KEYSPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyspace().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6886,8 +6886,8 @@ public final class Vectordb {
         super.clear();
         bitField0_ = 0;
         key_ = "";
-        keyspaceName_ = "";
-        tableName_ = "";
+        keyspace_ = "";
+        table_ = "";
         return this;
       }
 
@@ -6925,10 +6925,10 @@ public final class Vectordb {
           result.key_ = key_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.keyspaceName_ = keyspaceName_;
+          result.keyspace_ = keyspace_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.tableName_ = tableName_;
+          result.table_ = table_;
         }
       }
 
@@ -6981,13 +6981,13 @@ public final class Vectordb {
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.getKeyspaceName().isEmpty()) {
-          keyspaceName_ = other.keyspaceName_;
+        if (!other.getKeyspace().isEmpty()) {
+          keyspace_ = other.keyspace_;
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           bitField0_ |= 0x00000004;
           onChanged();
         }
@@ -7023,12 +7023,12 @@ public final class Vectordb {
                 break;
               } // case 10
               case 18: {
-                keyspaceName_ = input.readStringRequireUtf8();
+                keyspace_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
               case 26: {
-                tableName_ = input.readStringRequireUtf8();
+                table_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -7121,145 +7121,145 @@ public final class Vectordb {
         return this;
       }
 
-      private java.lang.Object keyspaceName_ = "";
+      private java.lang.Object keyspace_ = "";
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @return The keyspaceName.
+       * <code>string keyspace = 2;</code>
+       * @return The keyspace.
        */
-      public java.lang.String getKeyspaceName() {
-        java.lang.Object ref = keyspaceName_;
+      public java.lang.String getKeyspace() {
+        java.lang.Object ref = keyspace_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          keyspaceName_ = s;
+          keyspace_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @return The bytes for keyspaceName.
+       * <code>string keyspace = 2;</code>
+       * @return The bytes for keyspace.
        */
       public com.google.protobuf.ByteString
-          getKeyspaceNameBytes() {
-        java.lang.Object ref = keyspaceName_;
+          getKeyspaceBytes() {
+        java.lang.Object ref = keyspace_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          keyspaceName_ = b;
+          keyspace_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @param value The keyspaceName to set.
+       * <code>string keyspace = 2;</code>
+       * @param value The keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceName(
+      public Builder setKeyspace(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 2;</code>
+       * <code>string keyspace = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKeyspaceName() {
-        keyspaceName_ = getDefaultInstance().getKeyspaceName();
+      public Builder clearKeyspace() {
+        keyspace_ = getDefaultInstance().getKeyspace();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 2;</code>
-       * @param value The bytes for keyspaceName to set.
+       * <code>string keyspace = 2;</code>
+       * @param value The bytes for keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceNameBytes(
+      public Builder setKeyspaceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private java.lang.Object tableName_ = "";
+      private java.lang.Object table_ = "";
       /**
-       * <code>string table_name = 3;</code>
-       * @return The tableName.
+       * <code>string table = 3;</code>
+       * @return The table.
        */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @return The bytes for tableName.
+       * <code>string table = 3;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tableName_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @param value The tableName to set.
+       * <code>string table = 3;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableName(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 3;</code>
+       * <code>string table = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTableName() {
-        tableName_ = getDefaultInstance().getTableName();
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 3;</code>
-       * @param value The bytes for tableName to set.
+       * <code>string table = 3;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableNameBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
@@ -7851,28 +7851,28 @@ public final class Vectordb {
     float getThreshold();
 
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The keyspace.
      */
-    java.lang.String getKeyspaceName();
+    java.lang.String getKeyspace();
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The bytes for keyspace.
      */
     com.google.protobuf.ByteString
-        getKeyspaceNameBytes();
+        getKeyspaceBytes();
 
     /**
-     * <code>string table_name = 6;</code>
-     * @return The tableName.
+     * <code>string table = 6;</code>
+     * @return The table.
      */
-    java.lang.String getTableName();
+    java.lang.String getTable();
     /**
-     * <code>string table_name = 6;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 6;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getTableNameBytes();
+        getTableBytes();
   }
   /**
    * Protobuf type {@code vectordb.VectorSearchRequest}
@@ -7889,8 +7889,8 @@ public final class Vectordb {
     private VectorSearchRequest() {
       query_ = emptyFloatList();
       metric_ = "";
-      keyspaceName_ = "";
-      tableName_ = "";
+      keyspace_ = "";
+      table_ = "";
     }
 
     @java.lang.Override
@@ -8004,78 +8004,78 @@ public final class Vectordb {
       return threshold_;
     }
 
-    public static final int KEYSPACE_NAME_FIELD_NUMBER = 5;
+    public static final int KEYSPACE_FIELD_NUMBER = 5;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object keyspaceName_ = "";
+    private volatile java.lang.Object keyspace_ = "";
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The keyspace.
      */
     @java.lang.Override
-    public java.lang.String getKeyspaceName() {
-      java.lang.Object ref = keyspaceName_;
+    public java.lang.String getKeyspace() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        keyspaceName_ = s;
+        keyspace_ = s;
         return s;
       }
     }
     /**
-     * <code>string keyspace_name = 5;</code>
-     * @return The bytes for keyspaceName.
+     * <code>string keyspace = 5;</code>
+     * @return The bytes for keyspace.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeyspaceNameBytes() {
-      java.lang.Object ref = keyspaceName_;
+        getKeyspaceBytes() {
+      java.lang.Object ref = keyspace_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        keyspaceName_ = b;
+        keyspace_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TABLE_NAME_FIELD_NUMBER = 6;
+    public static final int TABLE_FIELD_NUMBER = 6;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object tableName_ = "";
+    private volatile java.lang.Object table_ = "";
     /**
-     * <code>string table_name = 6;</code>
-     * @return The tableName.
+     * <code>string table = 6;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
-     * <code>string table_name = 6;</code>
-     * @return The bytes for tableName.
+     * <code>string table = 6;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tableName_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -8113,11 +8113,11 @@ public final class Vectordb {
       if (java.lang.Float.floatToRawIntBits(threshold_) != 0) {
         output.writeFloat(4, threshold_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, table_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -8150,11 +8150,11 @@ public final class Vectordb {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, threshold_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspaceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, keyspaceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyspace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, keyspace_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tableName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, table_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8180,10 +8180,10 @@ public final class Vectordb {
       if (java.lang.Float.floatToIntBits(getThreshold())
           != java.lang.Float.floatToIntBits(
               other.getThreshold())) return false;
-      if (!getKeyspaceName()
-          .equals(other.getKeyspaceName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
+      if (!getKeyspace()
+          .equals(other.getKeyspace())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8206,10 +8206,10 @@ public final class Vectordb {
       hash = (37 * hash) + THRESHOLD_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getThreshold());
-      hash = (37 * hash) + KEYSPACE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyspaceName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + KEYSPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyspace().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8345,8 +8345,8 @@ public final class Vectordb {
         topK_ = 0;
         metric_ = "";
         threshold_ = 0F;
-        keyspaceName_ = "";
-        tableName_ = "";
+        keyspace_ = "";
+        table_ = "";
         return this;
       }
 
@@ -8394,10 +8394,10 @@ public final class Vectordb {
           result.threshold_ = threshold_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.keyspaceName_ = keyspaceName_;
+          result.keyspace_ = keyspace_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.tableName_ = tableName_;
+          result.table_ = table_;
         }
       }
 
@@ -8467,13 +8467,13 @@ public final class Vectordb {
         if (other.getThreshold() != 0F) {
           setThreshold(other.getThreshold());
         }
-        if (!other.getKeyspaceName().isEmpty()) {
-          keyspaceName_ = other.keyspaceName_;
+        if (!other.getKeyspace().isEmpty()) {
+          keyspace_ = other.keyspace_;
           bitField0_ |= 0x00000010;
           onChanged();
         }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           bitField0_ |= 0x00000020;
           onChanged();
         }
@@ -8536,12 +8536,12 @@ public final class Vectordb {
                 break;
               } // case 37
               case 42: {
-                keyspaceName_ = input.readStringRequireUtf8();
+                keyspace_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
               case 50: {
-                tableName_ = input.readStringRequireUtf8();
+                table_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
@@ -8788,145 +8788,145 @@ public final class Vectordb {
         return this;
       }
 
-      private java.lang.Object keyspaceName_ = "";
+      private java.lang.Object keyspace_ = "";
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @return The keyspaceName.
+       * <code>string keyspace = 5;</code>
+       * @return The keyspace.
        */
-      public java.lang.String getKeyspaceName() {
-        java.lang.Object ref = keyspaceName_;
+      public java.lang.String getKeyspace() {
+        java.lang.Object ref = keyspace_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          keyspaceName_ = s;
+          keyspace_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @return The bytes for keyspaceName.
+       * <code>string keyspace = 5;</code>
+       * @return The bytes for keyspace.
        */
       public com.google.protobuf.ByteString
-          getKeyspaceNameBytes() {
-        java.lang.Object ref = keyspaceName_;
+          getKeyspaceBytes() {
+        java.lang.Object ref = keyspace_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          keyspaceName_ = b;
+          keyspace_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @param value The keyspaceName to set.
+       * <code>string keyspace = 5;</code>
+       * @param value The keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceName(
+      public Builder setKeyspace(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 5;</code>
+       * <code>string keyspace = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKeyspaceName() {
-        keyspaceName_ = getDefaultInstance().getKeyspaceName();
+      public Builder clearKeyspace() {
+        keyspace_ = getDefaultInstance().getKeyspace();
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
-       * <code>string keyspace_name = 5;</code>
-       * @param value The bytes for keyspaceName to set.
+       * <code>string keyspace = 5;</code>
+       * @param value The bytes for keyspace to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyspaceNameBytes(
+      public Builder setKeyspaceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        keyspaceName_ = value;
+        keyspace_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private java.lang.Object tableName_ = "";
+      private java.lang.Object table_ = "";
       /**
-       * <code>string table_name = 6;</code>
-       * @return The tableName.
+       * <code>string table = 6;</code>
+       * @return The table.
        */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @return The bytes for tableName.
+       * <code>string table = 6;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tableName_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @param value The tableName to set.
+       * <code>string table = 6;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableName(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 6;</code>
+       * <code>string table = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTableName() {
-        tableName_ = getDefaultInstance().getTableName();
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
         bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
-       * <code>string table_name = 6;</code>
-       * @param value The bytes for tableName to set.
+       * <code>string table = 6;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setTableNameBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        tableName_ = value;
+        table_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
@@ -10473,46 +10473,44 @@ public final class Vectordb {
   static {
     java.lang.String[] descriptorData = {
       "\n rust_server/proto/vectordb.proto\022\010vect" +
-      "ordb\032\037google/protobuf/timestamp.proto\"\274\001" +
+      "ordb\032\037google/protobuf/timestamp.proto\"\262\001" +
       "\n\022VectorWriteRequest\022\013\n\003key\030\001 \001(\t\022\016\n\006vec" +
       "tor\030\002 \003(\002\022.\n\ncreated_at\030\003 \001(\0132\032.google.p" +
       "rotobuf.Timestamp\022.\n\nupdated_at\030\004 \001(\0132\032." +
-      "google.protobuf.Timestamp\022\025\n\rkeyspace_na" +
-      "me\030\005 \001(\t\022\022\n\ntable_name\030\006 \001(\t\"s\n\027VectorBa" +
-      "tchWriteRequest\022-\n\007vectors\030\001 \003(\0132\034.vecto" +
-      "rdb.VectorWriteRequest\022\025\n\rkeyspace_name\030" +
-      "\002 \001(\t\022\022\n\ntable_name\030\003 \001(\t\"&\n\023VectorWrite" +
-      "Response\022\017\n\007success\030\001 \001(\010\"K\n\021VectorReadR" +
-      "equest\022\013\n\003key\030\001 \001(\t\022\025\n\rkeyspace_name\030\002 \001" +
-      "(\t\022\022\n\ntable_name\030\003 \001(\t\"3\n\022VectorReadResp" +
-      "onse\022\016\n\006vector\030\001 \003(\002\022\r\n\005found\030\002 \001(\010\"\275\001\n\023" +
-      "VectorUpdateRequest\022\013\n\003key\030\001 \001(\t\022\016\n\006vect" +
-      "or\030\002 \003(\002\022.\n\ncreated_at\030\003 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022.\n\nupdated_at\030\004 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022\025\n\rkeyspace_nam" +
-      "e\030\005 \001(\t\022\022\n\ntable_name\030\006 \001(\t\"\'\n\024VectorUpd" +
-      "ateResponse\022\017\n\007success\030\001 \001(\010\"M\n\023VectorDe" +
-      "leteRequest\022\013\n\003key\030\001 \001(\t\022\025\n\rkeyspace_nam" +
-      "e\030\002 \001(\t\022\022\n\ntable_name\030\003 \001(\t\"\'\n\024VectorDel" +
-      "eteResponse\022\017\n\007success\030\001 \001(\010\"\201\001\n\023VectorS" +
-      "earchRequest\022\r\n\005query\030\001 \003(\002\022\r\n\005top_k\030\002 \001" +
-      "(\005\022\016\n\006metric\030\003 \001(\t\022\021\n\tthreshold\030\004 \001(\002\022\025\n" +
-      "\rkeyspace_name\030\005 \001(\t\022\022\n\ntable_name\030\006 \001(\t" +
-      "\"?\n\024VectorSearchResponse\022\'\n\007matches\030\001 \003(" +
-      "\0132\026.vectordb.SearchResult\"*\n\014SearchResul" +
-      "t\022\013\n\003key\030\001 \001(\t\022\r\n\005score\030\002 \001(\0022\276\003\n\010Vector" +
-      "DB\022G\n\006Search\022\035.vectordb.VectorSearchRequ" +
-      "est\032\036.vectordb.VectorSearchResponse\022N\n\nB" +
-      "atchWrite\022!.vectordb.VectorBatchWriteReq" +
-      "uest\032\035.vectordb.VectorWriteResponse\022D\n\005W" +
-      "rite\022\034.vectordb.VectorWriteRequest\032\035.vec" +
-      "tordb.VectorWriteResponse\022A\n\004Read\022\033.vect" +
-      "ordb.VectorReadRequest\032\034.vectordb.Vector" +
-      "ReadResponse\022G\n\006Update\022\035.vectordb.Vector" +
-      "UpdateRequest\032\036.vectordb.VectorUpdateRes" +
-      "ponse\022G\n\006Delete\022\035.vectordb.VectorDeleteR" +
-      "equest\032\036.vectordb.VectorDeleteResponseb\006" +
-      "proto3"
+      "google.protobuf.Timestamp\022\020\n\010keyspace\030\005 " +
+      "\001(\t\022\r\n\005table\030\006 \001(\t\"i\n\027VectorBatchWriteRe" +
+      "quest\022-\n\007vectors\030\001 \003(\0132\034.vectordb.Vector" +
+      "WriteRequest\022\020\n\010keyspace\030\002 \001(\t\022\r\n\005table\030" +
+      "\003 \001(\t\"&\n\023VectorWriteResponse\022\017\n\007success\030" +
+      "\001 \001(\010\"A\n\021VectorReadRequest\022\013\n\003key\030\001 \001(\t\022" +
+      "\020\n\010keyspace\030\002 \001(\t\022\r\n\005table\030\003 \001(\t\"3\n\022Vect" +
+      "orReadResponse\022\016\n\006vector\030\001 \003(\002\022\r\n\005found\030" +
+      "\002 \001(\010\"\263\001\n\023VectorUpdateRequest\022\013\n\003key\030\001 \001" +
+      "(\t\022\016\n\006vector\030\002 \003(\002\022.\n\ncreated_at\030\003 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022.\n\nupdated_at" +
+      "\030\004 \001(\0132\032.google.protobuf.Timestamp\022\020\n\010ke" +
+      "yspace\030\005 \001(\t\022\r\n\005table\030\006 \001(\t\"\'\n\024VectorUpd" +
+      "ateResponse\022\017\n\007success\030\001 \001(\010\"C\n\023VectorDe" +
+      "leteRequest\022\013\n\003key\030\001 \001(\t\022\020\n\010keyspace\030\002 \001" +
+      "(\t\022\r\n\005table\030\003 \001(\t\"\'\n\024VectorDeleteRespons" +
+      "e\022\017\n\007success\030\001 \001(\010\"w\n\023VectorSearchReques" +
+      "t\022\r\n\005query\030\001 \003(\002\022\r\n\005top_k\030\002 \001(\005\022\016\n\006metri" +
+      "c\030\003 \001(\t\022\021\n\tthreshold\030\004 \001(\002\022\020\n\010keyspace\030\005" +
+      " \001(\t\022\r\n\005table\030\006 \001(\t\"?\n\024VectorSearchRespo" +
+      "nse\022\'\n\007matches\030\001 \003(\0132\026.vectordb.SearchRe" +
+      "sult\"*\n\014SearchResult\022\013\n\003key\030\001 \001(\t\022\r\n\005sco" +
+      "re\030\002 \001(\0022\276\003\n\010VectorDB\022G\n\006Search\022\035.vector" +
+      "db.VectorSearchRequest\032\036.vectordb.Vector" +
+      "SearchResponse\022N\n\nBatchWrite\022!.vectordb." +
+      "VectorBatchWriteRequest\032\035.vectordb.Vecto" +
+      "rWriteResponse\022D\n\005Write\022\034.vectordb.Vecto" +
+      "rWriteRequest\032\035.vectordb.VectorWriteResp" +
+      "onse\022A\n\004Read\022\033.vectordb.VectorReadReques" +
+      "t\032\034.vectordb.VectorReadResponse\022G\n\006Updat" +
+      "e\022\035.vectordb.VectorUpdateRequest\032\036.vecto" +
+      "rdb.VectorUpdateResponse\022G\n\006Delete\022\035.vec" +
+      "tordb.VectorDeleteRequest\032\036.vectordb.Vec" +
+      "torDeleteResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10524,13 +10522,13 @@ public final class Vectordb {
     internal_static_vectordb_VectorWriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorWriteRequest_descriptor,
-        new java.lang.String[] { "Key", "Vector", "CreatedAt", "UpdatedAt", "KeyspaceName", "TableName", });
+        new java.lang.String[] { "Key", "Vector", "CreatedAt", "UpdatedAt", "Keyspace", "Table", });
     internal_static_vectordb_VectorBatchWriteRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vectordb_VectorBatchWriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorBatchWriteRequest_descriptor,
-        new java.lang.String[] { "Vectors", "KeyspaceName", "TableName", });
+        new java.lang.String[] { "Vectors", "Keyspace", "Table", });
     internal_static_vectordb_VectorWriteResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_vectordb_VectorWriteResponse_fieldAccessorTable = new
@@ -10542,7 +10540,7 @@ public final class Vectordb {
     internal_static_vectordb_VectorReadRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorReadRequest_descriptor,
-        new java.lang.String[] { "Key", "KeyspaceName", "TableName", });
+        new java.lang.String[] { "Key", "Keyspace", "Table", });
     internal_static_vectordb_VectorReadResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_vectordb_VectorReadResponse_fieldAccessorTable = new
@@ -10554,7 +10552,7 @@ public final class Vectordb {
     internal_static_vectordb_VectorUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorUpdateRequest_descriptor,
-        new java.lang.String[] { "Key", "Vector", "CreatedAt", "UpdatedAt", "KeyspaceName", "TableName", });
+        new java.lang.String[] { "Key", "Vector", "CreatedAt", "UpdatedAt", "Keyspace", "Table", });
     internal_static_vectordb_VectorUpdateResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_vectordb_VectorUpdateResponse_fieldAccessorTable = new
@@ -10566,7 +10564,7 @@ public final class Vectordb {
     internal_static_vectordb_VectorDeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorDeleteRequest_descriptor,
-        new java.lang.String[] { "Key", "KeyspaceName", "TableName", });
+        new java.lang.String[] { "Key", "Keyspace", "Table", });
     internal_static_vectordb_VectorDeleteResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_vectordb_VectorDeleteResponse_fieldAccessorTable = new
@@ -10578,7 +10576,7 @@ public final class Vectordb {
     internal_static_vectordb_VectorSearchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vectordb_VectorSearchRequest_descriptor,
-        new java.lang.String[] { "Query", "TopK", "Metric", "Threshold", "KeyspaceName", "TableName", });
+        new java.lang.String[] { "Query", "TopK", "Metric", "Threshold", "Keyspace", "Table", });
     internal_static_vectordb_VectorSearchResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_vectordb_VectorSearchResponse_fieldAccessorTable = new
