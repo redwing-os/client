@@ -590,6 +590,8 @@ class VectorSearchRequest final :
   enum : int {
     kQueryFieldNumber = 1,
     kMetricFieldNumber = 3,
+    kKeyspaceNameFieldNumber = 5,
+    kTableNameFieldNumber = 6,
     kTopKFieldNumber = 2,
     kThresholdFieldNumber = 4,
   };
@@ -627,6 +629,38 @@ class VectorSearchRequest final :
   std::string* _internal_mutable_metric();
 
   public:
+  // string keyspace_name = 5;
+  void clear_keyspace_name() ;
+  const std::string& keyspace_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keyspace_name(Arg_&& arg, Args_... args);
+  std::string* mutable_keyspace_name();
+  PROTOBUF_NODISCARD std::string* release_keyspace_name();
+  void set_allocated_keyspace_name(std::string* value);
+
+  private:
+  const std::string& _internal_keyspace_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keyspace_name(
+      const std::string& value);
+  std::string* _internal_mutable_keyspace_name();
+
+  public:
+  // string table_name = 6;
+  void clear_table_name() ;
+  const std::string& table_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_table_name(Arg_&& arg, Args_... args);
+  std::string* mutable_table_name();
+  PROTOBUF_NODISCARD std::string* release_table_name();
+  void set_allocated_table_name(std::string* value);
+
+  private:
+  const std::string& _internal_table_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_table_name(
+      const std::string& value);
+  std::string* _internal_mutable_table_name();
+
+  public:
   // int32 top_k = 2;
   void clear_top_k() ;
   ::int32_t top_k() const;
@@ -653,8 +687,8 @@ class VectorSearchRequest final :
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 4, 0,
-      43, 2>
+      3, 6, 0,
+      66, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -672,6 +706,8 @@ class VectorSearchRequest final :
                               ::google::protobuf::Arena* arena, const Impl_& from);
     ::google::protobuf::RepeatedField<float> query_;
     ::google::protobuf::internal::ArenaStringPtr metric_;
+    ::google::protobuf::internal::ArenaStringPtr keyspace_name_;
+    ::google::protobuf::internal::ArenaStringPtr table_name_;
     ::int32_t top_k_;
     float threshold_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1009,6 +1045,8 @@ class VectorReadRequest final :
 
   enum : int {
     kKeyFieldNumber = 1,
+    kKeyspaceNameFieldNumber = 2,
+    kTableNameFieldNumber = 3,
   };
   // string key = 1;
   void clear_key() ;
@@ -1026,14 +1064,46 @@ class VectorReadRequest final :
   std::string* _internal_mutable_key();
 
   public:
+  // string keyspace_name = 2;
+  void clear_keyspace_name() ;
+  const std::string& keyspace_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keyspace_name(Arg_&& arg, Args_... args);
+  std::string* mutable_keyspace_name();
+  PROTOBUF_NODISCARD std::string* release_keyspace_name();
+  void set_allocated_keyspace_name(std::string* value);
+
+  private:
+  const std::string& _internal_keyspace_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keyspace_name(
+      const std::string& value);
+  std::string* _internal_mutable_keyspace_name();
+
+  public:
+  // string table_name = 3;
+  void clear_table_name() ;
+  const std::string& table_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_table_name(Arg_&& arg, Args_... args);
+  std::string* mutable_table_name();
+  PROTOBUF_NODISCARD std::string* release_table_name();
+  void set_allocated_table_name(std::string* value);
+
+  private:
+  const std::string& _internal_table_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_table_name(
+      const std::string& value);
+  std::string* _internal_mutable_table_name();
+
+  public:
   // @@protoc_insertion_point(class_scope:vectordb.VectorReadRequest)
  private:
   class _Internal;
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 0,
-      38, 2>
+      2, 3, 0,
+      61, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -1050,6 +1120,8 @@ class VectorReadRequest final :
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
     ::google::protobuf::internal::ArenaStringPtr key_;
+    ::google::protobuf::internal::ArenaStringPtr keyspace_name_;
+    ::google::protobuf::internal::ArenaStringPtr table_name_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1365,6 +1437,8 @@ class VectorDeleteRequest final :
 
   enum : int {
     kKeyFieldNumber = 1,
+    kKeyspaceNameFieldNumber = 2,
+    kTableNameFieldNumber = 3,
   };
   // string key = 1;
   void clear_key() ;
@@ -1382,14 +1456,46 @@ class VectorDeleteRequest final :
   std::string* _internal_mutable_key();
 
   public:
+  // string keyspace_name = 2;
+  void clear_keyspace_name() ;
+  const std::string& keyspace_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keyspace_name(Arg_&& arg, Args_... args);
+  std::string* mutable_keyspace_name();
+  PROTOBUF_NODISCARD std::string* release_keyspace_name();
+  void set_allocated_keyspace_name(std::string* value);
+
+  private:
+  const std::string& _internal_keyspace_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keyspace_name(
+      const std::string& value);
+  std::string* _internal_mutable_keyspace_name();
+
+  public:
+  // string table_name = 3;
+  void clear_table_name() ;
+  const std::string& table_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_table_name(Arg_&& arg, Args_... args);
+  std::string* mutable_table_name();
+  PROTOBUF_NODISCARD std::string* release_table_name();
+  void set_allocated_table_name(std::string* value);
+
+  private:
+  const std::string& _internal_table_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_table_name(
+      const std::string& value);
+  std::string* _internal_mutable_table_name();
+
+  public:
   // @@protoc_insertion_point(class_scope:vectordb.VectorDeleteRequest)
  private:
   class _Internal;
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 0,
-      40, 2>
+      2, 3, 0,
+      63, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -1406,6 +1512,8 @@ class VectorDeleteRequest final :
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
     ::google::protobuf::internal::ArenaStringPtr key_;
+    ::google::protobuf::internal::ArenaStringPtr keyspace_name_;
+    ::google::protobuf::internal::ArenaStringPtr table_name_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1740,6 +1848,8 @@ class VectorWriteRequest final :
   enum : int {
     kVectorFieldNumber = 2,
     kKeyFieldNumber = 1,
+    kKeyspaceNameFieldNumber = 5,
+    kTableNameFieldNumber = 6,
     kCreatedAtFieldNumber = 3,
     kUpdatedAtFieldNumber = 4,
   };
@@ -1775,6 +1885,38 @@ class VectorWriteRequest final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(
       const std::string& value);
   std::string* _internal_mutable_key();
+
+  public:
+  // string keyspace_name = 5;
+  void clear_keyspace_name() ;
+  const std::string& keyspace_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keyspace_name(Arg_&& arg, Args_... args);
+  std::string* mutable_keyspace_name();
+  PROTOBUF_NODISCARD std::string* release_keyspace_name();
+  void set_allocated_keyspace_name(std::string* value);
+
+  private:
+  const std::string& _internal_keyspace_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keyspace_name(
+      const std::string& value);
+  std::string* _internal_mutable_keyspace_name();
+
+  public:
+  // string table_name = 6;
+  void clear_table_name() ;
+  const std::string& table_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_table_name(Arg_&& arg, Args_... args);
+  std::string* mutable_table_name();
+  PROTOBUF_NODISCARD std::string* release_table_name();
+  void set_allocated_table_name(std::string* value);
+
+  private:
+  const std::string& _internal_table_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_table_name(
+      const std::string& value);
+  std::string* _internal_mutable_table_name();
 
   public:
   // .google.protobuf.Timestamp created_at = 3;
@@ -1813,8 +1955,8 @@ class VectorWriteRequest final :
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 4, 2,
-      39, 2>
+      3, 6, 2,
+      62, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -1834,6 +1976,8 @@ class VectorWriteRequest final :
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedField<float> vector_;
     ::google::protobuf::internal::ArenaStringPtr key_;
+    ::google::protobuf::internal::ArenaStringPtr keyspace_name_;
+    ::google::protobuf::internal::ArenaStringPtr table_name_;
     ::google::protobuf::Timestamp* created_at_;
     ::google::protobuf::Timestamp* updated_at_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -1976,6 +2120,8 @@ class VectorUpdateRequest final :
   enum : int {
     kVectorFieldNumber = 2,
     kKeyFieldNumber = 1,
+    kKeyspaceNameFieldNumber = 5,
+    kTableNameFieldNumber = 6,
     kCreatedAtFieldNumber = 3,
     kUpdatedAtFieldNumber = 4,
   };
@@ -2011,6 +2157,38 @@ class VectorUpdateRequest final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(
       const std::string& value);
   std::string* _internal_mutable_key();
+
+  public:
+  // string keyspace_name = 5;
+  void clear_keyspace_name() ;
+  const std::string& keyspace_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keyspace_name(Arg_&& arg, Args_... args);
+  std::string* mutable_keyspace_name();
+  PROTOBUF_NODISCARD std::string* release_keyspace_name();
+  void set_allocated_keyspace_name(std::string* value);
+
+  private:
+  const std::string& _internal_keyspace_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keyspace_name(
+      const std::string& value);
+  std::string* _internal_mutable_keyspace_name();
+
+  public:
+  // string table_name = 6;
+  void clear_table_name() ;
+  const std::string& table_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_table_name(Arg_&& arg, Args_... args);
+  std::string* mutable_table_name();
+  PROTOBUF_NODISCARD std::string* release_table_name();
+  void set_allocated_table_name(std::string* value);
+
+  private:
+  const std::string& _internal_table_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_table_name(
+      const std::string& value);
+  std::string* _internal_mutable_table_name();
 
   public:
   // .google.protobuf.Timestamp created_at = 3;
@@ -2049,8 +2227,8 @@ class VectorUpdateRequest final :
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 4, 2,
-      40, 2>
+      3, 6, 2,
+      63, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -2070,6 +2248,8 @@ class VectorUpdateRequest final :
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedField<float> vector_;
     ::google::protobuf::internal::ArenaStringPtr key_;
+    ::google::protobuf::internal::ArenaStringPtr keyspace_name_;
+    ::google::protobuf::internal::ArenaStringPtr table_name_;
     ::google::protobuf::Timestamp* created_at_;
     ::google::protobuf::Timestamp* updated_at_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -2394,6 +2574,8 @@ class VectorBatchWriteRequest final :
 
   enum : int {
     kVectorsFieldNumber = 1,
+    kKeyspaceNameFieldNumber = 2,
+    kTableNameFieldNumber = 3,
   };
   // repeated .vectordb.VectorWriteRequest vectors = 1;
   int vectors_size() const;
@@ -2413,14 +2595,46 @@ class VectorBatchWriteRequest final :
   ::vectordb::VectorWriteRequest* add_vectors();
   const ::google::protobuf::RepeatedPtrField< ::vectordb::VectorWriteRequest >&
       vectors() const;
+  // string keyspace_name = 2;
+  void clear_keyspace_name() ;
+  const std::string& keyspace_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keyspace_name(Arg_&& arg, Args_... args);
+  std::string* mutable_keyspace_name();
+  PROTOBUF_NODISCARD std::string* release_keyspace_name();
+  void set_allocated_keyspace_name(std::string* value);
+
+  private:
+  const std::string& _internal_keyspace_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keyspace_name(
+      const std::string& value);
+  std::string* _internal_mutable_keyspace_name();
+
+  public:
+  // string table_name = 3;
+  void clear_table_name() ;
+  const std::string& table_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_table_name(Arg_&& arg, Args_... args);
+  std::string* mutable_table_name();
+  PROTOBUF_NODISCARD std::string* release_table_name();
+  void set_allocated_table_name(std::string* value);
+
+  private:
+  const std::string& _internal_table_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_table_name(
+      const std::string& value);
+  std::string* _internal_mutable_table_name();
+
+  public:
   // @@protoc_insertion_point(class_scope:vectordb.VectorBatchWriteRequest)
  private:
   class _Internal;
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 1,
-      0, 2>
+      2, 3, 1,
+      64, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -2437,6 +2651,8 @@ class VectorBatchWriteRequest final :
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
     ::google::protobuf::RepeatedPtrField< ::vectordb::VectorWriteRequest > vectors_;
+    ::google::protobuf::internal::ArenaStringPtr keyspace_name_;
+    ::google::protobuf::internal::ArenaStringPtr table_name_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -2740,6 +2956,112 @@ inline void VectorWriteRequest::set_allocated_updated_at(::google::protobuf::Tim
   // @@protoc_insertion_point(field_set_allocated:vectordb.VectorWriteRequest.updated_at)
 }
 
+// string keyspace_name = 5;
+inline void VectorWriteRequest::clear_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.ClearToEmpty();
+}
+inline const std::string& VectorWriteRequest::keyspace_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorWriteRequest.keyspace_name)
+  return _internal_keyspace_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorWriteRequest::set_keyspace_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorWriteRequest.keyspace_name)
+}
+inline std::string* VectorWriteRequest::mutable_keyspace_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_keyspace_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorWriteRequest.keyspace_name)
+  return _s;
+}
+inline const std::string& VectorWriteRequest::_internal_keyspace_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.keyspace_name_.Get();
+}
+inline void VectorWriteRequest::_internal_set_keyspace_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(value, GetArena());
+}
+inline std::string* VectorWriteRequest::_internal_mutable_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.keyspace_name_.Mutable( GetArena());
+}
+inline std::string* VectorWriteRequest::release_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorWriteRequest.keyspace_name)
+  return _impl_.keyspace_name_.Release();
+}
+inline void VectorWriteRequest::set_allocated_keyspace_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keyspace_name_.IsDefault()) {
+          _impl_.keyspace_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorWriteRequest.keyspace_name)
+}
+
+// string table_name = 6;
+inline void VectorWriteRequest::clear_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.ClearToEmpty();
+}
+inline const std::string& VectorWriteRequest::table_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorWriteRequest.table_name)
+  return _internal_table_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorWriteRequest::set_table_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorWriteRequest.table_name)
+}
+inline std::string* VectorWriteRequest::mutable_table_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_table_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorWriteRequest.table_name)
+  return _s;
+}
+inline const std::string& VectorWriteRequest::_internal_table_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.table_name_.Get();
+}
+inline void VectorWriteRequest::_internal_set_table_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(value, GetArena());
+}
+inline std::string* VectorWriteRequest::_internal_mutable_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.table_name_.Mutable( GetArena());
+}
+inline std::string* VectorWriteRequest::release_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorWriteRequest.table_name)
+  return _impl_.table_name_.Release();
+}
+inline void VectorWriteRequest::set_allocated_table_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.table_name_.IsDefault()) {
+          _impl_.table_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorWriteRequest.table_name)
+}
+
 // -------------------------------------------------------------------
 
 // VectorBatchWriteRequest
@@ -2791,6 +3113,112 @@ inline ::google::protobuf::RepeatedPtrField<::vectordb::VectorWriteRequest>*
 VectorBatchWriteRequest::_internal_mutable_vectors() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.vectors_;
+}
+
+// string keyspace_name = 2;
+inline void VectorBatchWriteRequest::clear_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.ClearToEmpty();
+}
+inline const std::string& VectorBatchWriteRequest::keyspace_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorBatchWriteRequest.keyspace_name)
+  return _internal_keyspace_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorBatchWriteRequest::set_keyspace_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorBatchWriteRequest.keyspace_name)
+}
+inline std::string* VectorBatchWriteRequest::mutable_keyspace_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_keyspace_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorBatchWriteRequest.keyspace_name)
+  return _s;
+}
+inline const std::string& VectorBatchWriteRequest::_internal_keyspace_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.keyspace_name_.Get();
+}
+inline void VectorBatchWriteRequest::_internal_set_keyspace_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(value, GetArena());
+}
+inline std::string* VectorBatchWriteRequest::_internal_mutable_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.keyspace_name_.Mutable( GetArena());
+}
+inline std::string* VectorBatchWriteRequest::release_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorBatchWriteRequest.keyspace_name)
+  return _impl_.keyspace_name_.Release();
+}
+inline void VectorBatchWriteRequest::set_allocated_keyspace_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keyspace_name_.IsDefault()) {
+          _impl_.keyspace_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorBatchWriteRequest.keyspace_name)
+}
+
+// string table_name = 3;
+inline void VectorBatchWriteRequest::clear_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.ClearToEmpty();
+}
+inline const std::string& VectorBatchWriteRequest::table_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorBatchWriteRequest.table_name)
+  return _internal_table_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorBatchWriteRequest::set_table_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorBatchWriteRequest.table_name)
+}
+inline std::string* VectorBatchWriteRequest::mutable_table_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_table_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorBatchWriteRequest.table_name)
+  return _s;
+}
+inline const std::string& VectorBatchWriteRequest::_internal_table_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.table_name_.Get();
+}
+inline void VectorBatchWriteRequest::_internal_set_table_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(value, GetArena());
+}
+inline std::string* VectorBatchWriteRequest::_internal_mutable_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.table_name_.Mutable( GetArena());
+}
+inline std::string* VectorBatchWriteRequest::release_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorBatchWriteRequest.table_name)
+  return _impl_.table_name_.Release();
+}
+inline void VectorBatchWriteRequest::set_allocated_table_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.table_name_.IsDefault()) {
+          _impl_.table_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorBatchWriteRequest.table_name)
 }
 
 // -------------------------------------------------------------------
@@ -2875,6 +3303,112 @@ inline void VectorReadRequest::set_allocated_key(std::string* value) {
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:vectordb.VectorReadRequest.key)
+}
+
+// string keyspace_name = 2;
+inline void VectorReadRequest::clear_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.ClearToEmpty();
+}
+inline const std::string& VectorReadRequest::keyspace_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorReadRequest.keyspace_name)
+  return _internal_keyspace_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorReadRequest::set_keyspace_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorReadRequest.keyspace_name)
+}
+inline std::string* VectorReadRequest::mutable_keyspace_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_keyspace_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorReadRequest.keyspace_name)
+  return _s;
+}
+inline const std::string& VectorReadRequest::_internal_keyspace_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.keyspace_name_.Get();
+}
+inline void VectorReadRequest::_internal_set_keyspace_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(value, GetArena());
+}
+inline std::string* VectorReadRequest::_internal_mutable_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.keyspace_name_.Mutable( GetArena());
+}
+inline std::string* VectorReadRequest::release_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorReadRequest.keyspace_name)
+  return _impl_.keyspace_name_.Release();
+}
+inline void VectorReadRequest::set_allocated_keyspace_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keyspace_name_.IsDefault()) {
+          _impl_.keyspace_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorReadRequest.keyspace_name)
+}
+
+// string table_name = 3;
+inline void VectorReadRequest::clear_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.ClearToEmpty();
+}
+inline const std::string& VectorReadRequest::table_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorReadRequest.table_name)
+  return _internal_table_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorReadRequest::set_table_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorReadRequest.table_name)
+}
+inline std::string* VectorReadRequest::mutable_table_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_table_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorReadRequest.table_name)
+  return _s;
+}
+inline const std::string& VectorReadRequest::_internal_table_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.table_name_.Get();
+}
+inline void VectorReadRequest::_internal_set_table_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(value, GetArena());
+}
+inline std::string* VectorReadRequest::_internal_mutable_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.table_name_.Mutable( GetArena());
+}
+inline std::string* VectorReadRequest::release_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorReadRequest.table_name)
+  return _impl_.table_name_.Release();
+}
+inline void VectorReadRequest::set_allocated_table_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.table_name_.IsDefault()) {
+          _impl_.table_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorReadRequest.table_name)
 }
 
 // -------------------------------------------------------------------
@@ -3233,6 +3767,112 @@ inline void VectorUpdateRequest::set_allocated_updated_at(::google::protobuf::Ti
   // @@protoc_insertion_point(field_set_allocated:vectordb.VectorUpdateRequest.updated_at)
 }
 
+// string keyspace_name = 5;
+inline void VectorUpdateRequest::clear_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.ClearToEmpty();
+}
+inline const std::string& VectorUpdateRequest::keyspace_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorUpdateRequest.keyspace_name)
+  return _internal_keyspace_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorUpdateRequest::set_keyspace_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorUpdateRequest.keyspace_name)
+}
+inline std::string* VectorUpdateRequest::mutable_keyspace_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_keyspace_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorUpdateRequest.keyspace_name)
+  return _s;
+}
+inline const std::string& VectorUpdateRequest::_internal_keyspace_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.keyspace_name_.Get();
+}
+inline void VectorUpdateRequest::_internal_set_keyspace_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(value, GetArena());
+}
+inline std::string* VectorUpdateRequest::_internal_mutable_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.keyspace_name_.Mutable( GetArena());
+}
+inline std::string* VectorUpdateRequest::release_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorUpdateRequest.keyspace_name)
+  return _impl_.keyspace_name_.Release();
+}
+inline void VectorUpdateRequest::set_allocated_keyspace_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keyspace_name_.IsDefault()) {
+          _impl_.keyspace_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorUpdateRequest.keyspace_name)
+}
+
+// string table_name = 6;
+inline void VectorUpdateRequest::clear_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.ClearToEmpty();
+}
+inline const std::string& VectorUpdateRequest::table_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorUpdateRequest.table_name)
+  return _internal_table_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorUpdateRequest::set_table_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorUpdateRequest.table_name)
+}
+inline std::string* VectorUpdateRequest::mutable_table_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_table_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorUpdateRequest.table_name)
+  return _s;
+}
+inline const std::string& VectorUpdateRequest::_internal_table_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.table_name_.Get();
+}
+inline void VectorUpdateRequest::_internal_set_table_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(value, GetArena());
+}
+inline std::string* VectorUpdateRequest::_internal_mutable_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.table_name_.Mutable( GetArena());
+}
+inline std::string* VectorUpdateRequest::release_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorUpdateRequest.table_name)
+  return _impl_.table_name_.Release();
+}
+inline void VectorUpdateRequest::set_allocated_table_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.table_name_.IsDefault()) {
+          _impl_.table_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorUpdateRequest.table_name)
+}
+
 // -------------------------------------------------------------------
 
 // VectorUpdateResponse
@@ -3315,6 +3955,112 @@ inline void VectorDeleteRequest::set_allocated_key(std::string* value) {
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:vectordb.VectorDeleteRequest.key)
+}
+
+// string keyspace_name = 2;
+inline void VectorDeleteRequest::clear_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.ClearToEmpty();
+}
+inline const std::string& VectorDeleteRequest::keyspace_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorDeleteRequest.keyspace_name)
+  return _internal_keyspace_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorDeleteRequest::set_keyspace_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorDeleteRequest.keyspace_name)
+}
+inline std::string* VectorDeleteRequest::mutable_keyspace_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_keyspace_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorDeleteRequest.keyspace_name)
+  return _s;
+}
+inline const std::string& VectorDeleteRequest::_internal_keyspace_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.keyspace_name_.Get();
+}
+inline void VectorDeleteRequest::_internal_set_keyspace_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(value, GetArena());
+}
+inline std::string* VectorDeleteRequest::_internal_mutable_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.keyspace_name_.Mutable( GetArena());
+}
+inline std::string* VectorDeleteRequest::release_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorDeleteRequest.keyspace_name)
+  return _impl_.keyspace_name_.Release();
+}
+inline void VectorDeleteRequest::set_allocated_keyspace_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keyspace_name_.IsDefault()) {
+          _impl_.keyspace_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorDeleteRequest.keyspace_name)
+}
+
+// string table_name = 3;
+inline void VectorDeleteRequest::clear_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.ClearToEmpty();
+}
+inline const std::string& VectorDeleteRequest::table_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorDeleteRequest.table_name)
+  return _internal_table_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorDeleteRequest::set_table_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorDeleteRequest.table_name)
+}
+inline std::string* VectorDeleteRequest::mutable_table_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_table_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorDeleteRequest.table_name)
+  return _s;
+}
+inline const std::string& VectorDeleteRequest::_internal_table_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.table_name_.Get();
+}
+inline void VectorDeleteRequest::_internal_set_table_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(value, GetArena());
+}
+inline std::string* VectorDeleteRequest::_internal_mutable_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.table_name_.Mutable( GetArena());
+}
+inline std::string* VectorDeleteRequest::release_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorDeleteRequest.table_name)
+  return _impl_.table_name_.Release();
+}
+inline void VectorDeleteRequest::set_allocated_table_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.table_name_.IsDefault()) {
+          _impl_.table_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorDeleteRequest.table_name)
 }
 
 // -------------------------------------------------------------------
@@ -3490,6 +4236,112 @@ inline void VectorSearchRequest::_internal_set_threshold(float value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.threshold_ = value;
+}
+
+// string keyspace_name = 5;
+inline void VectorSearchRequest::clear_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.ClearToEmpty();
+}
+inline const std::string& VectorSearchRequest::keyspace_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorSearchRequest.keyspace_name)
+  return _internal_keyspace_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorSearchRequest::set_keyspace_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorSearchRequest.keyspace_name)
+}
+inline std::string* VectorSearchRequest::mutable_keyspace_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_keyspace_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorSearchRequest.keyspace_name)
+  return _s;
+}
+inline const std::string& VectorSearchRequest::_internal_keyspace_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.keyspace_name_.Get();
+}
+inline void VectorSearchRequest::_internal_set_keyspace_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.keyspace_name_.Set(value, GetArena());
+}
+inline std::string* VectorSearchRequest::_internal_mutable_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.keyspace_name_.Mutable( GetArena());
+}
+inline std::string* VectorSearchRequest::release_keyspace_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorSearchRequest.keyspace_name)
+  return _impl_.keyspace_name_.Release();
+}
+inline void VectorSearchRequest::set_allocated_keyspace_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.keyspace_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keyspace_name_.IsDefault()) {
+          _impl_.keyspace_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorSearchRequest.keyspace_name)
+}
+
+// string table_name = 6;
+inline void VectorSearchRequest::clear_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.ClearToEmpty();
+}
+inline const std::string& VectorSearchRequest::table_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:vectordb.VectorSearchRequest.table_name)
+  return _internal_table_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void VectorSearchRequest::set_table_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:vectordb.VectorSearchRequest.table_name)
+}
+inline std::string* VectorSearchRequest::mutable_table_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_table_name();
+  // @@protoc_insertion_point(field_mutable:vectordb.VectorSearchRequest.table_name)
+  return _s;
+}
+inline const std::string& VectorSearchRequest::_internal_table_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.table_name_.Get();
+}
+inline void VectorSearchRequest::_internal_set_table_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.table_name_.Set(value, GetArena());
+}
+inline std::string* VectorSearchRequest::_internal_mutable_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.table_name_.Mutable( GetArena());
+}
+inline std::string* VectorSearchRequest::release_table_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:vectordb.VectorSearchRequest.table_name)
+  return _impl_.table_name_.Release();
+}
+inline void VectorSearchRequest::set_allocated_table_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.table_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.table_name_.IsDefault()) {
+          _impl_.table_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:vectordb.VectorSearchRequest.table_name)
 }
 
 // -------------------------------------------------------------------

@@ -25,48 +25,54 @@ namespace Vectordb {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBydXN0X3NlcnZlci9wcm90by92ZWN0b3JkYi5wcm90bxIIdmVjdG9yZGIa",
-            "H2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8ikQEKElZlY3Rvcldy",
+            "H2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8ivAEKElZlY3Rvcldy",
             "aXRlUmVxdWVzdBILCgNrZXkYASABKAkSDgoGdmVjdG9yGAIgAygCEi4KCmNy",
             "ZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4K",
             "CnVwZGF0ZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "IkgKF1ZlY3RvckJhdGNoV3JpdGVSZXF1ZXN0Ei0KB3ZlY3RvcnMYASADKAsy",
-            "HC52ZWN0b3JkYi5WZWN0b3JXcml0ZVJlcXVlc3QiJgoTVmVjdG9yV3JpdGVS",
-            "ZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIiAKEVZlY3RvclJlYWRSZXF1ZXN0",
-            "EgsKA2tleRgBIAEoCSIzChJWZWN0b3JSZWFkUmVzcG9uc2USDgoGdmVjdG9y",
-            "GAEgAygCEg0KBWZvdW5kGAIgASgIIpIBChNWZWN0b3JVcGRhdGVSZXF1ZXN0",
-            "EgsKA2tleRgBIAEoCRIOCgZ2ZWN0b3IYAiADKAISLgoKY3JlYXRlZF9hdBgD",
-            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9h",
-            "dBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiJwoUVmVjdG9y",
-            "VXBkYXRlUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCCIiChNWZWN0b3JEZWxl",
-            "dGVSZXF1ZXN0EgsKA2tleRgBIAEoCSInChRWZWN0b3JEZWxldGVSZXNwb25z",
-            "ZRIPCgdzdWNjZXNzGAEgASgIIlYKE1ZlY3RvclNlYXJjaFJlcXVlc3QSDQoF",
-            "cXVlcnkYASADKAISDQoFdG9wX2sYAiABKAUSDgoGbWV0cmljGAMgASgJEhEK",
-            "CXRocmVzaG9sZBgEIAEoAiI/ChRWZWN0b3JTZWFyY2hSZXNwb25zZRInCgdt",
-            "YXRjaGVzGAEgAygLMhYudmVjdG9yZGIuU2VhcmNoUmVzdWx0IioKDFNlYXJj",
-            "aFJlc3VsdBILCgNrZXkYASABKAkSDQoFc2NvcmUYAiABKAIyvgMKCFZlY3Rv",
-            "ckRCEkcKBlNlYXJjaBIdLnZlY3RvcmRiLlZlY3RvclNlYXJjaFJlcXVlc3Qa",
-            "Hi52ZWN0b3JkYi5WZWN0b3JTZWFyY2hSZXNwb25zZRJOCgpCYXRjaFdyaXRl",
-            "EiEudmVjdG9yZGIuVmVjdG9yQmF0Y2hXcml0ZVJlcXVlc3QaHS52ZWN0b3Jk",
-            "Yi5WZWN0b3JXcml0ZVJlc3BvbnNlEkQKBVdyaXRlEhwudmVjdG9yZGIuVmVj",
-            "dG9yV3JpdGVSZXF1ZXN0Gh0udmVjdG9yZGIuVmVjdG9yV3JpdGVSZXNwb25z",
-            "ZRJBCgRSZWFkEhsudmVjdG9yZGIuVmVjdG9yUmVhZFJlcXVlc3QaHC52ZWN0",
-            "b3JkYi5WZWN0b3JSZWFkUmVzcG9uc2USRwoGVXBkYXRlEh0udmVjdG9yZGIu",
-            "VmVjdG9yVXBkYXRlUmVxdWVzdBoeLnZlY3RvcmRiLlZlY3RvclVwZGF0ZVJl",
-            "c3BvbnNlEkcKBkRlbGV0ZRIdLnZlY3RvcmRiLlZlY3RvckRlbGV0ZVJlcXVl",
-            "c3QaHi52ZWN0b3JkYi5WZWN0b3JEZWxldGVSZXNwb25zZWIGcHJvdG8z"));
+            "EhUKDWtleXNwYWNlX25hbWUYBSABKAkSEgoKdGFibGVfbmFtZRgGIAEoCSJz",
+            "ChdWZWN0b3JCYXRjaFdyaXRlUmVxdWVzdBItCgd2ZWN0b3JzGAEgAygLMhwu",
+            "dmVjdG9yZGIuVmVjdG9yV3JpdGVSZXF1ZXN0EhUKDWtleXNwYWNlX25hbWUY",
+            "AiABKAkSEgoKdGFibGVfbmFtZRgDIAEoCSImChNWZWN0b3JXcml0ZVJlc3Bv",
+            "bnNlEg8KB3N1Y2Nlc3MYASABKAgiSwoRVmVjdG9yUmVhZFJlcXVlc3QSCwoD",
+            "a2V5GAEgASgJEhUKDWtleXNwYWNlX25hbWUYAiABKAkSEgoKdGFibGVfbmFt",
+            "ZRgDIAEoCSIzChJWZWN0b3JSZWFkUmVzcG9uc2USDgoGdmVjdG9yGAEgAygC",
+            "Eg0KBWZvdW5kGAIgASgIIr0BChNWZWN0b3JVcGRhdGVSZXF1ZXN0EgsKA2tl",
+            "eRgBIAEoCRIOCgZ2ZWN0b3IYAiADKAISLgoKY3JlYXRlZF9hdBgDIAEoCzIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgEIAEo",
+            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASFQoNa2V5c3BhY2VfbmFt",
+            "ZRgFIAEoCRISCgp0YWJsZV9uYW1lGAYgASgJIicKFFZlY3RvclVwZGF0ZVJl",
+            "c3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgiTQoTVmVjdG9yRGVsZXRlUmVxdWVz",
+            "dBILCgNrZXkYASABKAkSFQoNa2V5c3BhY2VfbmFtZRgCIAEoCRISCgp0YWJs",
+            "ZV9uYW1lGAMgASgJIicKFFZlY3RvckRlbGV0ZVJlc3BvbnNlEg8KB3N1Y2Nl",
+            "c3MYASABKAgigQEKE1ZlY3RvclNlYXJjaFJlcXVlc3QSDQoFcXVlcnkYASAD",
+            "KAISDQoFdG9wX2sYAiABKAUSDgoGbWV0cmljGAMgASgJEhEKCXRocmVzaG9s",
+            "ZBgEIAEoAhIVCg1rZXlzcGFjZV9uYW1lGAUgASgJEhIKCnRhYmxlX25hbWUY",
+            "BiABKAkiPwoUVmVjdG9yU2VhcmNoUmVzcG9uc2USJwoHbWF0Y2hlcxgBIAMo",
+            "CzIWLnZlY3RvcmRiLlNlYXJjaFJlc3VsdCIqCgxTZWFyY2hSZXN1bHQSCwoD",
+            "a2V5GAEgASgJEg0KBXNjb3JlGAIgASgCMr4DCghWZWN0b3JEQhJHCgZTZWFy",
+            "Y2gSHS52ZWN0b3JkYi5WZWN0b3JTZWFyY2hSZXF1ZXN0Gh4udmVjdG9yZGIu",
+            "VmVjdG9yU2VhcmNoUmVzcG9uc2USTgoKQmF0Y2hXcml0ZRIhLnZlY3RvcmRi",
+            "LlZlY3RvckJhdGNoV3JpdGVSZXF1ZXN0Gh0udmVjdG9yZGIuVmVjdG9yV3Jp",
+            "dGVSZXNwb25zZRJECgVXcml0ZRIcLnZlY3RvcmRiLlZlY3RvcldyaXRlUmVx",
+            "dWVzdBodLnZlY3RvcmRiLlZlY3RvcldyaXRlUmVzcG9uc2USQQoEUmVhZBIb",
+            "LnZlY3RvcmRiLlZlY3RvclJlYWRSZXF1ZXN0GhwudmVjdG9yZGIuVmVjdG9y",
+            "UmVhZFJlc3BvbnNlEkcKBlVwZGF0ZRIdLnZlY3RvcmRiLlZlY3RvclVwZGF0",
+            "ZVJlcXVlc3QaHi52ZWN0b3JkYi5WZWN0b3JVcGRhdGVSZXNwb25zZRJHCgZE",
+            "ZWxldGUSHS52ZWN0b3JkYi5WZWN0b3JEZWxldGVSZXF1ZXN0Gh4udmVjdG9y",
+            "ZGIuVmVjdG9yRGVsZXRlUmVzcG9uc2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorWriteRequest), global::Vectordb.VectorWriteRequest.Parser, new[]{ "Key", "Vector", "CreatedAt", "UpdatedAt" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorBatchWriteRequest), global::Vectordb.VectorBatchWriteRequest.Parser, new[]{ "Vectors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorWriteRequest), global::Vectordb.VectorWriteRequest.Parser, new[]{ "Key", "Vector", "CreatedAt", "UpdatedAt", "KeyspaceName", "TableName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorBatchWriteRequest), global::Vectordb.VectorBatchWriteRequest.Parser, new[]{ "Vectors", "KeyspaceName", "TableName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorWriteResponse), global::Vectordb.VectorWriteResponse.Parser, new[]{ "Success" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorReadRequest), global::Vectordb.VectorReadRequest.Parser, new[]{ "Key" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorReadRequest), global::Vectordb.VectorReadRequest.Parser, new[]{ "Key", "KeyspaceName", "TableName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorReadResponse), global::Vectordb.VectorReadResponse.Parser, new[]{ "Vector", "Found" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorUpdateRequest), global::Vectordb.VectorUpdateRequest.Parser, new[]{ "Key", "Vector", "CreatedAt", "UpdatedAt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorUpdateRequest), global::Vectordb.VectorUpdateRequest.Parser, new[]{ "Key", "Vector", "CreatedAt", "UpdatedAt", "KeyspaceName", "TableName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorUpdateResponse), global::Vectordb.VectorUpdateResponse.Parser, new[]{ "Success" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorDeleteRequest), global::Vectordb.VectorDeleteRequest.Parser, new[]{ "Key" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorDeleteRequest), global::Vectordb.VectorDeleteRequest.Parser, new[]{ "Key", "KeyspaceName", "TableName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorDeleteResponse), global::Vectordb.VectorDeleteResponse.Parser, new[]{ "Success" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorSearchRequest), global::Vectordb.VectorSearchRequest.Parser, new[]{ "Query", "TopK", "Metric", "Threshold" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorSearchRequest), global::Vectordb.VectorSearchRequest.Parser, new[]{ "Query", "TopK", "Metric", "Threshold", "KeyspaceName", "TableName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.VectorSearchResponse), global::Vectordb.VectorSearchResponse.Parser, new[]{ "Matches" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Vectordb.SearchResult), global::Vectordb.SearchResult.Parser, new[]{ "Key", "Score" }, null, null, null, null)
           }));
@@ -117,6 +123,8 @@ namespace Vectordb {
       vector_ = other.vector_.Clone();
       createdAt_ = other.createdAt_ != null ? other.createdAt_.Clone() : null;
       updatedAt_ = other.updatedAt_ != null ? other.updatedAt_.Clone() : null;
+      keyspaceName_ = other.keyspaceName_;
+      tableName_ = other.tableName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -173,6 +181,30 @@ namespace Vectordb {
       }
     }
 
+    /// <summary>Field number for the "keyspace_name" field.</summary>
+    public const int KeyspaceNameFieldNumber = 5;
+    private string keyspaceName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KeyspaceName {
+      get { return keyspaceName_; }
+      set {
+        keyspaceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "table_name" field.</summary>
+    public const int TableNameFieldNumber = 6;
+    private string tableName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TableName {
+      get { return tableName_; }
+      set {
+        tableName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -192,6 +224,8 @@ namespace Vectordb {
       if(!vector_.Equals(other.vector_)) return false;
       if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
       if (!object.Equals(UpdatedAt, other.UpdatedAt)) return false;
+      if (KeyspaceName != other.KeyspaceName) return false;
+      if (TableName != other.TableName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -203,6 +237,8 @@ namespace Vectordb {
       hash ^= vector_.GetHashCode();
       if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
       if (updatedAt_ != null) hash ^= UpdatedAt.GetHashCode();
+      if (KeyspaceName.Length != 0) hash ^= KeyspaceName.GetHashCode();
+      if (TableName.Length != 0) hash ^= TableName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -234,6 +270,14 @@ namespace Vectordb {
         output.WriteRawTag(34);
         output.WriteMessage(UpdatedAt);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -257,6 +301,14 @@ namespace Vectordb {
         output.WriteRawTag(34);
         output.WriteMessage(UpdatedAt);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -276,6 +328,12 @@ namespace Vectordb {
       }
       if (updatedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatedAt);
+      }
+      if (KeyspaceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TableName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -304,6 +362,12 @@ namespace Vectordb {
           UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         UpdatedAt.MergeFrom(other.UpdatedAt);
+      }
+      if (other.KeyspaceName.Length != 0) {
+        KeyspaceName = other.KeyspaceName;
+      }
+      if (other.TableName.Length != 0) {
+        TableName = other.TableName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -343,6 +407,14 @@ namespace Vectordb {
             input.ReadMessage(UpdatedAt);
             break;
           }
+          case 42: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 50: {
+            TableName = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -379,6 +451,14 @@ namespace Vectordb {
               UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 42: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 50: {
+            TableName = input.ReadString();
             break;
           }
         }
@@ -424,6 +504,8 @@ namespace Vectordb {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VectorBatchWriteRequest(VectorBatchWriteRequest other) : this() {
       vectors_ = other.vectors_.Clone();
+      keyspaceName_ = other.keyspaceName_;
+      tableName_ = other.tableName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -444,6 +526,30 @@ namespace Vectordb {
       get { return vectors_; }
     }
 
+    /// <summary>Field number for the "keyspace_name" field.</summary>
+    public const int KeyspaceNameFieldNumber = 2;
+    private string keyspaceName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KeyspaceName {
+      get { return keyspaceName_; }
+      set {
+        keyspaceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "table_name" field.</summary>
+    public const int TableNameFieldNumber = 3;
+    private string tableName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TableName {
+      get { return tableName_; }
+      set {
+        tableName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -460,6 +566,8 @@ namespace Vectordb {
         return true;
       }
       if(!vectors_.Equals(other.vectors_)) return false;
+      if (KeyspaceName != other.KeyspaceName) return false;
+      if (TableName != other.TableName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -468,6 +576,8 @@ namespace Vectordb {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= vectors_.GetHashCode();
+      if (KeyspaceName.Length != 0) hash ^= KeyspaceName.GetHashCode();
+      if (TableName.Length != 0) hash ^= TableName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -487,6 +597,14 @@ namespace Vectordb {
       output.WriteRawMessage(this);
     #else
       vectors_.WriteTo(output, _repeated_vectors_codec);
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -498,6 +616,14 @@ namespace Vectordb {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       vectors_.WriteTo(ref output, _repeated_vectors_codec);
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -509,6 +635,12 @@ namespace Vectordb {
     public int CalculateSize() {
       int size = 0;
       size += vectors_.CalculateSize(_repeated_vectors_codec);
+      if (KeyspaceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TableName);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -522,6 +654,12 @@ namespace Vectordb {
         return;
       }
       vectors_.Add(other.vectors_);
+      if (other.KeyspaceName.Length != 0) {
+        KeyspaceName = other.KeyspaceName;
+      }
+      if (other.TableName.Length != 0) {
+        TableName = other.TableName;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -541,6 +679,14 @@ namespace Vectordb {
             vectors_.AddEntriesFrom(input, _repeated_vectors_codec);
             break;
           }
+          case 18: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 26: {
+            TableName = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -558,6 +704,14 @@ namespace Vectordb {
             break;
           case 10: {
             vectors_.AddEntriesFrom(ref input, _repeated_vectors_codec);
+            break;
+          }
+          case 18: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 26: {
+            TableName = input.ReadString();
             break;
           }
         }
@@ -793,6 +947,8 @@ namespace Vectordb {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VectorReadRequest(VectorReadRequest other) : this() {
       key_ = other.key_;
+      keyspaceName_ = other.keyspaceName_;
+      tableName_ = other.tableName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -814,6 +970,30 @@ namespace Vectordb {
       }
     }
 
+    /// <summary>Field number for the "keyspace_name" field.</summary>
+    public const int KeyspaceNameFieldNumber = 2;
+    private string keyspaceName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KeyspaceName {
+      get { return keyspaceName_; }
+      set {
+        keyspaceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "table_name" field.</summary>
+    public const int TableNameFieldNumber = 3;
+    private string tableName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TableName {
+      get { return tableName_; }
+      set {
+        tableName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -830,6 +1010,8 @@ namespace Vectordb {
         return true;
       }
       if (Key != other.Key) return false;
+      if (KeyspaceName != other.KeyspaceName) return false;
+      if (TableName != other.TableName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -838,6 +1020,8 @@ namespace Vectordb {
     public override int GetHashCode() {
       int hash = 1;
       if (Key.Length != 0) hash ^= Key.GetHashCode();
+      if (KeyspaceName.Length != 0) hash ^= KeyspaceName.GetHashCode();
+      if (TableName.Length != 0) hash ^= TableName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -860,6 +1044,14 @@ namespace Vectordb {
         output.WriteRawTag(10);
         output.WriteString(Key);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -874,6 +1066,14 @@ namespace Vectordb {
         output.WriteRawTag(10);
         output.WriteString(Key);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -886,6 +1086,12 @@ namespace Vectordb {
       int size = 0;
       if (Key.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+      }
+      if (KeyspaceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TableName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -901,6 +1107,12 @@ namespace Vectordb {
       }
       if (other.Key.Length != 0) {
         Key = other.Key;
+      }
+      if (other.KeyspaceName.Length != 0) {
+        KeyspaceName = other.KeyspaceName;
+      }
+      if (other.TableName.Length != 0) {
+        TableName = other.TableName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -921,6 +1133,14 @@ namespace Vectordb {
             Key = input.ReadString();
             break;
           }
+          case 18: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 26: {
+            TableName = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -938,6 +1158,14 @@ namespace Vectordb {
             break;
           case 10: {
             Key = input.ReadString();
+            break;
+          }
+          case 18: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 26: {
+            TableName = input.ReadString();
             break;
           }
         }
@@ -1204,6 +1432,8 @@ namespace Vectordb {
       vector_ = other.vector_.Clone();
       createdAt_ = other.createdAt_ != null ? other.createdAt_.Clone() : null;
       updatedAt_ = other.updatedAt_ != null ? other.updatedAt_.Clone() : null;
+      keyspaceName_ = other.keyspaceName_;
+      tableName_ = other.tableName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1260,6 +1490,30 @@ namespace Vectordb {
       }
     }
 
+    /// <summary>Field number for the "keyspace_name" field.</summary>
+    public const int KeyspaceNameFieldNumber = 5;
+    private string keyspaceName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KeyspaceName {
+      get { return keyspaceName_; }
+      set {
+        keyspaceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "table_name" field.</summary>
+    public const int TableNameFieldNumber = 6;
+    private string tableName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TableName {
+      get { return tableName_; }
+      set {
+        tableName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1279,6 +1533,8 @@ namespace Vectordb {
       if(!vector_.Equals(other.vector_)) return false;
       if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
       if (!object.Equals(UpdatedAt, other.UpdatedAt)) return false;
+      if (KeyspaceName != other.KeyspaceName) return false;
+      if (TableName != other.TableName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1290,6 +1546,8 @@ namespace Vectordb {
       hash ^= vector_.GetHashCode();
       if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
       if (updatedAt_ != null) hash ^= UpdatedAt.GetHashCode();
+      if (KeyspaceName.Length != 0) hash ^= KeyspaceName.GetHashCode();
+      if (TableName.Length != 0) hash ^= TableName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1321,6 +1579,14 @@ namespace Vectordb {
         output.WriteRawTag(34);
         output.WriteMessage(UpdatedAt);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1344,6 +1610,14 @@ namespace Vectordb {
         output.WriteRawTag(34);
         output.WriteMessage(UpdatedAt);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1363,6 +1637,12 @@ namespace Vectordb {
       }
       if (updatedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatedAt);
+      }
+      if (KeyspaceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TableName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1391,6 +1671,12 @@ namespace Vectordb {
           UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         UpdatedAt.MergeFrom(other.UpdatedAt);
+      }
+      if (other.KeyspaceName.Length != 0) {
+        KeyspaceName = other.KeyspaceName;
+      }
+      if (other.TableName.Length != 0) {
+        TableName = other.TableName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1430,6 +1716,14 @@ namespace Vectordb {
             input.ReadMessage(UpdatedAt);
             break;
           }
+          case 42: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 50: {
+            TableName = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1466,6 +1760,14 @@ namespace Vectordb {
               UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 42: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 50: {
+            TableName = input.ReadString();
             break;
           }
         }
@@ -1701,6 +2003,8 @@ namespace Vectordb {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VectorDeleteRequest(VectorDeleteRequest other) : this() {
       key_ = other.key_;
+      keyspaceName_ = other.keyspaceName_;
+      tableName_ = other.tableName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1722,6 +2026,30 @@ namespace Vectordb {
       }
     }
 
+    /// <summary>Field number for the "keyspace_name" field.</summary>
+    public const int KeyspaceNameFieldNumber = 2;
+    private string keyspaceName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KeyspaceName {
+      get { return keyspaceName_; }
+      set {
+        keyspaceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "table_name" field.</summary>
+    public const int TableNameFieldNumber = 3;
+    private string tableName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TableName {
+      get { return tableName_; }
+      set {
+        tableName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1738,6 +2066,8 @@ namespace Vectordb {
         return true;
       }
       if (Key != other.Key) return false;
+      if (KeyspaceName != other.KeyspaceName) return false;
+      if (TableName != other.TableName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1746,6 +2076,8 @@ namespace Vectordb {
     public override int GetHashCode() {
       int hash = 1;
       if (Key.Length != 0) hash ^= Key.GetHashCode();
+      if (KeyspaceName.Length != 0) hash ^= KeyspaceName.GetHashCode();
+      if (TableName.Length != 0) hash ^= TableName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1768,6 +2100,14 @@ namespace Vectordb {
         output.WriteRawTag(10);
         output.WriteString(Key);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1782,6 +2122,14 @@ namespace Vectordb {
         output.WriteRawTag(10);
         output.WriteString(Key);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1794,6 +2142,12 @@ namespace Vectordb {
       int size = 0;
       if (Key.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+      }
+      if (KeyspaceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TableName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1809,6 +2163,12 @@ namespace Vectordb {
       }
       if (other.Key.Length != 0) {
         Key = other.Key;
+      }
+      if (other.KeyspaceName.Length != 0) {
+        KeyspaceName = other.KeyspaceName;
+      }
+      if (other.TableName.Length != 0) {
+        TableName = other.TableName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1829,6 +2189,14 @@ namespace Vectordb {
             Key = input.ReadString();
             break;
           }
+          case 18: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 26: {
+            TableName = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1846,6 +2214,14 @@ namespace Vectordb {
             break;
           case 10: {
             Key = input.ReadString();
+            break;
+          }
+          case 18: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 26: {
+            TableName = input.ReadString();
             break;
           }
         }
@@ -2084,6 +2460,8 @@ namespace Vectordb {
       topK_ = other.topK_;
       metric_ = other.metric_;
       threshold_ = other.threshold_;
+      keyspaceName_ = other.keyspaceName_;
+      tableName_ = other.tableName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2140,6 +2518,30 @@ namespace Vectordb {
       }
     }
 
+    /// <summary>Field number for the "keyspace_name" field.</summary>
+    public const int KeyspaceNameFieldNumber = 5;
+    private string keyspaceName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KeyspaceName {
+      get { return keyspaceName_; }
+      set {
+        keyspaceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "table_name" field.</summary>
+    public const int TableNameFieldNumber = 6;
+    private string tableName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TableName {
+      get { return tableName_; }
+      set {
+        tableName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2159,6 +2561,8 @@ namespace Vectordb {
       if (TopK != other.TopK) return false;
       if (Metric != other.Metric) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Threshold, other.Threshold)) return false;
+      if (KeyspaceName != other.KeyspaceName) return false;
+      if (TableName != other.TableName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2170,6 +2574,8 @@ namespace Vectordb {
       if (TopK != 0) hash ^= TopK.GetHashCode();
       if (Metric.Length != 0) hash ^= Metric.GetHashCode();
       if (Threshold != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Threshold);
+      if (KeyspaceName.Length != 0) hash ^= KeyspaceName.GetHashCode();
+      if (TableName.Length != 0) hash ^= TableName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2201,6 +2607,14 @@ namespace Vectordb {
         output.WriteRawTag(37);
         output.WriteFloat(Threshold);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2224,6 +2638,14 @@ namespace Vectordb {
         output.WriteRawTag(37);
         output.WriteFloat(Threshold);
       }
+      if (KeyspaceName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TableName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2243,6 +2665,12 @@ namespace Vectordb {
       }
       if (Threshold != 0F) {
         size += 1 + 4;
+      }
+      if (KeyspaceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyspaceName);
+      }
+      if (TableName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TableName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2265,6 +2693,12 @@ namespace Vectordb {
       }
       if (other.Threshold != 0F) {
         Threshold = other.Threshold;
+      }
+      if (other.KeyspaceName.Length != 0) {
+        KeyspaceName = other.KeyspaceName;
+      }
+      if (other.TableName.Length != 0) {
+        TableName = other.TableName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2298,6 +2732,14 @@ namespace Vectordb {
             Threshold = input.ReadFloat();
             break;
           }
+          case 42: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 50: {
+            TableName = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2328,6 +2770,14 @@ namespace Vectordb {
           }
           case 37: {
             Threshold = input.ReadFloat();
+            break;
+          }
+          case 42: {
+            KeyspaceName = input.ReadString();
+            break;
+          }
+          case 50: {
+            TableName = input.ReadString();
             break;
           }
         }
